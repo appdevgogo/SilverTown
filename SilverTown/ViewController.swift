@@ -69,6 +69,7 @@ class ViewController: UIViewController {
         //Bind a model selected handler
         tableView.rx.modelSelected(Product.self).bind { product in
             print(product.title)
+            print("테스트 페이지 입니다.")
         }.disposed(by: bag)
 
         //Fetch itmes
