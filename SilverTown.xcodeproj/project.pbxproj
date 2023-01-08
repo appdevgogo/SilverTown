@@ -50,7 +50,6 @@
 				4D72EF8E886A0D02BB9205FC /* Pods-SilverTown.debug.xcconfig */,
 				3ECF1C1995B32BFC078643E6 /* Pods-SilverTown.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -60,6 +59,51 @@
 				57160249B890E62CBD30288D /* Pods_SilverTown.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFAB21F9296A4D3300E32CAC /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4A5A9296848430028E135 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		FFAB21FA296A4E0200E32CAC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FFC4A59F296848370028E135 /* ViewController.swift */,
+				FFC4A5A1296848370028E135 /* Main.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FFAB21FB296A4E4600E32CAC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		FFAB21FC296A501000E32CAC /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		FFAB21FD296A502000E32CAC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		FFAB21FE296A503C00E32CAC /* BookMark */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BookMark;
 			sourceTree = "<group>";
 		};
 		FFC4A58F296848370028E135 = {
@@ -83,12 +127,15 @@
 		FFC4A59A296848370028E135 /* SilverTown */ = {
 			isa = PBXGroup;
 			children = (
+				FFAB21F9296A4D3300E32CAC /* LaunchScreen */,
+				FFAB21FA296A4E0200E32CAC /* Home */,
+				FFAB21FB296A4E4600E32CAC /* Detail */,
+				FFAB21FC296A501000E32CAC /* Filter */,
+				FFAB21FD296A502000E32CAC /* Search */,
+				FFAB21FE296A503C00E32CAC /* BookMark */,
 				FFC4A59B296848370028E135 /* AppDelegate.swift */,
 				FFC4A59D296848370028E135 /* SceneDelegate.swift */,
-				FFC4A59F296848370028E135 /* ViewController.swift */,
-				FFC4A5A1296848370028E135 /* Main.storyboard */,
 				FFC4A5A7296848430028E135 /* Assets.xcassets */,
-				FFC4A5A9296848430028E135 /* LaunchScreen.storyboard */,
 				FFC4A5AC296848430028E135 /* Info.plist */,
 				FFC4A5A4296848370028E135 /* SilverTown.xcdatamodeld */,
 			);
