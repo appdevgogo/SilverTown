@@ -55,6 +55,19 @@ class ViewController: UIViewController {
         bindTableData()
     }
     
+    private func initSetting () {
+        
+        print("--->> initSetting 시작되었습니다.")
+        
+        let Storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let VC = Storyboard.instantiateViewController(identifier: "Main") as? ViewController else { return }
+        //VC.modalPresentationStyle = .fullScreen // 풀스크린으로 설정
+        self.present(VC, animated: false, completion: nil)
+        // 뷰가 등장하는 애니메이션 효과인 animated는 false로 설정
+        
+        
+    }
+    
     func bindTableData() {
         //Bind items to table
         viewModel.items.bind(

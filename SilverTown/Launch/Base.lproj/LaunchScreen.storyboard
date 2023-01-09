@@ -21,8 +21,8 @@
                                 <rect key="frame" x="173.66666666666666" y="317" width="43" height="41"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="건강한 노년을 위한 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKk-5d-1cM">
-                                <rect key="frame" x="100.66666666666669" y="378" width="189" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <rect key="frame" x="74" y="373" width="242" height="38.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -31,7 +31,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jKk-5d-1cM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4x8-sd-6xd"/>
-                            <constraint firstItem="jKk-5d-1cM" firstAttribute="top" secondItem="xRT-gA-ii3" secondAttribute="bottom" constant="20" id="5FO-zd-I57"/>
+                            <constraint firstItem="jKk-5d-1cM" firstAttribute="top" secondItem="xRT-gA-ii3" secondAttribute="bottom" constant="15" id="5FO-zd-I57"/>
                             <constraint firstItem="xRT-gA-ii3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.8" id="QtT-nK-q82"/>
                             <constraint firstItem="xRT-gA-ii3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iJr-Ty-bfE"/>
                         </constraints>

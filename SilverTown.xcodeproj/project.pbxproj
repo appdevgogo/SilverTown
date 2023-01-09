@@ -8,19 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		532B64BBA579DDB822B3CFFA /* Pods_SilverTown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57160249B890E62CBD30288D /* Pods_SilverTown.framework */; };
+		FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB21FF296A7EDC00E32CAC /* LaunchViewController.swift */; };
+		FFAB2202296A813D00E32CAC /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB2201296A813D00E32CAC /* Launch.storyboard */; };
 		FFC4A59C296848370028E135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59B296848370028E135 /* AppDelegate.swift */; };
 		FFC4A59E296848370028E135 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59D296848370028E135 /* SceneDelegate.swift */; };
 		FFC4A5A0296848370028E135 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59F296848370028E135 /* ViewController.swift */; };
 		FFC4A5A3296848370028E135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFC4A5A1296848370028E135 /* Main.storyboard */; };
 		FFC4A5A6296848370028E135 /* SilverTown.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A5A4296848370028E135 /* SilverTown.xcdatamodeld */; };
 		FFC4A5A8296848430028E135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC4A5A7296848430028E135 /* Assets.xcassets */; };
-		FFC4A5AB296848430028E135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFC4A5A9296848430028E135 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3ECF1C1995B32BFC078643E6 /* Pods-SilverTown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilverTown.release.xcconfig"; path = "Target Support Files/Pods-SilverTown/Pods-SilverTown.release.xcconfig"; sourceTree = "<group>"; };
 		4D72EF8E886A0D02BB9205FC /* Pods-SilverTown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilverTown.debug.xcconfig"; path = "Target Support Files/Pods-SilverTown/Pods-SilverTown.debug.xcconfig"; sourceTree = "<group>"; };
 		57160249B890E62CBD30288D /* Pods_SilverTown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilverTown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFAB21FF296A7EDC00E32CAC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		FFAB2201296A813D00E32CAC /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		FFC4A598296848370028E135 /* SilverTown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilverTown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC4A59B296848370028E135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFC4A59D296848370028E135 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +31,6 @@
 		FFC4A5A2296848370028E135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFC4A5A5296848370028E135 /* SilverTown.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SilverTown.xcdatamodel; sourceTree = "<group>"; };
 		FFC4A5A7296848430028E135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FFC4A5AA296848430028E135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFC4A5AC296848430028E135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,21 +63,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FFAB21F9296A4D3300E32CAC /* LaunchScreen */ = {
+		FFAB21F9296A4D3300E32CAC /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				FFC4A5A9296848430028E135 /* LaunchScreen.storyboard */,
+				FFAB21FF296A7EDC00E32CAC /* LaunchViewController.swift */,
+				FFAB2201296A813D00E32CAC /* Launch.storyboard */,
 			);
-			path = LaunchScreen;
+			path = Launch;
 			sourceTree = "<group>";
 		};
-		FFAB21FA296A4E0200E32CAC /* Home */ = {
+		FFAB21FA296A4E0200E32CAC /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				FFC4A59F296848370028E135 /* ViewController.swift */,
 				FFC4A5A1296848370028E135 /* Main.storyboard */,
 			);
-			path = Home;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		FFAB21FB296A4E4600E32CAC /* Detail */ = {
@@ -127,8 +130,8 @@
 		FFC4A59A296848370028E135 /* SilverTown */ = {
 			isa = PBXGroup;
 			children = (
-				FFAB21F9296A4D3300E32CAC /* LaunchScreen */,
-				FFAB21FA296A4E0200E32CAC /* Home */,
+				FFAB21F9296A4D3300E32CAC /* Launch */,
+				FFAB21FA296A4E0200E32CAC /* Main */,
 				FFAB21FB296A4E4600E32CAC /* Detail */,
 				FFAB21FC296A501000E32CAC /* Filter */,
 				FFAB21FD296A502000E32CAC /* Search */,
@@ -202,8 +205,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC4A5AB296848430028E135 /* LaunchScreen.storyboard in Resources */,
 				FFC4A5A8296848430028E135 /* Assets.xcassets in Resources */,
+				FFAB2202296A813D00E32CAC /* Launch.storyboard in Resources */,
 				FFC4A5A3296848370028E135 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +263,7 @@
 				FFC4A5A6296848370028E135 /* SilverTown.xcdatamodeld in Sources */,
 				FFC4A5A0296848370028E135 /* ViewController.swift in Sources */,
 				FFC4A59C296848370028E135 /* AppDelegate.swift in Sources */,
+				FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */,
 				FFC4A59E296848370028E135 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,14 +277,6 @@
 				FFC4A5A2296848370028E135 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FFC4A5A9296848430028E135 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FFC4A5AA296848430028E135 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
