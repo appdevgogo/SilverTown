@@ -39,6 +39,7 @@ struct FilterMainViewModel {
             FilterMain(name: "월이용료 1~30만원"),
             FilterMain(name: "식비 1만4천원/1식"),
             FilterMain(name: "평생무료"),
+            FilterMain(name: "또다른 옵션입니다."),
        
         ]
         

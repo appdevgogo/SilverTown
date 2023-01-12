@@ -72,9 +72,9 @@ class MainViewController: UIViewController {
             
             cell.itemLabel.text = text.name
             
-            cell.itemLabel.backgroundColor = .green
-            cell.itemLabel.layer.cornerRadius = 10
-            cell.itemLabel.layer.masksToBounds = true
+          //  cell.itemLabel.backgroundColor = .green
+           // cell.itemLabel.layer.cornerRadius = 10
+           // cell.itemLabel.layer.masksToBounds = true
            // cell.itemLabel.sizeToFit()
            // cell.contentView.frame.size.width = cell.itemLabel.frame.size.width
             //cell.frame.size.width = cell.contentView.frame.size.width
