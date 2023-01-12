@@ -26,17 +26,15 @@ class MainViewController: UIViewController {
     
     //------------------->
     @IBOutlet weak var filterMainCV: UICollectionView!
-    
-    
     private var testViewModel = FilterMainViewModel()
     private var testBag = DisposeBag()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(tableView)
-        tableView.frame = view.bounds
-        bindTableData()
+        //view.addSubview(tableView)
+        //tableView.frame = view.bounds
+        //bindTableData()
         bindFilterMainCV()
     }
     
@@ -64,13 +62,44 @@ class MainViewController: UIViewController {
     
     func bindFilterMainCV() {
         
+        var num: CGFloat = 0
+        
         testViewModel.items.bind(
             to: filterMainCV.rx.items(
-                cellIdentifier: "cell"
-                cellType: UICollectionViewCell.self)
-        ) {row, model, cell in
-            cell.textLabel?.text = model.name
+                cellIdentifier: "cell",
+                cellType: FilterMainCVCell.self)
+        ) { index, text, cell in
+            
+            cell.itemLabel.text = text.name
+            
+            cell.itemLabel.backgroundColor = .green
+            cell.itemLabel.layer.cornerRadius = 10
+            cell.itemLabel.layer.masksToBounds = true
+           // cell.itemLabel.sizeToFit()
+           // cell.contentView.frame.size.width = cell.itemLabel.frame.size.width
+            //cell.frame.size.width = cell.contentView.frame.size.width
+            //cell.frame.origin.x = num
+            
+           // num = num + cell.itemLabel.frame.size.width
+            
+            print(cell.itemLabel.frame.size)
+            print(cell.contentView.frame.size)
+            print(cell.frame.size)
+            print(cell.frame.origin)
+            print(num)
+            
+            
+            print(index)
+            print(text.name)
         }.disposed(by: bag)
+        
+        //Bind a model selected handler
+        filterMainCV.rx.modelSelected(FilterMain.self).bind { filteritem in
+           // print(filterMain.name)
+           // print("테스트 페이지 입니다.")
+        }.disposed(by: bag)
+        
+        testViewModel.fetchItem()
             
         
     }

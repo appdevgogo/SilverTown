@@ -34,9 +34,11 @@ struct FilterMainViewModel {
     
     func fetchItem(){
         let filteritems = [
-            FilterMain(name: "경기도"),
+            FilterMain(name: "서울특별시 마포구"),
             FilterMain(name: "보증금 1~6억"),
             FilterMain(name: "월이용료 1~30만원"),
+            FilterMain(name: "식비 1만4천원/1식"),
+            FilterMain(name: "평생무료"),
        
         ]
         
