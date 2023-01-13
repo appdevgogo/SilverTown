@@ -62,7 +62,9 @@ class MainViewController: UIViewController {
     
     func bindFilterMainCV() {
         
-        var num: CGFloat = 0
+        var itemOrigin: CGFloat = 20
+        //var sizeFixFlag: Bool = false
+        var sizeFixArray: [CGFloat] = []
         
         testViewModel.items.bind(
             to: filterMainCV.rx.items(
@@ -71,37 +73,45 @@ class MainViewController: UIViewController {
         ) { index, text, cell in
             
             cell.itemLabel.text = text.name
+            cell.itemLabel.backgroundColor = .green
+            cell.itemLabel.layer.cornerRadius = 10
+            cell.itemLabel.layer.masksToBounds = true
+            cell.itemLabel.sizeToFit()
             
-          //  cell.itemLabel.backgroundColor = .green
-           // cell.itemLabel.layer.cornerRadius = 10
-           // cell.itemLabel.layer.masksToBounds = true
-           // cell.itemLabel.sizeToFit()
-           // cell.contentView.frame.size.width = cell.itemLabel.frame.size.width
-            //cell.frame.size.width = cell.contentView.frame.size.width
-            //cell.frame.origin.x = num
+            cell.contentView.frame.size.width = cell.itemLabel.frame.size.width
+            cell.frame.size.width = cell.itemLabel.frame.size.width
             
-           // num = num + cell.itemLabel.frame.size.width
+            print("--->카운드")
+            print(sizeFixArray.count)
+            print(index)
             
+            if index == sizeFixArray.count {
+                
+                cell.frame.origin.x = itemOrigin
+                sizeFixArray.append(itemOrigin)
+                itemOrigin = itemOrigin + cell.itemLabel.frame.size.width + 10
+                
+            } else {
+                
+                cell.frame.origin.x = sizeFixArray[index]
+                
+            }
+            
+            print(text.name)
+            print(cell.frame.origin)
             print(cell.itemLabel.frame.size)
             print(cell.contentView.frame.size)
             print(cell.frame.size)
-            print(cell.frame.origin)
-            print(num)
+            
+            print(sizeFixArray)
+            print(self.filterMainCV.collectionViewLayout.collectionViewContentSize)
+            print(self.filterMainCV.contentSize)
             
             
-            print(index)
-            print(text.name)
-        }.disposed(by: bag)
-        
-        //Bind a model selected handler
-        filterMainCV.rx.modelSelected(FilterMain.self).bind { filteritem in
-           // print(filterMain.name)
-           // print("테스트 페이지 입니다.")
         }.disposed(by: bag)
         
         testViewModel.fetchItem()
-            
-        
+
     }
 
 }
