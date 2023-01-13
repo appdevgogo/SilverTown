@@ -26,8 +26,8 @@ class MainViewController: UIViewController {
     
     //------------------->
     @IBOutlet weak var filterMainCV: UICollectionView!
-    private var testViewModel = FilterMainViewModel()
-    private var testBag = DisposeBag()
+    private var filterMainViewModel = FilterMainViewModel()
+    private var filterMainBag = DisposeBag()
     
 
     override func viewDidLoad() {
@@ -62,57 +62,47 @@ class MainViewController: UIViewController {
     
     func bindFilterMainCV() {
         
-        var itemOrigin: CGFloat = 20
-        //var sizeFixFlag: Bool = false
+        var itemOrigin: CGFloat = 15
         var sizeFixArray: [CGFloat] = []
         
-        testViewModel.items.bind(
+        filterMainViewModel.items.bind(
             to: filterMainCV.rx.items(
                 cellIdentifier: "cell",
                 cellType: FilterMainCVCell.self)
         ) { index, text, cell in
             
             cell.itemLabel.text = text.name
-            cell.itemLabel.backgroundColor = .green
-            cell.itemLabel.layer.cornerRadius = 10
+            cell.itemLabel.textColor = .basicRed
+            cell.itemLabel.layer.borderWidth = 1
+            cell.itemLabel.layer.borderColor = UIColor.basicRed.cgColor
             cell.itemLabel.layer.masksToBounds = true
+            cell.itemLabel.layer.cornerRadius = 15
             cell.itemLabel.sizeToFit()
             
+            cell.itemLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+            
             cell.contentView.frame.size.width = cell.itemLabel.frame.size.width
-            cell.frame.size.width = cell.itemLabel.frame.size.width
+            cell.frame.size.width = cell.itemLabel.frame.size.width + 20
             
-            print("--->카운드")
-            print(sizeFixArray.count)
-            print(index)
-            
-            if index == sizeFixArray.count {
+            switch index {
                 
+            case sizeFixArray.count :
                 cell.frame.origin.x = itemOrigin
                 sizeFixArray.append(itemOrigin)
-                itemOrigin = itemOrigin + cell.itemLabel.frame.size.width + 10
+                itemOrigin = itemOrigin + cell.frame.size.width + 15
                 
-            } else {
-                
+            default :
                 cell.frame.origin.x = sizeFixArray[index]
                 
             }
             
-            print(text.name)
-            print(cell.frame.origin)
-            print(cell.itemLabel.frame.size)
-            print(cell.contentView.frame.size)
-            print(cell.frame.size)
             
-            print(sizeFixArray)
-            print(self.filterMainCV.collectionViewLayout.collectionViewContentSize)
-            print(self.filterMainCV.contentSize)
-            
-            
-        }.disposed(by: bag)
+        }.disposed(by: filterMainBag)
         
-        testViewModel.fetchItem()
+        filterMainViewModel.fetchItem()
 
     }
 
 }
+
 

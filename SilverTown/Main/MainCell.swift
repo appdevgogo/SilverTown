@@ -9,6 +9,6 @@ import UIKit
 
 class FilterMainCVCell: UICollectionViewCell {
     
-    @IBOutlet weak var itemLabel: UILabel!
+    @IBOutlet weak var itemLabel: PaddingLabel!
     
 }

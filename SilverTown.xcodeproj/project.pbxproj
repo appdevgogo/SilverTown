@@ -20,6 +20,8 @@
 		FFC4A5A8296848430028E135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC4A5A7296848430028E135 /* Assets.xcassets */; };
 		FFD32077296D86980098F456 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD32076296D86980098F456 /* MainModel.swift */; };
 		FFD32079296D86CA0098F456 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD32078296D86CA0098F456 /* MainViewModel.swift */; };
+		FFD86A4F297126710023F004 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD86A4E297126710023F004 /* Colors.swift */; };
+		FFD86A5129713CF80023F004 /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD86A5029713CF80023F004 /* UISettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		FFC4A5AC296848430028E135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFD32076296D86980098F456 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		FFD32078296D86CA0098F456 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FFD86A4E297126710023F004 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FFD86A5029713CF80023F004 /* UISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,9 @@
 		FFA647C4296C85FB00ABC259 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FFD86A4E297126710023F004 /* Colors.swift */,
 				FFA647C5296C863100ABC259 /* Extensions.swift */,
+				FFD86A5029713CF80023F004 /* UISettings.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -281,7 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC4A5A6296848370028E135 /* SilverTown.xcdatamodeld in Sources */,
+				FFD86A4F297126710023F004 /* Colors.swift in Sources */,
 				FFA647C6296C863100ABC259 /* Extensions.swift in Sources */,
+				FFD86A5129713CF80023F004 /* UISettings.swift in Sources */,
 				FFC4A5A0296848370028E135 /* MainViewController.swift in Sources */,
 				FFD32079296D86CA0098F456 /* MainViewModel.swift in Sources */,
 				FFD32077296D86980098F456 /* MainModel.swift in Sources */,
