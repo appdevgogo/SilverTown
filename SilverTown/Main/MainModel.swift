@@ -8,12 +8,17 @@
 import Foundation
 
 
-struct Product {
-    let imageName: String
+struct TownMain {
+    
     let title: String
+    let description: String
+    let imageURL: String
+    
 }
 
 
 struct FilterMain {
-    let name: String
+    
+    let item: String
+    
 }

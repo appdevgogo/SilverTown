@@ -12,51 +12,49 @@ import RxCocoa
 
 class MainViewController: UIViewController {
     
-    private let tableView: UITableView = {
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        return table
-        
-    }()
     
-    private var viewModel = ProductViewModel()
-    private var bag = DisposeBag()
+    @IBOutlet weak var townMainTV: UITableView!
+    private var townMainViewModel = TownMainViewModel()
+    private var townMainBag = DisposeBag()
     
-    
-    //------------------->
-    @IBOutlet weak var filterMainCV: UICollectionView!
+    @IBOutlet weak var FilterMainCV: UICollectionView!
     private var filterMainViewModel = FilterMainViewModel()
     private var filterMainBag = DisposeBag()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.addSubview(tableView)
-        //tableView.frame = view.bounds
-        //bindTableData()
+        bindTownMainTV()
         bindFilterMainCV()
     }
     
-    func bindTableData() {
-        //Bind items to table
-        viewModel.items.bind(
-            to: tableView.rx.items(
-                cellIdentifier: "cell",
-                cellType: UITableViewCell.self)
-        ) { row, model, cell in
-            cell.textLabel?.text = model.title
-            cell.imageView?.image = UIImage(systemName: model.imageName)
-        }.disposed(by: bag)
+    func bindTownMainTV() {
         
-        //Bind a model selected handler
-        tableView.rx.modelSelected(Product.self).bind { product in
-            print(product.title)
+        //Bind items to table
+        townMainViewModel.items.bind(
+            to: townMainTV.rx.items(
+                cellIdentifier: "cell",
+                cellType: TownMainTVCell.self)
+        ) { row, model, cell in
+            
+            cell.titleLabel.text = model.title
+            cell.descriptionLabel.text = model.description
+            
+        }.disposed(by: townMainBag)
+        
+        //Connect Delegate
+        townMainTV
+            .rx.setDelegate(self)
+            .disposed(by: townMainBag)
+        
+        //Click Event
+        townMainTV.rx.modelSelected(TownMain.self).bind { town in
+            print(town.title)
             print("테스트 페이지 입니다.")
-        }.disposed(by: bag)
+        }.disposed(by: townMainBag)
 
         //Fetch itmes
-        viewModel.fetchItem()
+        townMainViewModel.fetchItem()
         
     }
     
@@ -66,12 +64,12 @@ class MainViewController: UIViewController {
         var sizeFixArray: [CGFloat] = []
         
         filterMainViewModel.items.bind(
-            to: filterMainCV.rx.items(
+            to: FilterMainCV.rx.items(
                 cellIdentifier: "cell",
                 cellType: FilterMainCVCell.self)
         ) { index, text, cell in
             
-            cell.itemLabel.text = text.name
+            cell.itemLabel.text = text.item
             cell.itemLabel.textColor = .basicRed
             cell.itemLabel.layer.borderWidth = 1
             cell.itemLabel.layer.borderColor = UIColor.basicRed.cgColor
@@ -106,3 +104,8 @@ class MainViewController: UIViewController {
 }
 
 
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 350
+    }
+}
