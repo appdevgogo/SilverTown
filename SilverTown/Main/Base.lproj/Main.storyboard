@@ -60,21 +60,21 @@
                                 <rect key="frame" x="0.0" y="97" width="390" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="400" id="Rjd-W4-eJR" customClass="TownMainTVCell" customModule="SilverTown" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="400"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="350" id="Rjd-W4-eJR" customClass="TownMainTVCell" customModule="SilverTown" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rjd-W4-eJR" id="Q41-dS-5uO">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="350"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SK그레이스힐(Grace Hill)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyw-ii-eLp">
-                                                    <rect key="frame" x="30" y="21" width="330" height="30"/>
+                                                    <rect key="frame" x="20" y="21" width="340" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slc-gO-pjM">
-                                                    <rect key="frame" x="30" y="61" width="330" height="43"/>
+                                                    <rect key="frame" x="20" y="61" width="340" height="43"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="보증금">
                                                             <attributes>
@@ -172,13 +172,53 @@ Cg
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pCb-3f-dUf">
+                                                    <rect key="frame" x="20" y="124" width="350" height="180"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="180" id="GZi-8a-YAJ"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K6V-go-Ny0">
+                                                        <size key="itemSize" width="255" height="170"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellcell" id="9pG-pc-mJt" customClass="TownMainCVCell" customModule="SilverTown" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="5" width="255" height="170"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iBO-w7-kgh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="255" height="170"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TW9-Jw-w1G">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="170"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="TW9-Jw-w1G" secondAttribute="bottom" id="9y6-Hf-5Gf"/>
+                                                                    <constraint firstItem="TW9-Jw-w1G" firstAttribute="leading" secondItem="iBO-w7-kgh" secondAttribute="leading" id="Ibq-6p-s2p"/>
+                                                                    <constraint firstItem="TW9-Jw-w1G" firstAttribute="top" secondItem="iBO-w7-kgh" secondAttribute="top" id="YkT-W1-3b1"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="TW9-Jw-w1G" secondAttribute="trailing" id="fzt-8U-B3r"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="itemImage" destination="TW9-Jw-w1G" id="xLA-rr-3rw"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Slc-gO-pjM" secondAttribute="trailing" constant="10" id="BXr-oC-hZY"/>
-                                                <constraint firstItem="Yyw-ii-eLp" firstAttribute="leading" secondItem="Q41-dS-5uO" secondAttribute="leadingMargin" constant="10" id="Eqa-eQ-qeb"/>
+                                                <constraint firstItem="Yyw-ii-eLp" firstAttribute="leading" secondItem="Q41-dS-5uO" secondAttribute="leadingMargin" id="Eqa-eQ-qeb"/>
+                                                <constraint firstItem="pCb-3f-dUf" firstAttribute="top" secondItem="Slc-gO-pjM" secondAttribute="bottom" constant="20" id="LDr-W4-ZgM"/>
                                                 <constraint firstItem="Yyw-ii-eLp" firstAttribute="top" secondItem="Q41-dS-5uO" secondAttribute="topMargin" constant="10" id="Qga-qd-ccm"/>
                                                 <constraint firstItem="Slc-gO-pjM" firstAttribute="top" secondItem="Yyw-ii-eLp" secondAttribute="bottom" constant="10" id="Tv7-Q0-W8h"/>
-                                                <constraint firstItem="Slc-gO-pjM" firstAttribute="leading" secondItem="Q41-dS-5uO" secondAttribute="leadingMargin" constant="10" id="YnJ-0U-TKA"/>
+                                                <constraint firstItem="pCb-3f-dUf" firstAttribute="leading" secondItem="Q41-dS-5uO" secondAttribute="leadingMargin" id="XGv-bT-8vN"/>
+                                                <constraint firstItem="Slc-gO-pjM" firstAttribute="leading" secondItem="Q41-dS-5uO" secondAttribute="leadingMargin" id="YnJ-0U-TKA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pCb-3f-dUf" secondAttribute="trailing" id="bcV-og-nTr"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Yyw-ii-eLp" secondAttribute="trailing" constant="10" id="huX-db-dOO"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -204,6 +244,7 @@ Cg
                     </view>
                     <connections>
                         <outlet property="FilterMainCV" destination="O81-aw-Ddv" id="R7V-9h-7oE"/>
+                        <outlet property="townMainImgCV" destination="pCb-3f-dUf" id="kB1-mq-c7K"/>
                         <outlet property="townMainTV" destination="z5M-9x-Tzn" id="3IT-my-HGC"/>
                     </connections>
                 </viewController>

@@ -8,6 +8,26 @@
 //import Foundation
 import RxSwift
 
+struct FilterMainViewModel {
+    
+    var items = PublishSubject<[FilterMain]>()
+    
+    func fetchItem(){
+        
+        let itemList = [
+            FilterMain(item: "서울특별시 마포구"),
+            FilterMain(item: "보증금 1~6억"),
+            FilterMain(item: "월이용료 1~30만원"),
+            FilterMain(item: "식비 1만4천원/1식"),
+            FilterMain(item: "건강검진 평생무료"),
+            FilterMain(item: "실비보험 적용"),
+        ]
+        
+        items.onNext(itemList)
+        items.onCompleted()
+    }
+    
+}
 
 struct TownMainViewModel {
     
@@ -25,7 +45,8 @@ struct TownMainViewModel {
     
 }
 
-struct FilterMainViewModel {
+
+struct TownMainImageViewModel {
     
     var items = PublishSubject<[FilterMain]>()
     

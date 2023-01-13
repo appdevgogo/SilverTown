@@ -36,3 +36,10 @@ class TownMainTVCell: UITableViewCell {
     
 }
 
+
+class TownMainCVCell: UICollectionViewCell {
+    
+    @IBOutlet weak var itemImage: UIImageView!
+    
+}
+

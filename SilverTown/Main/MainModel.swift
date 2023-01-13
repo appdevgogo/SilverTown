@@ -8,6 +8,12 @@
 import Foundation
 
 
+struct FilterMain {
+    
+    let item: String
+    
+}
+
 struct TownMain {
     
     let title: String
@@ -16,9 +22,8 @@ struct TownMain {
     
 }
 
-
-struct FilterMain {
+struct TownMainImg {
     
-    let item: String
+    let imageURL: String
     
 }
