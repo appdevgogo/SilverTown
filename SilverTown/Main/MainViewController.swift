@@ -12,37 +12,37 @@ import RxCocoa
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var FilterMainCV: UICollectionView!
-    private var filterMainViewModel = FilterMainViewModel()
-    private var filterMainBag = DisposeBag()
+    @IBOutlet weak var mainFilterCV: UICollectionView!
+    private var mainFilterViewModel = MainFilterViewModel()
+    private var mainFilterBag = DisposeBag()
     
     
-    @IBOutlet weak var townMainTV: UITableView!
-    private var townMainViewModel = TownMainViewModel()
-    private var townMainBag = DisposeBag()
+    @IBOutlet weak var mainSilverTownTV: UITableView!
+    private var mainSilverTownViewModel = MainSilverTownViewModel()
+    private var mainSilverTownBag = DisposeBag()
     
-    @IBOutlet weak var townMainImageCV: UICollectionView!
-    private var townMainImageViewModel = TownMainImageViewModel()
-    private var townMainImageBag = DisposeBag()
+    @IBOutlet weak var mainSilverTownSubCV: UICollectionView!
+    private var mainSilverTownSubViewModel = MainSilverTownSubViewModel()
+    private var mainSilverTownSubBag = DisposeBag()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindFilterMainCV()
-        bindTownMainTV()
+        bindMainFilterCV()
+        bindMainSilverTownTV()
         
     }
     
-    func bindFilterMainCV() {
+    func bindMainFilterCV() {
         
         var itemOrigin: CGFloat = 15
         var sizeFixArray: [CGFloat] = []
         
-        filterMainViewModel.items.bind(
-            to: FilterMainCV.rx.items(
+        mainFilterViewModel.items.bind(
+            to: mainFilterCV.rx.items(
                 cellIdentifier: "cell",
-                cellType: FilterMainCVCell.self)
+                cellType: MainFilterCVC.self)
         ) { index, text, cell in
             
             cell.itemLabel.text = text.item
@@ -51,8 +51,6 @@ class MainViewController: UIViewController {
             cell.itemLabel.layer.borderColor = UIColor.basicRed.cgColor
             cell.itemLabel.layer.masksToBounds = true
             cell.itemLabel.layer.cornerRadius = 15
-            
-            
             cell.itemLabel.sizeToFit()
             
             cell.itemLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
@@ -73,46 +71,47 @@ class MainViewController: UIViewController {
             }
             
             
-        }.disposed(by: filterMainBag)
+        }.disposed(by: mainFilterBag)
         
-        filterMainViewModel.fetchItem()
+        mainFilterViewModel.fetchItem()
 
     }
     
-    func bindTownMainTV() {
+    func bindMainSilverTownTV() {
         
-        townMainViewModel.items.bind(
-            to: townMainTV.rx.items(
+        mainSilverTownViewModel.items.bind(
+            to: mainSilverTownTV.rx.items(
                 cellIdentifier: "cell",
-                cellType: TownMainTVCell.self)
+                cellType: MainSilverTownTVC.self)
         ) { row, model, cell in
             
             cell.titleLabel.text = model.title
             cell.descriptionLabel.text = model.description
             
-           // self.bindTownMainImageCV()
+            //이미지 3개를 뿌려주면 됨
+                        
             
-        }.disposed(by: townMainBag)
+        }.disposed(by: mainSilverTownBag)
         
-        townMainTV
+        mainSilverTownTV
             .rx.setDelegate(self)
-            .disposed(by: townMainBag)
+            .disposed(by: mainSilverTownBag)
         
-        townMainTV.rx.modelSelected(TownMain.self).bind { town in
+        mainSilverTownTV.rx.modelSelected(MainSilverTown.self).bind { town in
             print(town.title)
             print("테스트 페이지 입니다.")
-        }.disposed(by: townMainBag)
+        }.disposed(by: mainSilverTownBag)
 
-        townMainViewModel.fetchItem()
+        mainSilverTownViewModel.fetchItem()
         
     }
-    
-    func bindTownMainImageCV() {
+    /*
+    func bindMainSilverTownSubCV() {
         
-        townMainImageViewModel.items.bind(
-            to: FilterMainCV.rx.items(
+        mainSilverTownSubViewModel.items.bind(
+            to: mainFilterCV.rx.items(
                 cellIdentifier: "cellcell",
-                cellType: TownMainCVCell.self)
+                cellType: MainSilverTownSubCVC.self)
         ) { index, text, cell in
             
             print("여기나오냐냐냥냥냥")
@@ -120,11 +119,11 @@ class MainViewController: UIViewController {
             cell.itemImage.image = UIImage(named: "testImage_01")
             
             
-        }.disposed(by: filterMainBag)
+        }.disposed(by: mainFilterBag)
         
-        townMainImageViewModel.fetchItem()
+        mainSilverTownSubViewModel.fetchItem()
         
-    }
+    }*/
 
 }
 

@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="yoz-PK-Zxi" customClass="FilterMainCVCell" customModule="SilverTown" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="yoz-PK-Zxi" customClass="MainFilterCVC" customModule="SilverTown" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KIb-sb-gln">
@@ -60,7 +60,7 @@
                                 <rect key="frame" x="0.0" y="97" width="390" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="350" id="Rjd-W4-eJR" customClass="TownMainTVCell" customModule="SilverTown" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="350" id="Rjd-W4-eJR" customClass="MainSilverTownTVC" customModule="SilverTown" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="390" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rjd-W4-eJR" id="Q41-dS-5uO">
@@ -76,93 +76,15 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slc-gO-pjM">
                                                     <rect key="frame" x="20" y="61" width="340" height="43"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="보증금">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content=" 4">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="억">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content=" / ">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="월이용료">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content=" 120">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="만원">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
-                                                            </attributes>
-                                                        </fragment>
                                                         <fragment>
-                                                            <string key="content" base64-UTF8="YES">
-Cg
+                                                            <string key="content">보증금 4억 / 월이용료 120만원
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" metaFont="system" size="18"/>
                                                             </attributes>
                                                         </fragment>
-                                                        <fragment content="세대관리비">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content=" 18">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="만원">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="(21">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="평형">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content=")">
+                                                        <fragment content="세대관리비 18만원(21평형)">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" metaFont="system" size="18"/>
@@ -185,7 +107,7 @@ Cg
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellcell" id="9pG-pc-mJt" customClass="TownMainCVCell" customModule="SilverTown" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellcell" id="9pG-pc-mJt" customClass="MainSilverTownSubCVC" customModule="SilverTown" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="5" width="255" height="170"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iBO-w7-kgh">
@@ -243,9 +165,9 @@ Cg
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="FilterMainCV" destination="O81-aw-Ddv" id="R7V-9h-7oE"/>
+                        <outlet property="mainFilterCV" destination="O81-aw-Ddv" id="R7V-9h-7oE"/>
+                        <outlet property="mainSilverTownTV" destination="z5M-9x-Tzn" id="3IT-my-HGC"/>
                         <outlet property="townMainImgCV" destination="pCb-3f-dUf" id="kB1-mq-c7K"/>
-                        <outlet property="townMainTV" destination="z5M-9x-Tzn" id="3IT-my-HGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

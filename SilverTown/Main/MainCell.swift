@@ -7,14 +7,14 @@
 
 import UIKit
 
-class FilterMainCVCell: UICollectionViewCell {
+class MainFilterCVC: UICollectionViewCell {
     
     @IBOutlet weak var itemLabel: PaddingLabel!
     
 }
 
 
-class TownMainTVCell: UITableViewCell {
+class MainSilverTownTVC: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -37,7 +37,7 @@ class TownMainTVCell: UITableViewCell {
 }
 
 
-class TownMainCVCell: UICollectionViewCell {
+class MainSilverTownSubCVC: UICollectionViewCell {
     
     @IBOutlet weak var itemImage: UIImageView!
     
