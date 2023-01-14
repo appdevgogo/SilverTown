@@ -18,12 +18,13 @@ struct MainSilverTown {
     
     let title: String
     let description: String
-    let imageURL: String
+    let imageURLs: [String]
     
 }
 
 struct MainSilverTownSub {
     
-    let imageURL: String
-    
+    let imageURL: [String]
 }
+
+

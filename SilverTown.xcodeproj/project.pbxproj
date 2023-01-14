@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		532B64BBA579DDB822B3CFFA /* Pods_SilverTown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57160249B890E62CBD30288D /* Pods_SilverTown.framework */; };
-		FFA647C6296C863100ABC259 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA647C5296C863100ABC259 /* Extensions.swift */; };
+		FF9AE7DC2972F08B0088C2B7 /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9AE7D82972F08B0088C2B7 /* NanumGothic.ttf */; };
+		FF9AE7DD2972F08B0088C2B7 /* NanumGothicExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9AE7D92972F08B0088C2B7 /* NanumGothicExtraBold.ttf */; };
+		FF9AE7DE2972F08B0088C2B7 /* NanumGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9AE7DA2972F08B0088C2B7 /* NanumGothicBold.ttf */; };
+		FF9AE7DF2972F08B0088C2B7 /* NanumGothicLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9AE7DB2972F08B0088C2B7 /* NanumGothicLight.ttf */; };
 		FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB21FF296A7EDC00E32CAC /* LaunchViewController.swift */; };
 		FFAB2202296A813D00E32CAC /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB2201296A813D00E32CAC /* Launch.storyboard */; };
 		FFAEB50729704C2B00A13670 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAEB50629704C2B00A13670 /* MainCell.swift */; };
@@ -28,7 +31,15 @@
 		3ECF1C1995B32BFC078643E6 /* Pods-SilverTown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilverTown.release.xcconfig"; path = "Target Support Files/Pods-SilverTown/Pods-SilverTown.release.xcconfig"; sourceTree = "<group>"; };
 		4D72EF8E886A0D02BB9205FC /* Pods-SilverTown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilverTown.debug.xcconfig"; path = "Target Support Files/Pods-SilverTown/Pods-SilverTown.debug.xcconfig"; sourceTree = "<group>"; };
 		57160249B890E62CBD30288D /* Pods_SilverTown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilverTown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFA647C5296C863100ABC259 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FF9AE7D02972E9A90088C2B7 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		FF9AE7D12972E9A90088C2B7 /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Medium.ttf"; sourceTree = "<group>"; };
+		FF9AE7D22972E9A90088C2B7 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Regular.ttf"; path = "../../../../../Users/yyjweber/Downloads/Comfortaa/static/Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		FF9AE7D32972E9A90088C2B7 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		FF9AE7D42972E9A90088C2B7 /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; };
+		FF9AE7D82972F08B0088C2B7 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothic.ttf; path = "../../../../../Users/yyjweber/Downloads/나눔 글꼴/나눔고딕/NanumFontSetup_TTF_GOTHIC/NanumGothic.ttf"; sourceTree = "<group>"; };
+		FF9AE7D92972F08B0088C2B7 /* NanumGothicExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicExtraBold.ttf; path = "../../../../../Users/yyjweber/Downloads/나눔 글꼴/나눔고딕/NanumFontSetup_TTF_GOTHIC/NanumGothicExtraBold.ttf"; sourceTree = "<group>"; };
+		FF9AE7DA2972F08B0088C2B7 /* NanumGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicBold.ttf; path = "../../../../../Users/yyjweber/Downloads/나눔 글꼴/나눔고딕/NanumFontSetup_TTF_GOTHIC/NanumGothicBold.ttf"; sourceTree = "<group>"; };
+		FF9AE7DB2972F08B0088C2B7 /* NanumGothicLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicLight.ttf; path = "../../../../../Users/yyjweber/Downloads/나눔 글꼴/나눔고딕/NanumFontSetup_TTF_GOTHIC/NanumGothicLight.ttf"; sourceTree = "<group>"; };
 		FFAB21FF296A7EDC00E32CAC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		FFAB2201296A813D00E32CAC /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		FFAEB50629704C2B00A13670 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
@@ -75,11 +86,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF93D3B42972D341005CF387 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FF9AE7D82972F08B0088C2B7 /* NanumGothic.ttf */,
+				FF9AE7DA2972F08B0088C2B7 /* NanumGothicBold.ttf */,
+				FF9AE7D92972F08B0088C2B7 /* NanumGothicExtraBold.ttf */,
+				FF9AE7DB2972F08B0088C2B7 /* NanumGothicLight.ttf */,
+				FF9AE7D02972E9A90088C2B7 /* Comfortaa-Bold.ttf */,
+				FF9AE7D32972E9A90088C2B7 /* Comfortaa-Light.ttf */,
+				FF9AE7D12972E9A90088C2B7 /* Comfortaa-Medium.ttf */,
+				FF9AE7D22972E9A90088C2B7 /* Comfortaa-Regular.ttf */,
+				FF9AE7D42972E9A90088C2B7 /* Comfortaa-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		FFA647C4296C85FB00ABC259 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				FFD86A4E297126710023F004 /* Colors.swift */,
-				FFA647C5296C863100ABC259 /* Extensions.swift */,
 				FFD86A5029713CF80023F004 /* UISettings.swift */,
 			);
 			path = Common;
@@ -97,9 +123,9 @@
 		FFAB21FA296A4E0200E32CAC /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FFAEB50629704C2B00A13670 /* MainCell.swift */,
 				FFD32076296D86980098F456 /* MainModel.swift */,
 				FFD32078296D86CA0098F456 /* MainViewModel.swift */,
+				FFAEB50629704C2B00A13670 /* MainCell.swift */,
 				FFC4A59F296848370028E135 /* MainViewController.swift */,
 				FFC4A5A1296848370028E135 /* Main.storyboard */,
 			);
@@ -162,6 +188,7 @@
 				FFAB21FD296A502000E32CAC /* Search */,
 				FFAB21FE296A503C00E32CAC /* BookMark */,
 				FFA647C4296C85FB00ABC259 /* Common */,
+				FF93D3B42972D341005CF387 /* Font */,
 				FFC4A59B296848370028E135 /* AppDelegate.swift */,
 				FFC4A59D296848370028E135 /* SceneDelegate.swift */,
 				FFC4A5A7296848430028E135 /* Assets.xcassets */,
@@ -231,9 +258,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9AE7DD2972F08B0088C2B7 /* NanumGothicExtraBold.ttf in Resources */,
 				FFC4A5A8296848430028E135 /* Assets.xcassets in Resources */,
+				FF9AE7DE2972F08B0088C2B7 /* NanumGothicBold.ttf in Resources */,
 				FFAB2202296A813D00E32CAC /* Launch.storyboard in Resources */,
+				FF9AE7DF2972F08B0088C2B7 /* NanumGothicLight.ttf in Resources */,
 				FFC4A5A3296848370028E135 /* Main.storyboard in Resources */,
+				FF9AE7DC2972F08B0088C2B7 /* NanumGothic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +319,6 @@
 			files = (
 				FFC4A5A6296848370028E135 /* SilverTown.xcdatamodeld in Sources */,
 				FFD86A4F297126710023F004 /* Colors.swift in Sources */,
-				FFA647C6296C863100ABC259 /* Extensions.swift in Sources */,
 				FFD86A5129713CF80023F004 /* UISettings.swift in Sources */,
 				FFC4A5A0296848370028E135 /* MainViewController.swift in Sources */,
 				FFD32079296D86CA0098F456 /* MainViewModel.swift in Sources */,

@@ -16,15 +16,9 @@ class MainViewController: UIViewController {
     private var mainFilterViewModel = MainFilterViewModel()
     private var mainFilterBag = DisposeBag()
     
-    
     @IBOutlet weak var mainSilverTownTV: UITableView!
     private var mainSilverTownViewModel = MainSilverTownViewModel()
     private var mainSilverTownBag = DisposeBag()
-    
-    @IBOutlet weak var mainSilverTownSubCV: UICollectionView!
-    private var mainSilverTownSubViewModel = MainSilverTownSubViewModel()
-    private var mainSilverTownSubBag = DisposeBag()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +43,8 @@ class MainViewController: UIViewController {
             cell.itemLabel.textColor = .basicRed
             cell.itemLabel.layer.borderWidth = 1
             cell.itemLabel.layer.borderColor = UIColor.basicRed.cgColor
-            cell.itemLabel.layer.masksToBounds = true
             cell.itemLabel.layer.cornerRadius = 15
+            cell.itemLabel.layer.masksToBounds = true
             cell.itemLabel.sizeToFit()
             
             cell.itemLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
@@ -85,11 +79,16 @@ class MainViewController: UIViewController {
                 cellType: MainSilverTownTVC.self)
         ) { row, model, cell in
             
+           // cell.titleLabel.font = UIFont(name: "NanumGothicBold", size: 25.0)
             cell.titleLabel.text = model.title
+           // cell.descriptionLabel.font = UIFont(name: "Comfortaa-Regular", size: 20.0)
+            cell.descriptionLabel.setLineSpacing(lineSpacing: 5.0)
             cell.descriptionLabel.text = model.description
             
-            //이미지 3개를 뿌려주면 됨
-                        
+            //cell.separatorLabel.text = ""
+           // cell.separatorLabel.backgroundColor = .systemGray6
+            cell.separatorLabel.layer.cornerRadius = 3
+            cell.separatorLabel.layer.masksToBounds = true
             
         }.disposed(by: mainSilverTownBag)
         
@@ -98,32 +97,14 @@ class MainViewController: UIViewController {
             .disposed(by: mainSilverTownBag)
         
         mainSilverTownTV.rx.modelSelected(MainSilverTown.self).bind { town in
+            
             print(town.title)
-            print("테스트 페이지 입니다.")
+            
         }.disposed(by: mainSilverTownBag)
 
         mainSilverTownViewModel.fetchItem()
         
     }
-    /*
-    func bindMainSilverTownSubCV() {
-        
-        mainSilverTownSubViewModel.items.bind(
-            to: mainFilterCV.rx.items(
-                cellIdentifier: "cellcell",
-                cellType: MainSilverTownSubCVC.self)
-        ) { index, text, cell in
-            
-            print("여기나오냐냐냥냥냥")
-            
-            cell.itemImage.image = UIImage(named: "testImage_01")
-            
-            
-        }.disposed(by: mainFilterBag)
-        
-        mainSilverTownSubViewModel.fetchItem()
-        
-    }*/
 
 }
 
