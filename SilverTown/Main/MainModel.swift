@@ -24,7 +24,7 @@ struct MainSilverTown {
 
 struct MainSilverTownSub {
     
-    let imageURL: [String]
+    let imageURL: String
 }
 
 

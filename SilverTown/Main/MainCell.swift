@@ -28,6 +28,8 @@ class MainSilverTownTVC: UITableViewCell {
 
     @IBOutlet weak var separatorLabel: UILabel!
     
+    var imgURLs: [String] = []
+    
     override func awakeFromNib() {
         
         bindMainSilverTownSubCV()
@@ -55,15 +57,21 @@ class MainSilverTownTVC: UITableViewCell {
                 cellType: MainSilverTownSubCVC.self)
         ){ index, model, cell in
             
+            print("------->")
+            print(index)
+            print(self.imgURLs)
+            //print(self.titleLabel.text!)
+            //print(model.imageURL)
+            
             cell.itemImage.layer.cornerRadius = 25
-
-            switch model.imageURL[1] {
+            
+            switch self.imgURLs[index] {
                  
             case "none", "":
                 print("No image available")
                  
             default :
-                guard let url = URL(string: model.imageURL[1]) else { return }
+                guard let url = URL(string: self.imgURLs[index]) else { return }
                 cell.itemImage.kf.setImage(with: url)
                  
              }

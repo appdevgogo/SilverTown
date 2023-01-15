@@ -64,7 +64,6 @@ class MainViewController: UIViewController {
                 
             }
             
-            
         }.disposed(by: mainFilterBag)
         
         mainFilterViewModel.fetchItem()
@@ -79,9 +78,12 @@ class MainViewController: UIViewController {
                 cellType: MainSilverTownTVC.self)
         ) { row, model, cell in
             
+            print("=======================>")
             cell.titleLabel.text = model.title
             cell.descriptionLabel.setLineSpacing(lineSpacing: 5.0)
             cell.descriptionLabel.text = model.description
+            cell.imgURLs = model.imageURLs
+            
             cell.separatorLabel.layer.cornerRadius = 3
             cell.separatorLabel.layer.masksToBounds = true
             
