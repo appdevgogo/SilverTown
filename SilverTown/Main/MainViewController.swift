@@ -79,14 +79,9 @@ class MainViewController: UIViewController {
                 cellType: MainSilverTownTVC.self)
         ) { row, model, cell in
             
-           // cell.titleLabel.font = UIFont(name: "NanumGothicBold", size: 25.0)
             cell.titleLabel.text = model.title
-           // cell.descriptionLabel.font = UIFont(name: "Comfortaa-Regular", size: 20.0)
             cell.descriptionLabel.setLineSpacing(lineSpacing: 5.0)
             cell.descriptionLabel.text = model.description
-            
-            //cell.separatorLabel.text = ""
-           // cell.separatorLabel.backgroundColor = .systemGray6
             cell.separatorLabel.layer.cornerRadius = 3
             cell.separatorLabel.layer.masksToBounds = true
             

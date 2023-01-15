@@ -7,5 +7,6 @@ target 'SilverTown' do
 
   pod "RxSwift"
   pod "RxCocoa"
+  pod "Kingfisher"
 
 end

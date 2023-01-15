@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class MainFilterCVC: UICollectionViewCell {
     
@@ -28,7 +29,9 @@ class MainSilverTownTVC: UITableViewCell {
     @IBOutlet weak var separatorLabel: UILabel!
     
     override func awakeFromNib() {
-        bindTest()
+        
+        bindMainSilverTownSubCV()
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,11 +42,12 @@ class MainSilverTownTVC: UITableViewCell {
             
         } else {
             contentView.backgroundColor = UIColor.white
+            
         }
         
     }
     
-    func bindTest(){
+    func bindMainSilverTownSubCV(){
         
         mainSilverTownSubViewModel.items.bind(
             to: mainSilverTownSubCV.rx.items(
@@ -52,16 +56,23 @@ class MainSilverTownTVC: UITableViewCell {
         ){ index, model, cell in
             
             cell.itemImage.layer.cornerRadius = 25
-            print(index)
-            
-            //cell.itemImage.load(url: URL(string: model.imageURL[1])!)
 
+            switch model.imageURL[1] {
+                 
+            case "none", "":
+                print("No image available")
+                 
+            default :
+                guard let url = URL(string: model.imageURL[1]) else { return }
+                cell.itemImage.kf.setImage(with: url)
+                 
+             }
+                
         }.disposed(by: mainSilverTownSubBag)
         
         mainSilverTownSubViewModel.fetchItem()
         
     }
-    
     
 }
 
