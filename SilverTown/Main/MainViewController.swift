@@ -23,15 +23,19 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        settingRootViewController()
         bindMainFilterCV()
         bindMainSilverTownTV()
         
     }
     
-    func settingRootViewController(){
-        
-        self.navigationController?.isNavigationBarHidden = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     func bindMainFilterCV() {
@@ -114,7 +118,7 @@ class MainViewController: UIViewController {
             
             
         }.disposed(by: mainSilverTownBag)
-
+        
         mainSilverTownViewModel.fetchItem()
         
     }

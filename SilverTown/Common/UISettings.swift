@@ -24,6 +24,32 @@ class PaddingLabel: UILabel {
     }
 }
 
+extension UIViewController {
+    
+    func addBackButton(_ name: String) {
+            
+        let imgConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .regular, scale: .large)
+        let imgObj = UIImage(systemName: name, withConfiguration: imgConfig)
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
+        let btnBack = UIButton(frame: CGRect(x: -15, y: 0, width: 60, height: 45))
+        btnBack.setImage(imgObj, for: .normal)
+        btnBack.tintColor = .black
+        btnBack.addTarget(self, action: #selector(self.backAction(_:)), for: .touchUpInside)
+        containerView.addSubview(btnBack)
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: containerView)
+        navigationController?.navigationBar.barTintColor = .white
+
+    }
+    
+    @objc func backAction(_ sender: UIButton) {
+        
+       navigationController?.popViewController(animated: true)
+    }
+    
+    
+}
+
 extension UIView {
     
     func fadeTransition(_ duration:CFTimeInterval) {
