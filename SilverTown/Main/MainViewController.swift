@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
     
     func settingRootViewController(){
         
-        
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     func bindMainFilterCV() {
