@@ -36,11 +36,22 @@ class LaunchViewController: UIViewController {
     
     func showMainView() {
         
-        let Storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let VC = Storyboard.instantiateViewController(identifier: "Main") as? MainViewController else { return }
-        VC.modalPresentationStyle = .fullScreen // 풀스크린으로 설정
-        self.present(VC, animated: false, completion: nil)
-        // 뷰가 등장하는 애니메이션 효과인 animated는 false로 설정
+        
+        //let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var homeViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
+        let nav = UINavigationController(rootViewController: homeViewController)
+        UIApplication.shared.windows.first?.rootViewController = nav
+
+        /*
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "Main") as! MainViewController
+        UIApplication.shared.windows.first?.rootViewController = controller
+        UIApplication.shared.windows.first?.makeKeyAndVisible()*/
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let controller = storyBoard.instantiateViewController(withIdentifier: "Main") as? MainViewController else {return}
+        self.navigationController?.pushViewController(controller, animated: true)
         
     }
     

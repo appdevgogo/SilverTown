@@ -17,7 +17,7 @@ class MainFilterCVC: UICollectionViewCell {
 }
 
 
-class MainSilverTownTVC: UITableViewCell {
+class MainSilverTownTVC: UITableViewCell, UINavigationControllerDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -76,6 +76,18 @@ class MainSilverTownTVC: UITableViewCell {
                  
              }
                 
+        }.disposed(by: mainSilverTownSubBag)
+        
+        mainSilverTownSubCV.rx.modelSelected(MainSilverTownSub.self).bind { element in
+            
+            /*
+            print("클릭 이벤트")
+            
+            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+            guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
+            
+            self.navigationController?.pushViewController(controller, animated: true)
+         */
         }.disposed(by: mainSilverTownSubBag)
         
         mainSilverTownSubViewModel.fetchItem()
