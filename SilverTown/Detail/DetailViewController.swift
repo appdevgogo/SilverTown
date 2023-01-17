@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
     func initSetting(){
         
         addBackButton("arrow.backward")
+        addRightNavigationButton("heart")
     }
     
     

@@ -31,20 +31,45 @@ extension UIViewController {
         let imgConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .regular, scale: .large)
         let imgObj = UIImage(systemName: name, withConfiguration: imgConfig)
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
-        let btnBack = UIButton(frame: CGRect(x: -15, y: 0, width: 60, height: 45))
-        btnBack.setImage(imgObj, for: .normal)
-        btnBack.tintColor = .black
-        btnBack.addTarget(self, action: #selector(self.backAction(_:)), for: .touchUpInside)
-        containerView.addSubview(btnBack)
+        let button = UIButton(frame: CGRect(x: -15, y: 0, width: 60, height: 45))
+        button.setImage(imgObj, for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(self.backButtonAction(_:)), for: .touchUpInside)
+        containerView.addSubview(button)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: containerView)
         navigationController?.navigationBar.barTintColor = .white
 
     }
     
-    @objc func backAction(_ sender: UIButton) {
+    @objc func backButtonAction(_ sender: UIButton) {
         
        navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+
+extension UIViewController {
+    
+    func addRightNavigationButton(_ name: String) {
+        
+        let imgConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
+        let imgObj = UIImage(systemName: name, withConfiguration: imgConfig)
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
+        let button = UIButton(frame: CGRect(x: -10, y: 0, width: 60, height: 45))
+        button.setImage(imgObj, for: .normal)
+        button.tintColor = .basicPurple
+        button.addTarget(self, action: #selector(self.rightNavigationButtonAction(_:)), for: .touchUpInside)
+        containerView.addSubview(button)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: containerView)
+        
+    }
+    
+    @objc func rightNavigationButtonAction(_ sender: UIButton) {
+        
+       print("clicked")
     }
     
     
