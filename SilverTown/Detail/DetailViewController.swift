@@ -47,16 +47,33 @@ class DetailViewController: UIViewController {
                 cellType: DetailSilverTownTVC.self)
         ) { row, model, cell in
             
-            print("djddf")
-            
+            /*
+            cell.titleLabel.text = model.title
+            cell.addressLabel.text = model.address
+            cell.subTitleFirstLabel.text = model.subTitleFirst
+            cell.subTitleSecondLabel.text = model.subTitleSecond
+            cell.subContentFirstLabel.text = model.subContentFirst
+            cell.subContentSecondLabel.text = model.subContentSecond
+            cell.subOtherLabel.text = model.subOther */
             
         }.disposed(by: detailSilverTownBag)
         
-        
-        
+        detailSilverTownTV
+            .rx.setDelegate(self)
+            .disposed(by: detailSilverTownBag)
+    
         detailSilverTownViewModel.fetchItem()
-        
         
     }
 
+}
+
+
+extension DetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 1000
+    }
+    
 }

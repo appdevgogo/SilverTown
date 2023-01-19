@@ -71,7 +71,6 @@ struct MainSilverTownSubViewModel {
         ]
         
         items.onNext(itemList)
-
         items.onCompleted()
     }
     

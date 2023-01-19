@@ -12,14 +12,13 @@ import RxCocoa
 
 class DetailSilverTownTVC: UITableViewCell {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var adress: UILabel!
-    
-    @IBOutlet weak var subTitleFirst: UILabel!
-    @IBOutlet weak var subTitleSecond: UILabel!
-    @IBOutlet weak var subContentFirst: UILabel!
-    @IBOutlet weak var subContentSecond: UILabel!
-    @IBOutlet weak var subOther: UILabel!
+    @IBOutlet weak var subTitleFirstLabel: UILabel!
+    @IBOutlet weak var subTitleSecondLabel: UILabel!
+    @IBOutlet weak var subContentFirstLabel: UILabel!
+    @IBOutlet weak var subContentSecondLabel: UILabel!
+    @IBOutlet weak var subOtherLabel: UILabel!
     
 }

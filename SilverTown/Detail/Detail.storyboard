@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellcell" rowHeight="1000" id="1sK-lh-vfY" customClass="DetailSilverTownTVC" customModule="SilverTown" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="1000" id="1sK-lh-vfY" customClass="DetailSilverTownTVC" customModule="SilverTown" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="390" height="1000"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1sK-lh-vfY" id="4z4-XC-f9q">
@@ -124,13 +124,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="adress" destination="IJ6-ap-Z9Z" id="6ib-s2-HyO"/>
-                                            <outlet property="subContentFirst" destination="wcD-lv-dBj" id="rOR-Rl-4zr"/>
-                                            <outlet property="subContentSecond" destination="t11-ch-HHA" id="Wjw-aH-adt"/>
-                                            <outlet property="subOther" destination="JOC-xM-X1g" id="O5t-8Q-Hez"/>
-                                            <outlet property="subTitleFirst" destination="poD-Sd-D8O" id="NP0-qW-qZf"/>
-                                            <outlet property="subTitleSecond" destination="UCU-xr-dd2" id="ZrE-Wm-Peo"/>
-                                            <outlet property="title" destination="CjQ-8x-lcU" id="j5F-mW-PBg"/>
+                                            <outlet property="addressLabel" destination="IJ6-ap-Z9Z" id="yoq-oY-8Gz"/>
+                                            <outlet property="subContentFirstLabel" destination="wcD-lv-dBj" id="rOR-Rl-4zr"/>
+                                            <outlet property="subContentSecondLabel" destination="t11-ch-HHA" id="Wjw-aH-adt"/>
+                                            <outlet property="subOtherLabel" destination="JOC-xM-X1g" id="O5t-8Q-Hez"/>
+                                            <outlet property="subTitleFirstLabel" destination="poD-Sd-D8O" id="NP0-qW-qZf"/>
+                                            <outlet property="subTitleSecondLabel" destination="UCU-xr-dd2" id="ZrE-Wm-Peo"/>
+                                            <outlet property="titleLabel" destination="CjQ-8x-lcU" id="j5F-mW-PBg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -106,12 +106,12 @@ class MainViewController: UIViewController {
         mainSilverTownTV.rx.modelSelected(MainSilverTown.self).bind { town in
             
             print("클릭 이벤트")
+            
             /*
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
             self.navigationController?.pushViewController(controller, animated: true)*/
     
-            
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             let controller = storyBoard.instantiateViewController(withIdentifier: "Detail")
             self.navigationController?.pushViewController(controller, animated: true)
