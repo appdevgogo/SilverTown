@@ -21,7 +21,6 @@
         <!--Navigation Controller-->
         <scene sceneID="biJ-Yu-JnP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a0H-Gu-EBo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="tC8-ia-Tro" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kN5-B1-58O">
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,6 +29,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ree-9f-9Nv"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0H-Gu-EBo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-765" y="-34"/>
         </scene>
@@ -97,7 +97,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slc-gO-pjM">
-                                                    <rect key="frame" x="20" y="55" width="340" height="40.333333333333343"/>
+                                                    <rect key="frame" x="20" y="55" width="350" height="40.333333333333343"/>
                                                     <string key="text">보증금 4억 / 월이용료 120만원
 세대관리비 18만원(21평형)</string>
                                                     <fontDescription key="fontDescription" name="Comfortaa-Light" family="Comfortaa" pointSize="18"/>
@@ -156,7 +156,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bW9-Cb-KQ4" firstAttribute="leading" secondItem="Q41-dS-5uO" secondAttribute="leadingMargin" id="86p-eW-CxL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Slc-gO-pjM" secondAttribute="trailing" constant="10" id="BXr-oC-hZY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Slc-gO-pjM" secondAttribute="trailing" id="BXr-oC-hZY"/>
                                                 <constraint firstItem="Yyw-ii-eLp" firstAttribute="leading" secondItem="Q41-dS-5uO" secondAttribute="leadingMargin" id="Eqa-eQ-qeb"/>
                                                 <constraint firstItem="pCb-3f-dUf" firstAttribute="top" secondItem="Slc-gO-pjM" secondAttribute="bottom" constant="15" id="LDr-W4-ZgM"/>
                                                 <constraint firstItem="Yyw-ii-eLp" firstAttribute="top" secondItem="Q41-dS-5uO" secondAttribute="topMargin" id="Qga-qd-ccm"/>

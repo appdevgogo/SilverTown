@@ -47,14 +47,17 @@ class DetailViewController: UIViewController {
                 cellType: DetailSilverTownTVC.self)
         ) { row, model, cell in
             
-            /*
             cell.titleLabel.text = model.title
             cell.addressLabel.text = model.address
             cell.subTitleFirstLabel.text = model.subTitleFirst
             cell.subTitleSecondLabel.text = model.subTitleSecond
             cell.subContentFirstLabel.text = model.subContentFirst
             cell.subContentSecondLabel.text = model.subContentSecond
-            cell.subOtherLabel.text = model.subOther */
+            cell.subOtherLabel.text = model.subOther
+            
+            print(cell.contentView.frame.size)
+            print(cell.titleLabel.frame.size)
+            print(cell.frame.size)
             
         }.disposed(by: detailSilverTownBag)
         

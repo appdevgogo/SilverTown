@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Uw-oa-eot">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Uw-oa-eot">
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -37,87 +37,116 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더클래식 500 실버타운" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjQ-8x-lcU">
-                                                    <rect key="frame" x="30" y="21" width="248" height="29"/>
+                                                    <rect key="frame" x="20" y="21" width="350" height="29"/>
                                                     <fontDescription key="fontDescription" name="NanumGothicExtraBold" family="NanumGothic" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 광진구 능동로 90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJ6-ap-Z9Z">
-                                                    <rect key="frame" x="30" y="60" width="196" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="20" y="60" width="350" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공급면적" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poD-Sd-D8O">
-                                                    <rect key="frame" x="30" y="101" width="100" height="40"/>
+                                                    <rect key="frame" x="20" y="103" width="100" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="dfv-xH-lWJ"/>
                                                         <constraint firstAttribute="height" constant="40" id="kFz-qx-CCA"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금액" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCU-xr-dd2">
-                                                    <rect key="frame" x="130" y="101" width="230" height="40"/>
+                                                    <rect key="frame" x="120" y="103" width="250" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="6fD-GM-xXA"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="cZ8-6B-Tr3"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24평형 (138.76m2)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcD-lv-dBj">
-                                                    <rect key="frame" x="30" y="141" width="100" height="80"/>
+                                                    <rect key="frame" x="20" y="143" width="100" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="6gE-2m-l05"/>
                                                         <constraint firstAttribute="width" constant="100" id="OiD-Bf-RrT"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   식대(별도) : 1만4천원/1식" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOC-xM-X1g">
-                                                    <rect key="frame" x="30" y="221" width="330" height="40"/>
+                                                    <rect key="frame" x="20" y="223" width="350" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="330" id="Tb2-u0-QkG"/>
                                                         <constraint firstAttribute="height" constant="40" id="iay-Cu-1az"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t11-ch-HHA">
-                                                    <rect key="frame" x="130" y="141" width="230" height="80"/>
+                                                    <rect key="frame" x="120" y="143" width="250" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="4Na-oA-GV0"/>
                                                         <constraint firstAttribute="height" constant="80" id="lMr-XZ-Kt5"/>
                                                     </constraints>
                                                     <string key="text">   보증금 8억 
    월이용료 167만원
    세대관리비 30만원</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOk-cI-CBI">
+                                                    <rect key="frame" x="20" y="293" width="69" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="GQ2-am-PO3"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="내외부"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ie-jD-q83">
+                                                    <rect key="frame" x="109" y="293" width="83" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="eeF-OD-5F3"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="부대시설"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPt-1g-Fic">
+                                                    <rect key="frame" x="212" y="293" width="53.666666666666686" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="yW6-ji-Ogp"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="기타"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="poD-Sd-D8O" firstAttribute="top" secondItem="IJ6-ap-Z9Z" secondAttribute="bottom" constant="20" id="0HD-wo-Y6h"/>
-                                                <constraint firstItem="poD-Sd-D8O" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="33x-zd-eLD"/>
-                                                <constraint firstItem="wcD-lv-dBj" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="5Sn-5i-nBY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="UCU-xr-dd2" secondAttribute="trailing" constant="10" id="ApN-qz-HgF"/>
+                                                <constraint firstItem="poD-Sd-D8O" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="33x-zd-eLD"/>
+                                                <constraint firstItem="wcD-lv-dBj" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="5Sn-5i-nBY"/>
+                                                <constraint firstItem="vPt-1g-Fic" firstAttribute="leading" secondItem="9ie-jD-q83" secondAttribute="trailing" constant="20" id="A2t-SQ-tAR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UCU-xr-dd2" secondAttribute="trailing" id="ApN-qz-HgF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CjQ-8x-lcU" secondAttribute="trailing" id="CLM-k7-74n"/>
+                                                <constraint firstItem="qOk-cI-CBI" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="Ec0-7F-6wp"/>
+                                                <constraint firstItem="vPt-1g-Fic" firstAttribute="top" secondItem="JOC-xM-X1g" secondAttribute="bottom" constant="30" id="GZK-cv-63v"/>
                                                 <constraint firstItem="UCU-xr-dd2" firstAttribute="top" secondItem="IJ6-ap-Z9Z" secondAttribute="bottom" constant="20" id="Hhn-Ov-Nji"/>
-                                                <constraint firstItem="CjQ-8x-lcU" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="Oes-KM-wrW"/>
+                                                <constraint firstItem="CjQ-8x-lcU" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="Oes-KM-wrW"/>
                                                 <constraint firstItem="wcD-lv-dBj" firstAttribute="top" secondItem="poD-Sd-D8O" secondAttribute="bottom" id="S95-2Y-4Cc"/>
-                                                <constraint firstItem="JOC-xM-X1g" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="T4y-D2-dZD"/>
+                                                <constraint firstItem="JOC-xM-X1g" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="T4y-D2-dZD"/>
                                                 <constraint firstItem="JOC-xM-X1g" firstAttribute="top" secondItem="wcD-lv-dBj" secondAttribute="bottom" id="Udu-dB-YNZ"/>
+                                                <constraint firstItem="9ie-jD-q83" firstAttribute="leading" secondItem="qOk-cI-CBI" secondAttribute="trailing" constant="20" id="b7n-q4-Coc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="IJ6-ap-Z9Z" secondAttribute="trailing" id="cCb-L6-gD0"/>
+                                                <constraint firstItem="vPt-1g-Fic" firstAttribute="leading" secondItem="9ie-jD-q83" secondAttribute="trailing" constant="20" id="e02-5C-AXQ"/>
                                                 <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="top" secondItem="CjQ-8x-lcU" secondAttribute="bottom" constant="10" id="hmB-yc-EvR"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="JOC-xM-X1g" secondAttribute="trailing" constant="10" id="hwL-Ta-uM3"/>
-                                                <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="mdG-cs-Ed0"/>
-                                                <constraint firstItem="UCU-xr-dd2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="poD-Sd-D8O" secondAttribute="trailing" id="mhy-a1-aKG"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="t11-ch-HHA" secondAttribute="trailing" constant="10" id="r9n-Qq-tsT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JOC-xM-X1g" secondAttribute="trailing" id="hwL-Ta-uM3"/>
+                                                <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="mdG-cs-Ed0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="t11-ch-HHA" secondAttribute="trailing" id="r9n-Qq-tsT"/>
+                                                <constraint firstItem="qOk-cI-CBI" firstAttribute="top" secondItem="JOC-xM-X1g" secondAttribute="bottom" constant="30" id="rZ1-AO-6qD"/>
                                                 <constraint firstItem="t11-ch-HHA" firstAttribute="leading" secondItem="wcD-lv-dBj" secondAttribute="trailing" id="s6p-RE-Utr"/>
+                                                <constraint firstItem="9ie-jD-q83" firstAttribute="top" secondItem="JOC-xM-X1g" secondAttribute="bottom" constant="30" id="tg5-BR-kzf"/>
                                                 <constraint firstItem="t11-ch-HHA" firstAttribute="top" secondItem="UCU-xr-dd2" secondAttribute="bottom" id="u4a-hu-tzA"/>
                                                 <constraint firstItem="UCU-xr-dd2" firstAttribute="leading" secondItem="poD-Sd-D8O" secondAttribute="trailing" id="ubw-vQ-LhA"/>
                                                 <constraint firstItem="CjQ-8x-lcU" firstAttribute="top" secondItem="4z4-XC-f9q" secondAttribute="topMargin" constant="10" id="wX1-eC-Tm7"/>
@@ -125,6 +154,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="IJ6-ap-Z9Z" id="yoq-oY-8Gz"/>
+                                            <outlet property="imgTitleFirstButton" destination="qOk-cI-CBI" id="dd4-8e-nBg"/>
+                                            <outlet property="imgTitleSecondButton" destination="9ie-jD-q83" id="9cS-gZ-Y8R"/>
+                                            <outlet property="imgTitleThirdButton" destination="vPt-1g-Fic" id="ndV-1f-GIr"/>
                                             <outlet property="subContentFirstLabel" destination="wcD-lv-dBj" id="rOR-Rl-4zr"/>
                                             <outlet property="subContentSecondLabel" destination="t11-ch-HHA" id="Wjw-aH-adt"/>
                                             <outlet property="subOtherLabel" destination="JOC-xM-X1g" id="O5t-8Q-Hez"/>
