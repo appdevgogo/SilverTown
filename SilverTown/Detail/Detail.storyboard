@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumGothic.ttf">
+            <string>NanumGothic</string>
+        </array>
+        <array key="NanumGothicExtraBold.ttf">
+            <string>NanumGothicExtraBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Detail View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -17,24 +25,133 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEP-d2-oAP">
-                                <rect key="frame" x="159" y="405" width="72" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Uw-oa-eot">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellcell" rowHeight="1000" id="1sK-lh-vfY" customClass="DetailSilverTownTVC" customModule="SilverTown" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="1000"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1sK-lh-vfY" id="4z4-XC-f9q">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더클래식 500 실버타운" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjQ-8x-lcU">
+                                                    <rect key="frame" x="30" y="21" width="248" height="29"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothicExtraBold" family="NanumGothic" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 광진구 능동로 90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJ6-ap-Z9Z">
+                                                    <rect key="frame" x="30" y="60" width="196" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공급면적" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poD-Sd-D8O">
+                                                    <rect key="frame" x="30" y="101" width="100" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="dfv-xH-lWJ"/>
+                                                        <constraint firstAttribute="height" constant="40" id="kFz-qx-CCA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금액" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCU-xr-dd2">
+                                                    <rect key="frame" x="130" y="101" width="230" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="6fD-GM-xXA"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="cZ8-6B-Tr3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24평형 (138.76m2)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcD-lv-dBj">
+                                                    <rect key="frame" x="30" y="141" width="100" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="6gE-2m-l05"/>
+                                                        <constraint firstAttribute="width" constant="100" id="OiD-Bf-RrT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   식대(별도) : 1만4천원/1식" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOC-xM-X1g">
+                                                    <rect key="frame" x="30" y="221" width="330" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="330" id="Tb2-u0-QkG"/>
+                                                        <constraint firstAttribute="height" constant="40" id="iay-Cu-1az"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t11-ch-HHA">
+                                                    <rect key="frame" x="130" y="141" width="230" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="4Na-oA-GV0"/>
+                                                        <constraint firstAttribute="height" constant="80" id="lMr-XZ-Kt5"/>
+                                                    </constraints>
+                                                    <string key="text">   보증금 8억 
+   월이용료 167만원
+   세대관리비 30만원</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="poD-Sd-D8O" firstAttribute="top" secondItem="IJ6-ap-Z9Z" secondAttribute="bottom" constant="20" id="0HD-wo-Y6h"/>
+                                                <constraint firstItem="poD-Sd-D8O" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="33x-zd-eLD"/>
+                                                <constraint firstItem="wcD-lv-dBj" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="5Sn-5i-nBY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UCU-xr-dd2" secondAttribute="trailing" constant="10" id="ApN-qz-HgF"/>
+                                                <constraint firstItem="UCU-xr-dd2" firstAttribute="top" secondItem="IJ6-ap-Z9Z" secondAttribute="bottom" constant="20" id="Hhn-Ov-Nji"/>
+                                                <constraint firstItem="CjQ-8x-lcU" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="Oes-KM-wrW"/>
+                                                <constraint firstItem="wcD-lv-dBj" firstAttribute="top" secondItem="poD-Sd-D8O" secondAttribute="bottom" id="S95-2Y-4Cc"/>
+                                                <constraint firstItem="JOC-xM-X1g" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="T4y-D2-dZD"/>
+                                                <constraint firstItem="JOC-xM-X1g" firstAttribute="top" secondItem="wcD-lv-dBj" secondAttribute="bottom" id="Udu-dB-YNZ"/>
+                                                <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="top" secondItem="CjQ-8x-lcU" secondAttribute="bottom" constant="10" id="hmB-yc-EvR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JOC-xM-X1g" secondAttribute="trailing" constant="10" id="hwL-Ta-uM3"/>
+                                                <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" constant="10" id="mdG-cs-Ed0"/>
+                                                <constraint firstItem="UCU-xr-dd2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="poD-Sd-D8O" secondAttribute="trailing" id="mhy-a1-aKG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="t11-ch-HHA" secondAttribute="trailing" constant="10" id="r9n-Qq-tsT"/>
+                                                <constraint firstItem="t11-ch-HHA" firstAttribute="leading" secondItem="wcD-lv-dBj" secondAttribute="trailing" id="s6p-RE-Utr"/>
+                                                <constraint firstItem="t11-ch-HHA" firstAttribute="top" secondItem="UCU-xr-dd2" secondAttribute="bottom" id="u4a-hu-tzA"/>
+                                                <constraint firstItem="UCU-xr-dd2" firstAttribute="leading" secondItem="poD-Sd-D8O" secondAttribute="trailing" id="ubw-vQ-LhA"/>
+                                                <constraint firstItem="CjQ-8x-lcU" firstAttribute="top" secondItem="4z4-XC-f9q" secondAttribute="topMargin" constant="10" id="wX1-eC-Tm7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="adress" destination="IJ6-ap-Z9Z" id="6ib-s2-HyO"/>
+                                            <outlet property="subContentFirst" destination="wcD-lv-dBj" id="rOR-Rl-4zr"/>
+                                            <outlet property="subContentSecond" destination="t11-ch-HHA" id="Wjw-aH-adt"/>
+                                            <outlet property="subOther" destination="JOC-xM-X1g" id="O5t-8Q-Hez"/>
+                                            <outlet property="subTitleFirst" destination="poD-Sd-D8O" id="NP0-qW-qZf"/>
+                                            <outlet property="subTitleSecond" destination="UCU-xr-dd2" id="ZrE-Wm-Peo"/>
+                                            <outlet property="title" destination="CjQ-8x-lcU" id="j5F-mW-PBg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Uw-oa-eot" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Q8a-XF-18q"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1Uw-oa-eot" secondAttribute="trailing" id="SyU-4n-MOp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1Uw-oa-eot" secondAttribute="bottom" id="ULF-n8-fgG"/>
+                            <constraint firstItem="1Uw-oa-eot" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fzg-eh-2kv"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="MEP-d2-oAP" id="GGC-SI-DCv"/>
+                        <outlet property="detailSilverTownTV" destination="1Uw-oa-eot" id="G3k-FY-jn1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="-52" y="-17"/>
         </scene>
     </scenes>
     <resources>

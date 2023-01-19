@@ -12,6 +12,7 @@
 		FF9687A52974457000614DA9 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A42974457000614DA9 /* DetailModel.swift */; };
 		FF9687A72974458800614DA9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A62974458800614DA9 /* DetailViewModel.swift */; };
 		FF9687A9297445A800614DA9 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9687A8297445A800614DA9 /* Detail.storyboard */; };
+		FF976EE5297913BB004BD893 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF976EE4297913BB004BD893 /* DetailCell.swift */; };
 		FF9AE7DC2972F08B0088C2B7 /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9AE7D82972F08B0088C2B7 /* NanumGothic.ttf */; };
 		FF9AE7DD2972F08B0088C2B7 /* NanumGothicExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9AE7D92972F08B0088C2B7 /* NanumGothicExtraBold.ttf */; };
 		FF9AE7DE2972F08B0088C2B7 /* NanumGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9AE7DA2972F08B0088C2B7 /* NanumGothicBold.ttf */; };
@@ -39,6 +40,7 @@
 		FF9687A42974457000614DA9 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		FF9687A62974458800614DA9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		FF9687A8297445A800614DA9 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		FF976EE4297913BB004BD893 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		FF9AE7D02972E9A90088C2B7 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		FF9AE7D12972E9A90088C2B7 /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Medium.ttf"; sourceTree = "<group>"; };
 		FF9AE7D22972E9A90088C2B7 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Comfortaa-Regular.ttf"; path = "../../../../../Users/yyjweber/Downloads/Comfortaa/static/Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				FF9687A42974457000614DA9 /* DetailModel.swift */,
 				FF9687A62974458800614DA9 /* DetailViewModel.swift */,
+				FF976EE4297913BB004BD893 /* DetailCell.swift */,
 				FF9687A22974455500614DA9 /* DetailViewController.swift */,
 				FF9687A8297445A800614DA9 /* Detail.storyboard */,
 			);
@@ -342,6 +345,7 @@
 				FF9687A72974458800614DA9 /* DetailViewModel.swift in Sources */,
 				FFAEB50729704C2B00A13670 /* MainCell.swift in Sources */,
 				FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */,
+				FF976EE5297913BB004BD893 /* DetailCell.swift in Sources */,
 				FFC4A59E296848370028E135 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
