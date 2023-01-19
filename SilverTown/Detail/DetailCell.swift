@@ -18,7 +18,7 @@ class DetailSilverTownTVC: UITableViewCell {
     @IBOutlet weak var subTitleFirstLabel: UILabel!
     @IBOutlet weak var subTitleSecondLabel: UILabel!
     @IBOutlet weak var subContentFirstLabel: UILabel!
-    @IBOutlet weak var subContentSecondLabel: PaddingLabel!
+    @IBOutlet weak var subContentSecondLabel: UILabel!
     @IBOutlet weak var subOtherLabel: UILabel!
     
     @IBOutlet weak var imgTitleFirstButton: UIButton!
@@ -60,16 +60,23 @@ class DetailSilverTownTVC: UITableViewCell {
         
         imgTitleFirstButton.layer.borderWidth = 2
         imgTitleFirstButton.layer.borderColor = UIColor.basicPurple.cgColor
-        imgTitleFirstButton.layer.cornerRadius = 10
+        imgTitleFirstButton.layer.cornerRadius = 15
         imgTitleFirstButton.clipsToBounds = true
         imgTitleFirstButton.titleLabel?.textColor = .basicPurple
         
         imgTitleSecondButton.layer.borderWidth = 1
-        imgTitleSecondButton.layer.borderColor = UIColor.systemGray6.cgColor
-        imgTitleSecondButton.layer.cornerRadius = 10
+        imgTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
+        imgTitleSecondButton.layer.cornerRadius = 15
         imgTitleSecondButton.clipsToBounds = true
-        imgTitleSecondButton.titleLabel?.textColor = .systemGray6
+        imgTitleSecondButton.titleLabel?.textColor = .systemGray2
         
+        imgTitleThirdButton.layer.borderWidth = 1
+        imgTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
+        imgTitleThirdButton.layer.cornerRadius = 15
+        imgTitleThirdButton.clipsToBounds = true
+        imgTitleThirdButton.titleLabel?.textColor = .systemGray2
+        
+
         
     }
     

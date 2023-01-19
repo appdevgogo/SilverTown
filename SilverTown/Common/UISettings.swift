@@ -157,3 +157,27 @@ extension UIImageView {
         }
     }
 }
+
+
+class detailImgTitleButton: UIButton {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupView()
+    }
+
+    func setupView() {
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.basicPurple.cgColor
+        layer.cornerRadius = 10
+        clipsToBounds = true
+        titleLabel?.textColor = .basicPurple
+    }
+}
+
+

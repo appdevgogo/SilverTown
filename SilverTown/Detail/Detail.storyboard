@@ -54,7 +54,7 @@
                                                         <constraint firstAttribute="width" constant="100" id="dfv-xH-lWJ"/>
                                                         <constraint firstAttribute="height" constant="40" id="kFz-qx-CCA"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -63,7 +63,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="6fD-GM-xXA"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -73,7 +73,7 @@
                                                         <constraint firstAttribute="height" constant="80" id="6gE-2m-l05"/>
                                                         <constraint firstAttribute="width" constant="100" id="OiD-Bf-RrT"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -82,7 +82,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="iay-Cu-1az"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -94,7 +94,7 @@
                                                     <string key="text">   보증금 8억 
    월이용료 167만원
    세대관리비 30만원</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -107,7 +107,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="내외부"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ie-jD-q83">
-                                                    <rect key="frame" x="109" y="293" width="83" height="30"/>
+                                                    <rect key="frame" x="104" y="293" width="83" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="eeF-OD-5F3"/>
                                                     </constraints>
@@ -115,7 +115,7 @@
                                                     <buttonConfiguration key="configuration" style="plain" title="부대시설"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPt-1g-Fic">
-                                                    <rect key="frame" x="212" y="293" width="53.666666666666686" height="30"/>
+                                                    <rect key="frame" x="202" y="293" width="53.666666666666657" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="yW6-ji-Ogp"/>
                                                     </constraints>
@@ -127,7 +127,7 @@
                                                 <constraint firstItem="poD-Sd-D8O" firstAttribute="top" secondItem="IJ6-ap-Z9Z" secondAttribute="bottom" constant="20" id="0HD-wo-Y6h"/>
                                                 <constraint firstItem="poD-Sd-D8O" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="33x-zd-eLD"/>
                                                 <constraint firstItem="wcD-lv-dBj" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="5Sn-5i-nBY"/>
-                                                <constraint firstItem="vPt-1g-Fic" firstAttribute="leading" secondItem="9ie-jD-q83" secondAttribute="trailing" constant="20" id="A2t-SQ-tAR"/>
+                                                <constraint firstItem="vPt-1g-Fic" firstAttribute="leading" secondItem="9ie-jD-q83" secondAttribute="trailing" constant="15" id="A2t-SQ-tAR"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="UCU-xr-dd2" secondAttribute="trailing" id="ApN-qz-HgF"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="CjQ-8x-lcU" secondAttribute="trailing" id="CLM-k7-74n"/>
                                                 <constraint firstItem="qOk-cI-CBI" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="Ec0-7F-6wp"/>
@@ -137,9 +137,8 @@
                                                 <constraint firstItem="wcD-lv-dBj" firstAttribute="top" secondItem="poD-Sd-D8O" secondAttribute="bottom" id="S95-2Y-4Cc"/>
                                                 <constraint firstItem="JOC-xM-X1g" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="T4y-D2-dZD"/>
                                                 <constraint firstItem="JOC-xM-X1g" firstAttribute="top" secondItem="wcD-lv-dBj" secondAttribute="bottom" id="Udu-dB-YNZ"/>
-                                                <constraint firstItem="9ie-jD-q83" firstAttribute="leading" secondItem="qOk-cI-CBI" secondAttribute="trailing" constant="20" id="b7n-q4-Coc"/>
+                                                <constraint firstItem="9ie-jD-q83" firstAttribute="leading" secondItem="qOk-cI-CBI" secondAttribute="trailing" constant="15" id="b7n-q4-Coc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="IJ6-ap-Z9Z" secondAttribute="trailing" id="cCb-L6-gD0"/>
-                                                <constraint firstItem="vPt-1g-Fic" firstAttribute="leading" secondItem="9ie-jD-q83" secondAttribute="trailing" constant="20" id="e02-5C-AXQ"/>
                                                 <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="top" secondItem="CjQ-8x-lcU" secondAttribute="bottom" constant="10" id="hmB-yc-EvR"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JOC-xM-X1g" secondAttribute="trailing" id="hwL-Ta-uM3"/>
                                                 <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="mdG-cs-Ed0"/>
