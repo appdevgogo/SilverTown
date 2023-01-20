@@ -123,7 +123,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="기타"/>
                                                 </button>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cYv-VX-joh">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cYv-VX-joh">
                                                     <rect key="frame" x="20" y="343" width="350" height="230"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -202,6 +202,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="IJ6-ap-Z9Z" id="yoq-oY-8Gz"/>
+                                            <outlet property="detailImgCount" destination="Fxd-xR-kIx" id="t2w-YO-vBT"/>
                                             <outlet property="detailSilverTownSubCV" destination="cYv-VX-joh" id="T21-5b-ZuS"/>
                                             <outlet property="imgTitleFirstButton" destination="qOk-cI-CBI" id="dd4-8e-nBg"/>
                                             <outlet property="imgTitleSecondButton" destination="9ie-jD-q83" id="9cS-gZ-Y8R"/>
@@ -223,7 +224,7 @@
                             <constraint firstItem="1Uw-oa-eot" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9Td-X3-Zy6"/>
                             <constraint firstItem="1Uw-oa-eot" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="PWZ-Ru-IFW"/>
                             <constraint firstItem="1Uw-oa-eot" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Q8a-XF-18q"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1Uw-oa-eot" secondAttribute="bottom" id="ULF-n8-fgG"/>
+                            <constraint firstItem="1Uw-oa-eot" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ysC-jE-WgL"/>
                         </constraints>
                     </view>
                     <connections>

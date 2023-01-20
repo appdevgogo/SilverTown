@@ -63,12 +63,10 @@ class MainViewController: UIViewController {
             cell.frame.size.width = cell.itemLabel.frame.size.width + 20
             
             switch index {
-                
             case sizeFixArray.count :
                 cell.frame.origin.x = itemOrigin
                 sizeFixArray.append(itemOrigin)
                 itemOrigin = itemOrigin + cell.frame.size.width + 15
-                
             default :
                 cell.frame.origin.x = sizeFixArray[index]
                 
@@ -106,11 +104,6 @@ class MainViewController: UIViewController {
         mainSilverTownTV.rx.modelSelected(MainSilverTown.self).bind { town in
             
             print("클릭 이벤트")
-            
-            /*
-            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
-            guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
-            self.navigationController?.pushViewController(controller, animated: true)*/
     
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             let controller = storyBoard.instantiateViewController(withIdentifier: "Detail")

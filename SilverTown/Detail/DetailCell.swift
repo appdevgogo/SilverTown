@@ -30,6 +30,9 @@ class DetailSilverTownTVC: UITableViewCell {
     private var detailSilverTownSubBag = DisposeBag()
     var imgURLs: [String] = []
     
+    @IBOutlet weak var detailImgCount: UILabel!
+    
+    
     override func awakeFromNib() {
         
         addSubBorders()
@@ -82,8 +85,6 @@ class DetailSilverTownTVC: UITableViewCell {
         imgTitleThirdButton.clipsToBounds = true
         imgTitleThirdButton.titleLabel?.textColor = .systemGray2
         
-
-        
     }
     
     func bindDetailSilverTownSubCV(){
@@ -94,39 +95,40 @@ class DetailSilverTownTVC: UITableViewCell {
                 cellType: DetailSilverTownSubCVC.self)
         ){ index, model, cell in
             
-            print("------->")
-            print(index)
-            print(self.imgURLs)
-            print(self.titleLabel.text!)
-            print(model.imageURL)
-            
             cell.itemImage.layer.cornerRadius = 15
             
             switch self.imgURLs[index] {
-                 
             case "none", "":
                 print("No image available")
-                 
             default :
                 guard let url = URL(string: self.imgURLs[index]) else { return }
                 cell.itemImage.kf.setImage(with: url)
-                 
              }
                 
         }.disposed(by: detailSilverTownSubBag)
         
+        detailSilverTownSubCV
+            .rx.setDelegate(self)
+            .disposed(by: detailSilverTownSubBag)
+        
         detailSilverTownSubCV.rx.modelSelected(MainSilverTownSub.self).bind { element in
-            
-            print("클릭 이벤트")
-            /*
-            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
-            guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
-            self.navigationController?.pushViewController(controller, animated: true)*/
-         
         }.disposed(by: detailSilverTownSubBag)
         
         detailSilverTownSubViewModel.fetchItem()
         
+    }
+    
+}
+
+extension DetailSilverTownTVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageWidth = scrollView.frame.size.width
+        let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 2)
+                print("page = \(page)")
+        
+        self.detailImgCount.text = "\(page) / \(self.imgURLs.count)"
+            // Do whatever with currentPage.
     }
     
 }

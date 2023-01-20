@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+
     
     func initSetting(){
         
@@ -54,11 +55,6 @@ class DetailViewController: UIViewController {
             cell.subContentFirstLabel.text = model.subContentFirst
             cell.subContentSecondLabel.text = model.subContentSecond
             cell.subOtherLabel.text = model.subOther
-            
-            print(cell.contentView.frame.size)
-            print(cell.titleLabel.frame.size)
-            print(cell.frame.size)
-            
             cell.imgURLs = model.imageURLs
             
         }.disposed(by: detailSilverTownBag)
