@@ -25,10 +25,16 @@ class DetailSilverTownTVC: UITableViewCell {
     @IBOutlet weak var imgTitleSecondButton: UIButton!
     @IBOutlet weak var imgTitleThirdButton: UIButton!
     
+    @IBOutlet weak var detailSilverTownSubCV: UICollectionView!
+    private var detailSilverTownSubViewModel = DetailSilverTownSubViewModel()
+    private var detailSilverTownSubBag = DisposeBag()
+    var imgURLs: [String] = []
+    
     override func awakeFromNib() {
         
         addSubBorders()
         imgTitleBorderRound()
+        bindDetailSilverTownSubCV()
         
     }
     
@@ -79,5 +85,55 @@ class DetailSilverTownTVC: UITableViewCell {
 
         
     }
+    
+    func bindDetailSilverTownSubCV(){
+        
+        detailSilverTownSubViewModel.items.bind(
+            to: detailSilverTownSubCV.rx.items(
+                cellIdentifier: "cell",
+                cellType: DetailSilverTownSubCVC.self)
+        ){ index, model, cell in
+            
+            print("------->")
+            print(index)
+            print(self.imgURLs)
+            print(self.titleLabel.text!)
+            print(model.imageURL)
+            
+            cell.itemImage.layer.cornerRadius = 15
+            
+            switch self.imgURLs[index] {
+                 
+            case "none", "":
+                print("No image available")
+                 
+            default :
+                guard let url = URL(string: self.imgURLs[index]) else { return }
+                cell.itemImage.kf.setImage(with: url)
+                 
+             }
+                
+        }.disposed(by: detailSilverTownSubBag)
+        
+        detailSilverTownSubCV.rx.modelSelected(MainSilverTownSub.self).bind { element in
+            
+            print("클릭 이벤트")
+            /*
+            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+            guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
+            self.navigationController?.pushViewController(controller, animated: true)*/
+         
+        }.disposed(by: detailSilverTownSubBag)
+        
+        detailSilverTownSubViewModel.fetchItem()
+        
+    }
+    
+}
+
+
+class DetailSilverTownSubCVC: UICollectionViewCell {
+    
+    @IBOutlet weak var itemImage: UIImageView!
     
 }

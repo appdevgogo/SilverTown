@@ -17,5 +17,12 @@ struct DetailSilverTown {
     let subContentFirst: String
     let subContentSecond: String
     let subOther: String
+    let imageURLs: [String]
     
+}
+
+
+struct DetailSilverTownSub {
+    
+    let imageURL: String
 }

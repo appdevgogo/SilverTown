@@ -59,24 +59,13 @@ class DetailViewController: UIViewController {
             print(cell.titleLabel.frame.size)
             print(cell.frame.size)
             
+            cell.imgURLs = model.imageURLs
+            
         }.disposed(by: detailSilverTownBag)
         
-        detailSilverTownTV
-            .rx.setDelegate(self)
-            .disposed(by: detailSilverTownBag)
-    
         detailSilverTownViewModel.fetchItem()
         
     }
 
 }
 
-
-extension DetailViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 1000
-    }
-    
-}
