@@ -37,8 +37,8 @@ class DetailSilverTownTVC: UITableViewCell {
         
         addSubBorders()
         imgTitleBorderRound()
-        bindDetailSilverTownSubCV()
         buttonsAction()
+        bindDetailSilverTownSubCV()
     
     }
     
@@ -123,11 +123,73 @@ class DetailSilverTownTVC: UITableViewCell {
     
     func buttonsAction(){
         
+        imgTitleFirstButton.rx.tap.bind{
+            
+            self.imgTitleFirstButton.tintColor = .basicPurple
+            self.imgTitleFirstButton.layer.borderWidth = 2
+            self.imgTitleFirstButton.layer.borderColor = UIColor.basicPurple.cgColor
+            
+            self.imgTitleSecondButton.tintColor = .systemGray2
+            self.imgTitleSecondButton.layer.borderWidth = 1
+            self.imgTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
+            
+            self.imgTitleThirdButton.tintColor = .systemGray2
+            self.imgTitleThirdButton.layer.borderWidth = 1
+            self.imgTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
+            
+            self.imgURLs = ["https://dimg.donga.com/wps/NEWS/IMAGE/2022/04/21/112983704.5.jpg",
+                            "https://news.imaeil.com/photos/2019/05/28/2019052816581390757_l.jpg",
+                            "https://cdn.dailyimpact.co.kr/news/photo/202104/68343_42316_2142.jpg"]
+            self.detailSilverTownSubCV.reloadData()
+        
+            self.detailSilverTownSubCV.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+            
+        }.disposed(by: detailSilverTownSubBag)
+        
+        imgTitleSecondButton.rx.tap.bind{
+            
+            self.imgTitleFirstButton.tintColor = .systemGray2
+            self.imgTitleFirstButton.layer.borderWidth = 1
+            self.imgTitleFirstButton.layer.borderColor = UIColor.systemGray2.cgColor
+            
+            self.imgTitleSecondButton.tintColor = .basicPurple
+            self.imgTitleSecondButton.layer.borderWidth = 2
+            self.imgTitleSecondButton.layer.borderColor = UIColor.basicPurple.cgColor
+            
+            self.imgTitleThirdButton.tintColor = .systemGray2
+            self.imgTitleThirdButton.layer.borderWidth = 1
+            self.imgTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
+            
+            self.imgURLs = ["https://dimg.donga.com/wps/NEWS/IMAGE/2020/06/03/101324166.5.jpg",
+                            "https://www.thedailypost.kr/news/photo/202002/73007_64794_1959.jpg",
+                            "https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg"]
+            self.detailSilverTownSubCV.reloadData()
+            
+            self.detailSilverTownSubCV.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+            
+            
+        }.disposed(by: detailSilverTownSubBag)
+        
         imgTitleThirdButton.rx.tap.bind{
             
-            print("--------------^^버튼 클릭됨")
-            self.imgURLs = ["https://dimg.donga.com/wps/NEWS/IMAGE/2020/06/03/101324166.5.jpg","https://www.thedailypost.kr/news/photo/202002/73007_64794_1959.jpg","https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg"]
+            self.imgTitleFirstButton.tintColor = .systemGray2
+            self.imgTitleFirstButton.layer.borderWidth = 1
+            self.imgTitleFirstButton.layer.borderColor = UIColor.systemGray2.cgColor
+            
+            self.imgTitleSecondButton.tintColor = .systemGray2
+            self.imgTitleSecondButton.layer.borderWidth = 1
+            self.imgTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
+            
+            self.imgTitleThirdButton.tintColor = .basicPurple
+            self.imgTitleThirdButton.layer.borderWidth = 2
+            self.imgTitleThirdButton.layer.borderColor = UIColor.basicPurple.cgColor
+            
+            self.imgURLs = ["https://newsimg.sedaily.com/2017/09/03/1OKVUPOCKP_1.jpg",
+                            "https://img.etoday.co.kr/pto_db/2014/02/600/20140203051815_403252_836_554.JPG",
+                            "https://wimg.mk.co.kr/meet/neds/2015/10/image_readtop_2015_1019968_14458278062191475.jpg"]
             self.detailSilverTownSubCV.reloadData()
+            
+            self.detailSilverTownSubCV.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
             
         }.disposed(by: detailSilverTownSubBag)
         

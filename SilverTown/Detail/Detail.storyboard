@@ -166,11 +166,28 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_youtube" translatesAutoresizingMaskIntoConstraints="NO" id="gbP-0L-Nvz">
+                                                    <rect key="frame" x="20" y="624" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="P5r-Ps-n8M"/>
+                                                        <constraint firstAttribute="width" constant="35" id="p01-8U-6y7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유부트 영상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtR-6Q-nka">
+                                                    <rect key="frame" x="65" y="624" width="305" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="ip7-UL-FDa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="poD-Sd-D8O" firstAttribute="top" secondItem="IJ6-ap-Z9Z" secondAttribute="bottom" constant="20" id="0HD-wo-Y6h"/>
                                                 <constraint firstItem="poD-Sd-D8O" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="33x-zd-eLD"/>
                                                 <constraint firstItem="wcD-lv-dBj" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="5Sn-5i-nBY"/>
+                                                <constraint firstItem="jtR-6Q-nka" firstAttribute="leading" secondItem="gbP-0L-Nvz" secondAttribute="trailing" constant="10" id="9ic-aq-snm"/>
                                                 <constraint firstItem="vPt-1g-Fic" firstAttribute="leading" secondItem="9ie-jD-q83" secondAttribute="trailing" constant="15" id="A2t-SQ-tAR"/>
                                                 <constraint firstItem="cYv-VX-joh" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="Aa5-V2-x8k"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="UCU-xr-dd2" secondAttribute="trailing" id="ApN-qz-HgF"/>
@@ -178,7 +195,9 @@
                                                 <constraint firstItem="qOk-cI-CBI" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="Ec0-7F-6wp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cYv-VX-joh" secondAttribute="trailing" id="FCF-df-9GE"/>
                                                 <constraint firstItem="vPt-1g-Fic" firstAttribute="top" secondItem="JOC-xM-X1g" secondAttribute="bottom" constant="30" id="GZK-cv-63v"/>
+                                                <constraint firstItem="gbP-0L-Nvz" firstAttribute="top" secondItem="Fxd-xR-kIx" secondAttribute="bottom" constant="20" id="H1D-A9-I6e"/>
                                                 <constraint firstItem="UCU-xr-dd2" firstAttribute="top" secondItem="IJ6-ap-Z9Z" secondAttribute="bottom" constant="20" id="Hhn-Ov-Nji"/>
+                                                <constraint firstItem="gbP-0L-Nvz" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="JZd-7x-beP"/>
                                                 <constraint firstItem="Fxd-xR-kIx" firstAttribute="centerX" secondItem="4z4-XC-f9q" secondAttribute="centerX" id="KPv-ks-0Yd"/>
                                                 <constraint firstItem="cYv-VX-joh" firstAttribute="top" secondItem="qOk-cI-CBI" secondAttribute="bottom" constant="20" id="Nza-hp-PzA"/>
                                                 <constraint firstItem="CjQ-8x-lcU" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="Oes-KM-wrW"/>
@@ -186,10 +205,12 @@
                                                 <constraint firstItem="JOC-xM-X1g" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="T4y-D2-dZD"/>
                                                 <constraint firstItem="JOC-xM-X1g" firstAttribute="top" secondItem="wcD-lv-dBj" secondAttribute="bottom" id="Udu-dB-YNZ"/>
                                                 <constraint firstItem="9ie-jD-q83" firstAttribute="leading" secondItem="qOk-cI-CBI" secondAttribute="trailing" constant="15" id="b7n-q4-Coc"/>
+                                                <constraint firstItem="jtR-6Q-nka" firstAttribute="top" secondItem="Fxd-xR-kIx" secondAttribute="bottom" constant="20" id="bJY-Vn-qBM"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="IJ6-ap-Z9Z" secondAttribute="trailing" id="cCb-L6-gD0"/>
                                                 <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="top" secondItem="CjQ-8x-lcU" secondAttribute="bottom" constant="10" id="hmB-yc-EvR"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JOC-xM-X1g" secondAttribute="trailing" id="hwL-Ta-uM3"/>
                                                 <constraint firstItem="IJ6-ap-Z9Z" firstAttribute="leading" secondItem="4z4-XC-f9q" secondAttribute="leadingMargin" id="mdG-cs-Ed0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jtR-6Q-nka" secondAttribute="trailing" id="qAs-rq-ThL"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="t11-ch-HHA" secondAttribute="trailing" id="r9n-Qq-tsT"/>
                                                 <constraint firstItem="qOk-cI-CBI" firstAttribute="top" secondItem="JOC-xM-X1g" secondAttribute="bottom" constant="30" id="rZ1-AO-6qD"/>
                                                 <constraint firstItem="t11-ch-HHA" firstAttribute="leading" secondItem="wcD-lv-dBj" secondAttribute="trailing" id="s6p-RE-Utr"/>
@@ -237,6 +258,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo_youtube" width="35" height="23.333333969116211"/>
         <image name="testImage_01" width="640" height="359"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -87,7 +87,7 @@ struct MainSilverTownSubViewModel {
  "https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg"
 
  "https://newsimg.sedaily.com/2017/09/03/1OKVUPOCKP_1.jpg",
- "http://www.오로지.kr/images/facilities_11.jpg",
+ "https://img.etoday.co.kr/pto_db/2014/02/600/20140203051815_403252_836_554.JPG",
  "https://wimg.mk.co.kr/meet/neds/2015/10/image_readtop_2015_1019968_14458278062191475.jpg"
  */
 
