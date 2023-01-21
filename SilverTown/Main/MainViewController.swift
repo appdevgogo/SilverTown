@@ -80,13 +80,14 @@ class MainViewController: UIViewController {
     
     func bindMainSilverTownTV() {
         
+        mainSilverTownTV.rx.setDelegate(self).disposed(by: mainSilverTownBag)
+        
         mainSilverTownViewModel.items.bind(
             to: mainSilverTownTV.rx.items(
                 cellIdentifier: "cell",
                 cellType: MainSilverTownTVC.self)
         ) { row, model, cell in
             
-            print("=======================>")
             cell.titleLabel.text = model.title
             cell.descriptionLabel.setLineSpacing(lineSpacing: 5.0)
             cell.descriptionLabel.text = model.description
@@ -97,18 +98,11 @@ class MainViewController: UIViewController {
             
         }.disposed(by: mainSilverTownBag)
         
-        mainSilverTownTV
-            .rx.setDelegate(self)
-            .disposed(by: mainSilverTownBag)
-        
         mainSilverTownTV.rx.modelSelected(MainSilverTown.self).bind { town in
             
-            print("클릭 이벤트")
-    
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             let controller = storyBoard.instantiateViewController(withIdentifier: "Detail")
             self.navigationController?.pushViewController(controller, animated: true)
-            
             
         }.disposed(by: mainSilverTownBag)
         
@@ -117,7 +111,6 @@ class MainViewController: UIViewController {
     }
 
 }
-
 
 extension MainViewController: UITableViewDelegate {
     

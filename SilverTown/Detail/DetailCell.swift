@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 
 class DetailSilverTownTVC: UITableViewCell {
@@ -32,13 +33,13 @@ class DetailSilverTownTVC: UITableViewCell {
     
     @IBOutlet weak var detailImgCount: UILabel!
     
-    
     override func awakeFromNib() {
         
         addSubBorders()
         imgTitleBorderRound()
         bindDetailSilverTownSubCV()
-        
+        buttonsAction()
+    
     }
     
     func addSubBorders(){
@@ -89,12 +90,18 @@ class DetailSilverTownTVC: UITableViewCell {
     
     func bindDetailSilverTownSubCV(){
         
+        detailSilverTownSubCV.rx.setDelegate(self).disposed(by: detailSilverTownSubBag)
+        
         detailSilverTownSubViewModel.items.bind(
             to: detailSilverTownSubCV.rx.items(
                 cellIdentifier: "cell",
                 cellType: DetailSilverTownSubCVC.self)
+
         ){ index, model, cell in
             
+            print(">>>>>>>>>>>>>>>>>>>")
+            print(index)
+    
             cell.itemImage.layer.cornerRadius = 15
             
             switch self.imgURLs[index] {
@@ -107,14 +114,22 @@ class DetailSilverTownTVC: UITableViewCell {
                 
         }.disposed(by: detailSilverTownSubBag)
         
-        detailSilverTownSubCV
-            .rx.setDelegate(self)
-            .disposed(by: detailSilverTownSubBag)
-        
         detailSilverTownSubCV.rx.modelSelected(MainSilverTownSub.self).bind { element in
         }.disposed(by: detailSilverTownSubBag)
         
         detailSilverTownSubViewModel.fetchItem()
+        
+    }
+    
+    func buttonsAction(){
+        
+        imgTitleThirdButton.rx.tap.bind{
+            
+            print("--------------^^버튼 클릭됨")
+            self.imgURLs = ["https://dimg.donga.com/wps/NEWS/IMAGE/2020/06/03/101324166.5.jpg","https://www.thedailypost.kr/news/photo/202002/73007_64794_1959.jpg","https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg"]
+            self.detailSilverTownSubCV.reloadData()
+            
+        }.disposed(by: detailSilverTownSubBag)
         
     }
     
@@ -125,7 +140,7 @@ extension DetailSilverTownTVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.size.width
         let page = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 2)
-                print("page = \(page)")
+        //print("page = \(page)")
         
         self.detailImgCount.text = "\(page) / \(self.imgURLs.count)"
             // Do whatever with currentPage.

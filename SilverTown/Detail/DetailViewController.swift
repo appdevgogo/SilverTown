@@ -12,7 +12,6 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailSilverTownTV: UITableView!
     private var detailSilverTownViewModel = DetailSilverTownViewModel()
-    
     private var detailSilverTownBag = DisposeBag()
     
     override func viewDidLoad() {

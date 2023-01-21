@@ -52,16 +52,12 @@ class MainSilverTownTVC: UITableViewCell {
     func bindMainSilverTownSubCV(){
         
         mainSilverTownSubViewModel.items.bind(
+            
             to: mainSilverTownSubCV.rx.items(
                 cellIdentifier: "cell",
                 cellType: MainSilverTownSubCVC.self)
-        ){ index, model, cell in
             
-            print("------->")
-            print(index)
-            print(self.imgURLs)
-            //print(self.titleLabel.text!)
-            //print(model.imageURL)
+        ){ index, model, cell in
             
             cell.itemImage.layer.cornerRadius = 25
             
