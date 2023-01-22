@@ -7,6 +7,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class DetailViewController: UIViewController {
     
@@ -54,7 +55,30 @@ class DetailViewController: UIViewController {
             cell.subContentFirstLabel.text = model.subContentFirst
             cell.subContentSecondLabel.text = model.subContentSecond
             cell.subOtherLabel.text = model.subOther
-            cell.imgURLs = model.imageURLs
+            cell.imageURLs = model.imageURLs
+            
+            guard let url = URL(string: model.youtubeURLs[0]) else { return }
+            
+            let processor = DownsamplingImageProcessor(size: cell.youtubeFirstImageView.bounds.size)
+                         |> RoundCornerImageProcessor(cornerRadius: 20)
+            
+            cell.youtubeFirstImageView.kf.setImage(
+                with: url,
+                placeholder: UIImage(named: "smile"),
+                options: [.processor(processor), .loadDiskFileSynchronously, .cacheOriginalImage, .transition(.fade(0.25))])
+            
+            guard let url = URL(string: model.youtubeURLs[1]) else { return }
+            
+            cell.youtubeSecondImageView.kf.setImage(
+                with: url,
+                placeholder: UIImage(named: "smile"),
+                options: [.processor(processor), .loadDiskFileSynchronously, .cacheOriginalImage, .transition(.fade(0.25))])
+            
+            print(self.detailSilverTownTV.frame.size)
+            print(cell.frame.size)
+            print(cell.contentView.frame.size)
+            print(cell.youtubeFirstImageView.frame.size)
+            
             
         }.disposed(by: detailSilverTownBag)
         

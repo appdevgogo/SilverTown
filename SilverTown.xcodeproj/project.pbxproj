@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		532B64BBA579DDB822B3CFFA /* Pods_SilverTown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57160249B890E62CBD30288D /* Pods_SilverTown.framework */; };
+		FF7556BC297D1177001800D6 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7556BB297D1177001800D6 /* Filter.storyboard */; };
 		FF9687A32974455500614DA9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A22974455500614DA9 /* DetailViewController.swift */; };
 		FF9687A52974457000614DA9 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A42974457000614DA9 /* DetailModel.swift */; };
 		FF9687A72974458800614DA9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A62974458800614DA9 /* DetailViewModel.swift */; };
@@ -36,6 +37,7 @@
 		3ECF1C1995B32BFC078643E6 /* Pods-SilverTown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilverTown.release.xcconfig"; path = "Target Support Files/Pods-SilverTown/Pods-SilverTown.release.xcconfig"; sourceTree = "<group>"; };
 		4D72EF8E886A0D02BB9205FC /* Pods-SilverTown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilverTown.debug.xcconfig"; path = "Target Support Files/Pods-SilverTown/Pods-SilverTown.debug.xcconfig"; sourceTree = "<group>"; };
 		57160249B890E62CBD30288D /* Pods_SilverTown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilverTown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF7556BB297D1177001800D6 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		FF9687A22974455500614DA9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF9687A42974457000614DA9 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		FF9687A62974458800614DA9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		FFAB21FC296A501000E32CAC /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				FF7556BB297D1177001800D6 /* Filter.storyboard */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			files = (
 				FF9AE7DD2972F08B0088C2B7 /* NanumGothicExtraBold.ttf in Resources */,
 				FFC4A5A8296848430028E135 /* Assets.xcassets in Resources */,
+				FF7556BC297D1177001800D6 /* Filter.storyboard in Resources */,
 				FF9AE7DE2972F08B0088C2B7 /* NanumGothicBold.ttf in Resources */,
 				FF9687A9297445A800614DA9 /* Detail.storyboard in Resources */,
 				FFAB2202296A813D00E32CAC /* Launch.storyboard in Resources */,

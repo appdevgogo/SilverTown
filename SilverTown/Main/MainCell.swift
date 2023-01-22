@@ -29,6 +29,8 @@ class MainSilverTownTVC: UITableViewCell {
     @IBOutlet weak var separatorLabel: UILabel!
     
     var imgURLs: [String] = []
+    var mainViewController: MainViewController!
+    var navcon = UINavigationController()
     
     override func awakeFromNib() {
         
@@ -77,10 +79,10 @@ class MainSilverTownTVC: UITableViewCell {
         mainSilverTownSubCV.rx.modelSelected(MainSilverTownSub.self).bind { element in
             
             print("클릭 이벤트")
-            /*
+        
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
-            self.navigationController?.pushViewController(controller, animated: true)*/
+            self.navcon.navigationController?.pushViewController(controller, animated: true)
          
         }.disposed(by: mainSilverTownSubBag)
         

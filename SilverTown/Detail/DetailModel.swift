@@ -19,11 +19,12 @@ struct DetailSilverTown {
     let subContentSecond: String
     let subOther: String
     let imageURLs: [String]
+    let youtubeURLs: [String]
     
 }
 
 
-struct DetailSilverTownSub {
+struct DetailSilverTownImgSub {
     
     let imageURL: String
 }

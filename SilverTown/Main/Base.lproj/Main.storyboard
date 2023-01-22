@@ -21,7 +21,7 @@
         <!--Navigation Controller-->
         <scene sceneID="biJ-Yu-JnP">
             <objects>
-                <navigationController navigationBarHidden="YES" id="tC8-ia-Tro" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" navigationBarHidden="YES" id="tC8-ia-Tro" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kN5-B1-58O">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -124,7 +124,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="180"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testImage_01" translatesAutoresizingMaskIntoConstraints="NO" id="TW9-Jw-w1G">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_silvertown" translatesAutoresizingMaskIntoConstraints="NO" id="TW9-Jw-w1G">
                                                                         <rect key="frame" x="0.0" y="0.0" width="250" height="180"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="180" id="YoX-1U-5He"/>
@@ -203,7 +203,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="testImage_01" width="640" height="359"/>
+        <image name="detail_silvertown" width="640" height="359"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
