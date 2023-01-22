@@ -29,8 +29,7 @@ class MainSilverTownTVC: UITableViewCell {
     @IBOutlet weak var separatorLabel: UILabel!
     
     var imgURLs: [String] = []
-    var mainViewController: MainViewController!
-    var navcon = UINavigationController()
+    var mainViewController: UIViewController!
     
     override func awakeFromNib() {
         
@@ -82,7 +81,7 @@ class MainSilverTownTVC: UITableViewCell {
         
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
-            self.navcon.navigationController?.pushViewController(controller, animated: true)
+            self.mainViewController.navigationController?.pushViewController(controller, animated: true)
          
         }.disposed(by: mainSilverTownSubBag)
         

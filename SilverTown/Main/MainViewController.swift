@@ -96,8 +96,7 @@ class MainViewController: UIViewController {
             cell.separatorLabel.layer.cornerRadius = 3
             cell.separatorLabel.layer.masksToBounds = true
             
-            let navigationController: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
-            cell.mainViewController = navigationController.children.first as? MainViewController
+            cell.mainViewController = self
             
         }.disposed(by: mainSilverTownBag)
         
