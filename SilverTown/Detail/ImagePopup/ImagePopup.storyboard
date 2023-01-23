@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Popup View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ImagePopup" id="Y6W-OH-hqX" customClass="ImagePopupViewController" customModule="SilverTown" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMl-UG-nFM">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_silvertown" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-Xa-MLY">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="763"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-bG-h9j">
+                                        <rect key="frame" x="330" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="K1m-eZ-ZUT"/>
+                                            <constraint firstAttribute="height" constant="50" id="StH-x1-vzR"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="xmarkButtonClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ANg-LW-6QQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="VXs-dF-aOI" firstAttribute="trailing" secondItem="GGg-bG-h9j" secondAttribute="trailing" constant="10" id="45j-cG-KNk"/>
+                                    <constraint firstItem="DYu-Xa-MLY" firstAttribute="bottom" secondItem="kej-W1-Iv1" secondAttribute="bottom" id="9mn-zQ-ucq"/>
+                                    <constraint firstItem="DYu-Xa-MLY" firstAttribute="height" secondItem="VXs-dF-aOI" secondAttribute="height" id="CdE-vC-XiE"/>
+                                    <constraint firstItem="GGg-bG-h9j" firstAttribute="top" secondItem="VXs-dF-aOI" secondAttribute="top" constant="10" id="K8X-ph-Lud"/>
+                                    <constraint firstItem="DYu-Xa-MLY" firstAttribute="top" secondItem="kej-W1-Iv1" secondAttribute="top" id="ceW-Bp-ic8"/>
+                                    <constraint firstItem="DYu-Xa-MLY" firstAttribute="width" secondItem="VXs-dF-aOI" secondAttribute="width" id="e9I-3g-PTA"/>
+                                    <constraint firstItem="DYu-Xa-MLY" firstAttribute="leading" secondItem="kej-W1-Iv1" secondAttribute="leading" id="si0-dT-JcS"/>
+                                    <constraint firstItem="DYu-Xa-MLY" firstAttribute="trailing" secondItem="kej-W1-Iv1" secondAttribute="trailing" id="yXp-Wv-8Om"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="kej-W1-Iv1"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="VXs-dF-aOI"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="H5v-rE-fXQ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QMl-UG-nFM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5aa-Yb-nwD"/>
+                            <constraint firstItem="QMl-UG-nFM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7se-NK-mYu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QMl-UG-nFM" secondAttribute="trailing" id="N0n-bk-7Qd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="QMl-UG-nFM" secondAttribute="bottom" id="zqA-rW-miG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageOrigin" destination="DYu-Xa-MLY" id="eYD-kN-IhH"/>
+                        <outlet property="scrollView" destination="QMl-UG-nFM" id="TyS-Dz-BKO"/>
+                        <outlet property="xmarkButton" destination="GGg-bG-h9j" id="6DJ-tz-Qox"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.76923076923077" y="-28.436018957345969"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="detail_silvertown" width="640" height="359"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

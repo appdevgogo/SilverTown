@@ -12,19 +12,19 @@ import RxCocoa
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var mainFilterCV: UICollectionView!
+    @IBOutlet weak var mainFilterCollectionView: UICollectionView!
     private var mainFilterViewModel = MainFilterViewModel()
-    private var mainFilterBag = DisposeBag()
+    //private var mainFilterBag = DisposeBag()
     
-    @IBOutlet weak var mainSilverTownTV: UITableView!
+    @IBOutlet weak var mainSilverTownTableView: UITableView!
     private var mainSilverTownViewModel = MainSilverTownViewModel()
-    private var mainSilverTownBag = DisposeBag()
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindMainFilterCV()
-        bindMainSilverTownTV()
+        bindMainFilterCollectionView()
+        bindMainSilverTownTableView()
         
     }
     
@@ -38,15 +38,15 @@ class MainViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    func bindMainFilterCV() {
+    func bindMainFilterCollectionView() {
         
         var itemOrigin: CGFloat = 15
         var sizeFixArray: [CGFloat] = []
         
         mainFilterViewModel.items.bind(
-            to: mainFilterCV.rx.items(
+            to: mainFilterCollectionView.rx.items(
                 cellIdentifier: "cell",
-                cellType: MainFilterCVC.self)
+                cellType: MainFilterCollectionViewCell.self)
         ) { index, text, cell in
             
             cell.itemLabel.text = text.item
@@ -72,41 +72,76 @@ class MainViewController: UIViewController {
                 
             }
             
-        }.disposed(by: mainFilterBag)
+        }.disposed(by: disposeBag)
         
         mainFilterViewModel.fetchItem()
 
     }
     
-    func bindMainSilverTownTV() {
+    func bindMainSilverTownTableView() {
         
-        mainSilverTownTV.rx.setDelegate(self).disposed(by: mainSilverTownBag)
+        mainSilverTownTableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         mainSilverTownViewModel.items.bind(
-            to: mainSilverTownTV.rx.items(
+            to: mainSilverTownTableView.rx.items(
                 cellIdentifier: "cell",
-                cellType: MainSilverTownTVC.self)
+                cellType: MainSilverTownTableViewCell.self)
+            
         ) { row, model, cell in
+            
+            //print("------------->> mainSilverTownTableView 시작, row : \(row) ")
             
             cell.titleLabel.text = model.title
             cell.descriptionLabel.setLineSpacing(lineSpacing: 5.0)
             cell.descriptionLabel.text = model.description
-            cell.imgURLs = model.imageURLs
-            
             cell.separatorLabel.layer.cornerRadius = 3
             cell.separatorLabel.layer.masksToBounds = true
             
-            cell.mainViewController = self
+            let mainSilverTownSubViewModel = MainSilverTownSubViewModel()
+
+            mainSilverTownSubViewModel.items.bind(
+                to: cell.mainSilverTownSubCollectionView.rx.items(
+                    cellIdentifier: "cell",
+                    cellType: MainSilverTownSubCollectionViewCell.self)
+                
+            ) { index, model, cell in
+                
+                cell.itemImage.layer.cornerRadius = 25
+                
+                //print("================== mainSilverTownSubViewModel ==>>")
+                
+                switch model.imageURL {
+                     
+                case "none", "":
+                    print("No image available")
+                     
+                default :
+                    guard let url = URL(string: model.imageURL) else { return }
+                    cell.itemImage.kf.setImage(with: url)
+                    
+                 }
+                
+            }.disposed(by: self.disposeBag)
             
-        }.disposed(by: mainSilverTownBag)
+            cell.mainSilverTownSubCollectionView.rx.modelSelected(MainSilverTownSub.self).bind { element in
+                
+                let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+                guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
+                self.navigationController?.pushViewController(controller, animated: true)
+             
+            }.disposed(by: self.disposeBag)
+            
+            mainSilverTownSubViewModel.fetchItem(data: model.imageURLs)
+            
+        }.disposed(by: disposeBag)
         
-        mainSilverTownTV.rx.modelSelected(MainSilverTown.self).bind { town in
+        mainSilverTownTableView.rx.modelSelected(MainSilverTown.self).bind { element in
             
             let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
             let controller = storyBoard.instantiateViewController(withIdentifier: "Detail")
             self.navigationController?.pushViewController(controller, animated: true)
             
-        }.disposed(by: mainSilverTownBag)
+        }.disposed(by: disposeBag)
         
         mainSilverTownViewModel.fetchItem()
         

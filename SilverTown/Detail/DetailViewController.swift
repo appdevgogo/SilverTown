@@ -11,15 +11,16 @@ import Kingfisher
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var detailSilverTownTV: UITableView!
+    @IBOutlet weak var detailSilverTownTableView: UITableView!
     private var detailSilverTownViewModel = DetailSilverTownViewModel()
-    private var detailSilverTownBag = DisposeBag()
+    private var detailSilverTownSubImageViewModel = DetailSilverTownSubImageViewModel()
+    private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initSetting()
-        bindDetailSilverTownTV()
+        bindDetailSilverTownTableView()
         
     }
     
@@ -40,12 +41,12 @@ class DetailViewController: UIViewController {
         addRightNavigationButton("heart")
     }
     
-    func bindDetailSilverTownTV() {
+    func bindDetailSilverTownTableView() {
         
         detailSilverTownViewModel.items.bind(
-            to: detailSilverTownTV.rx.items(
+            to: detailSilverTownTableView.rx.items(
                 cellIdentifier: "cell",
-                cellType: DetailSilverTownTVC.self)
+                cellType: DetailSilverTownTableViewCell.self)
         ) { row, model, cell in
             
             cell.titleLabel.text = model.title
@@ -55,7 +56,7 @@ class DetailViewController: UIViewController {
             cell.subContentFirstLabel.text = model.subContentFirst
             cell.subContentSecondLabel.text = model.subContentSecond
             cell.subOtherLabel.text = model.subOther
-            cell.imageURLs = model.imageURLs
+            cell.imageCount = model.imageURLs.count
             
             guard let url = URL(string: model.youtubeURLs[0]) else { return }
             
@@ -74,13 +75,45 @@ class DetailViewController: UIViewController {
                 placeholder: UIImage(named: "smile"),
                 options: [.processor(processor), .loadDiskFileSynchronously, .cacheOriginalImage, .transition(.fade(0.25))])
             
+            /*
             print(self.detailSilverTownTV.frame.size)
             print(cell.frame.size)
             print(cell.contentView.frame.size)
             print(cell.youtubeFirstImageView.frame.size)
+            */
             
             
-        }.disposed(by: detailSilverTownBag)
+            self.detailSilverTownSubImageViewModel.items.bind(
+                to: cell.detailSilverTownSubImageCollectionView.rx.items(
+                    cellIdentifier: "cell",
+                    cellType: DetailSilverTownSubImageCollectionViewCell.self)
+
+            ){ index, model, cell in
+                
+                cell.itemImage.layer.cornerRadius = 15
+                
+                switch model.imageURL {
+                case "none", "":
+                    print("No image available")
+                default :
+                    guard let url = URL(string: model.imageURL) else { return }
+                    cell.itemImage.kf.setImage(with: url)
+                 }
+                    
+            }.disposed(by: self.disposeBag)
+            
+            cell.detailSilverTownSubImageCollectionView.rx.modelSelected(DetailSilverTownSubImage.self).bind { element in
+                
+                let storyBoard = UIStoryboard(name: "ImagePopup", bundle: nil)
+                guard let controller = storyBoard.instantiateViewController(withIdentifier: "ImagePopup") as? ImagePopupViewController else {return}
+                self.navigationController?.pushViewController(controller, animated: false)
+                
+            }.disposed(by: self.disposeBag)
+            
+            self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLs)
+            
+            
+        }.disposed(by: disposeBag)
         
         detailSilverTownViewModel.fetchItem()
         

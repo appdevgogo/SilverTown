@@ -10,32 +10,19 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-class MainFilterCVC: UICollectionViewCell {
+class MainFilterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var itemLabel: PaddingLabel!
     
 }
 
 
-class MainSilverTownTVC: UITableViewCell {
+class MainSilverTownTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    
-    @IBOutlet weak var mainSilverTownSubCV: UICollectionView!
-    private var mainSilverTownSubViewModel = MainSilverTownSubViewModel()
-    private var mainSilverTownSubBag = DisposeBag()
-
     @IBOutlet weak var separatorLabel: UILabel!
-    
-    var imgURLs: [String] = []
-    var mainViewController: UIViewController!
-    
-    override func awakeFromNib() {
-        
-        bindMainSilverTownSubCV()
-        
-    }
+    @IBOutlet weak var mainSilverTownSubCollectionView: UICollectionView!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -50,49 +37,10 @@ class MainSilverTownTVC: UITableViewCell {
         
     }
     
-    func bindMainSilverTownSubCV(){
-        
-        mainSilverTownSubViewModel.items.bind(
-            
-            to: mainSilverTownSubCV.rx.items(
-                cellIdentifier: "cell",
-                cellType: MainSilverTownSubCVC.self)
-            
-        ){ index, model, cell in
-            
-            cell.itemImage.layer.cornerRadius = 25
-            
-            switch self.imgURLs[index] {
-                 
-            case "none", "":
-                print("No image available")
-                 
-            default :
-                guard let url = URL(string: self.imgURLs[index]) else { return }
-                cell.itemImage.kf.setImage(with: url)
-                 
-             }
-                
-        }.disposed(by: mainSilverTownSubBag)
-        
-        mainSilverTownSubCV.rx.modelSelected(MainSilverTownSub.self).bind { element in
-            
-            print("클릭 이벤트")
-        
-            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
-            guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
-            self.mainViewController.navigationController?.pushViewController(controller, animated: true)
-         
-        }.disposed(by: mainSilverTownSubBag)
-        
-        mainSilverTownSubViewModel.fetchItem()
-        
-    }
-    
 }
 
 
-class MainSilverTownSubCVC: UICollectionViewCell {
+class MainSilverTownSubCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var itemImage: UIImageView!
     

@@ -1,14 +1,14 @@
 //
-//  DetailModel.swift
+//  FilterModel.swift
 //  SilverTown
 //
-//  Created by yyjweber on 2023/01/15.
+//  Created by yyjweber on 2023/01/23.
 //
 
 import Foundation
 
 
-struct DetailSilverTown {
+struct TableData {
     
     let title: String
     let address: String
@@ -17,13 +17,13 @@ struct DetailSilverTown {
     let subContentFirst: String
     let subContentSecond: String
     let subOther: String
-    let imageURLs: [DetailSilverTownSubImage]
+    let imageURLs: [CollectionData]
     let youtubeURLs: [String]
     
 }
 
 
-struct DetailSilverTownSubImage {
+struct CollectionData {
     
     let imageURL: String
 }

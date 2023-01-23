@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		532B64BBA579DDB822B3CFFA /* Pods_SilverTown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57160249B890E62CBD30288D /* Pods_SilverTown.framework */; };
+		FF1E8BD9297EC2B600A99646 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E8BD8297EC2B600A99646 /* FilterViewController.swift */; };
+		FF1E8BDB297EC32D00A99646 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E8BDA297EC32D00A99646 /* FilterModel.swift */; };
+		FF1E8BDD297EC33B00A99646 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E8BDC297EC33B00A99646 /* FilterViewModel.swift */; };
+		FF1E8BDF297EC4E200A99646 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E8BDE297EC4E200A99646 /* FilterCell.swift */; };
+		FF5B9BCD297E523E009ACCEA /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9BCC297E523E009ACCEA /* ImagePopupViewController.swift */; };
+		FF5B9BD0297E5B1C009ACCEA /* ImagePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5B9BCF297E5B1C009ACCEA /* ImagePopup.storyboard */; };
 		FF7556BC297D1177001800D6 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7556BB297D1177001800D6 /* Filter.storyboard */; };
 		FF9687A32974455500614DA9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A22974455500614DA9 /* DetailViewController.swift */; };
 		FF9687A52974457000614DA9 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A42974457000614DA9 /* DetailModel.swift */; };
@@ -37,6 +43,12 @@
 		3ECF1C1995B32BFC078643E6 /* Pods-SilverTown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilverTown.release.xcconfig"; path = "Target Support Files/Pods-SilverTown/Pods-SilverTown.release.xcconfig"; sourceTree = "<group>"; };
 		4D72EF8E886A0D02BB9205FC /* Pods-SilverTown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilverTown.debug.xcconfig"; path = "Target Support Files/Pods-SilverTown/Pods-SilverTown.debug.xcconfig"; sourceTree = "<group>"; };
 		57160249B890E62CBD30288D /* Pods_SilverTown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilverTown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1E8BD8297EC2B600A99646 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		FF1E8BDA297EC32D00A99646 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		FF1E8BDC297EC33B00A99646 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		FF1E8BDE297EC4E200A99646 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		FF5B9BCC297E523E009ACCEA /* ImagePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePopupViewController.swift; sourceTree = "<group>"; };
+		FF5B9BCF297E5B1C009ACCEA /* ImagePopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePopup.storyboard; sourceTree = "<group>"; };
 		FF7556BB297D1177001800D6 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		FF9687A22974455500614DA9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF9687A42974457000614DA9 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
@@ -98,6 +110,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF5B9BCE297E529C009ACCEA /* ImagePopup */ = {
+			isa = PBXGroup;
+			children = (
+				FF5B9BCC297E523E009ACCEA /* ImagePopupViewController.swift */,
+				FF5B9BCF297E5B1C009ACCEA /* ImagePopup.storyboard */,
+			);
+			path = ImagePopup;
+			sourceTree = "<group>";
+		};
 		FF93D3B42972D341005CF387 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +168,7 @@
 		FFAB21FB296A4E4600E32CAC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				FF5B9BCE297E529C009ACCEA /* ImagePopup */,
 				FF9687A42974457000614DA9 /* DetailModel.swift */,
 				FF9687A62974458800614DA9 /* DetailViewModel.swift */,
 				FF976EE4297913BB004BD893 /* DetailCell.swift */,
@@ -159,6 +181,10 @@
 		FFAB21FC296A501000E32CAC /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				FF1E8BDA297EC32D00A99646 /* FilterModel.swift */,
+				FF1E8BDC297EC33B00A99646 /* FilterViewModel.swift */,
+				FF1E8BDE297EC4E200A99646 /* FilterCell.swift */,
+				FF1E8BD8297EC2B600A99646 /* FilterViewController.swift */,
 				FF7556BB297D1177001800D6 /* Filter.storyboard */,
 			);
 			path = Filter;
@@ -285,6 +311,7 @@
 				FF9AE7DF2972F08B0088C2B7 /* NanumGothicLight.ttf in Resources */,
 				FFC4A5A3296848370028E135 /* Main.storyboard in Resources */,
 				FF9AE7DC2972F08B0088C2B7 /* NanumGothic.ttf in Resources */,
+				FF5B9BD0297E5B1C009ACCEA /* ImagePopup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,15 +364,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1E8BDF297EC4E200A99646 /* FilterCell.swift in Sources */,
 				FF9687A52974457000614DA9 /* DetailModel.swift in Sources */,
 				FF9687A32974455500614DA9 /* DetailViewController.swift in Sources */,
+				FF5B9BCD297E523E009ACCEA /* ImagePopupViewController.swift in Sources */,
 				FFC4A5A6296848370028E135 /* SilverTown.xcdatamodeld in Sources */,
 				FFD86A4F297126710023F004 /* Colors.swift in Sources */,
 				FFD86A5129713CF80023F004 /* UISettings.swift in Sources */,
 				FFC4A5A0296848370028E135 /* MainViewController.swift in Sources */,
+				FF1E8BDB297EC32D00A99646 /* FilterModel.swift in Sources */,
 				FFD32079296D86CA0098F456 /* MainViewModel.swift in Sources */,
 				FFD32077296D86980098F456 /* MainModel.swift in Sources */,
+				FF1E8BDD297EC33B00A99646 /* FilterViewModel.swift in Sources */,
 				FFC4A59C296848370028E135 /* AppDelegate.swift in Sources */,
+				FF1E8BD9297EC2B600A99646 /* FilterViewController.swift in Sources */,
 				FF9687A72974458800614DA9 /* DetailViewModel.swift in Sources */,
 				FFAEB50729704C2B00A13670 /* MainCell.swift in Sources */,
 				FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */,

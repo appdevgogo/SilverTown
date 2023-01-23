@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="1200" id="1sK-lh-vfY" customClass="DetailSilverTownTVC" customModule="SilverTown" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="1200" id="1sK-lh-vfY" customClass="DetailSilverTownTableViewCell" customModule="SilverTown" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="390" height="1200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1sK-lh-vfY" id="4z4-XC-f9q">
@@ -114,6 +114,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="GQ2-am-PO3"/>
                                                         <constraint firstAttribute="width" constant="70" id="quc-od-bK3"/>
                                                     </constraints>
+                                                    <color key="tintColor" systemColor="systemPurpleColor"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="내외부"/>
                                                 </button>
@@ -123,6 +124,7 @@
                                                         <constraint firstAttribute="width" constant="85" id="c8Y-AM-qFs"/>
                                                         <constraint firstAttribute="height" constant="30" id="eeF-OD-5F3"/>
                                                     </constraints>
+                                                    <color key="tintColor" systemColor="systemGray2Color"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="부대시설"/>
                                                 </button>
@@ -132,6 +134,7 @@
                                                         <constraint firstAttribute="width" constant="55" id="G2O-wQ-vyv"/>
                                                         <constraint firstAttribute="height" constant="30" id="yW6-ji-Ogp"/>
                                                     </constraints>
+                                                    <color key="tintColor" systemColor="systemGray2Color"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="기타"/>
                                                 </button>
@@ -148,7 +151,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="lce-or-rdW" customClass="DetailSilverTownSubImgCVC" customModule="SilverTown" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="lce-or-rdW" customClass="DetailSilverTownSubImageCollectionViewCell" customModule="SilverTown" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="280" height="230"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VuK-zE-JUV">
@@ -248,8 +251,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="IJ6-ap-Z9Z" id="yoq-oY-8Gz"/>
-                                            <outlet property="detailImgCount" destination="Fxd-xR-kIx" id="t2w-YO-vBT"/>
-                                            <outlet property="detailSilverTownSubImgCV" destination="cYv-VX-joh" id="T21-5b-ZuS"/>
+                                            <outlet property="detailImageCount" destination="Fxd-xR-kIx" id="t2w-YO-vBT"/>
+                                            <outlet property="detailSilverTownSubImageCollectionView" destination="cYv-VX-joh" id="T21-5b-ZuS"/>
                                             <outlet property="imgTitleFirstButton" destination="qOk-cI-CBI" id="dd4-8e-nBg"/>
                                             <outlet property="imgTitleSecondButton" destination="9ie-jD-q83" id="9cS-gZ-Y8R"/>
                                             <outlet property="imgTitleThirdButton" destination="vPt-1g-Fic" id="ndV-1f-GIr"/>
@@ -276,7 +279,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailSilverTownTV" destination="1Uw-oa-eot" id="G3k-FY-jn1"/>
+                        <outlet property="detailSilverTownTableView" destination="1Uw-oa-eot" id="G3k-FY-jn1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -291,6 +294,12 @@
         <image name="youtube_silvertown_02" width="324" height="182"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
