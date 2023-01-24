@@ -8,6 +8,7 @@ target 'SilverTown' do
   pod "RxSwift"
   pod "RxCocoa"
   pod "RxDataSources"
+  pod "RxGesture"
   pod "Kingfisher"
   
 end

@@ -13,12 +13,14 @@ import WebKit
 class YoutubePopupViewController: UIViewController{
     
     @IBOutlet weak var youtubeWebView: WKWebView!
+    @IBOutlet weak var xmarkButton: UIButton!
+    
     var youtubeID: String!
     
     override func viewDidLoad() {
         
-        addBackButton("arrow.backward", .white)
-        playYoutube(id: "mbZ_t2-uZvA")
+        xmarkButton.titleLabel?.text = ""
+        playYoutube(id: youtubeID)
             
         super.viewDidLoad()
 
@@ -29,4 +31,9 @@ class YoutubePopupViewController: UIViewController{
         youtubeWebView.load(URLRequest(url: url))
     }
             
+    @IBAction func xmarkButtonClick(_ sender: Any) {
+        
+        navigationController?.popViewController(animated: false)
+        
+    }
 }

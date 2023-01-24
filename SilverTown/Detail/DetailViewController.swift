@@ -7,6 +7,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxGesture
 import Kingfisher
 
 class DetailViewController: UIViewController {
@@ -58,7 +59,7 @@ class DetailViewController: UIViewController {
             cell.subOtherLabel.text = model.subOther
             cell.imageCount = model.imageURLs.count
             
-            // Image Titie Buttons -------------->>
+            // Buttons -------------->>
             cell.imageTitleFirstButton.rx.tap.bind{
                 
                 self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsFirst)
@@ -73,10 +74,29 @@ class DetailViewController: UIViewController {
             
             cell.imageTitleThirdButton.rx.tap.bind{
                 
-                let data = model.imageURLsThird
                 self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsThird)
                 
             }.disposed(by: self.disposeBag)
+            
+            cell.youtubeFirstImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
+                
+                let storyBoard = UIStoryboard(name: "YoutubePopup", bundle: nil)
+                guard let controller = storyBoard.instantiateViewController(withIdentifier: "YoutubePopup") as? YoutubePopupViewController else {return}
+                
+                controller.youtubeID = model.youtubeIDs[0]
+                self.navigationController?.pushViewController(controller, animated: false)
+                
+            }).disposed(by: self.disposeBag)
+            
+            cell.youtubeSecondImageView.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
+                
+                let storyBoard = UIStoryboard(name: "YoutubePopup", bundle: nil)
+                guard let controller = storyBoard.instantiateViewController(withIdentifier: "YoutubePopup") as? YoutubePopupViewController else {return}
+                
+                controller.youtubeID = model.youtubeIDs[1]
+                self.navigationController?.pushViewController(controller, animated: false)
+                
+            }).disposed(by: self.disposeBag)
             // <<-------------------------------
             
             guard let url = URL(string: "https://img.youtube.com/vi/\(model.youtubeIDs[0])/0.jpg") else { return }
