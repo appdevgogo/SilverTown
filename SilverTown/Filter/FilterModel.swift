@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxDataSources
 
 
 struct TableData {
@@ -27,3 +28,23 @@ struct CollectionData {
     
     let imageURL: String
 }
+
+struct MySection {
+    var header: String
+    var items: [Item]
+}
+
+// section Model
+extension MySection: AnimatableSectionModelType {
+    typealias Item = Int
+    
+    init(original: MySection, items: [Int]) {
+        self = original
+        self.items = items
+    }
+    
+    var identity: String {
+        return header
+    }
+}
+

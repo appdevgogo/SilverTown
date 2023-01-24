@@ -137,8 +137,8 @@ class MainViewController: UIViewController {
         
         mainSilverTownTableView.rx.modelSelected(MainSilverTown.self).bind { element in
             
-            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
-            let controller = storyBoard.instantiateViewController(withIdentifier: "Detail")
+            let storyBoard = UIStoryboard(name: "YoutubePopup", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "YoutubePopup")
             self.navigationController?.pushViewController(controller, animated: true)
             
         }.disposed(by: disposeBag)

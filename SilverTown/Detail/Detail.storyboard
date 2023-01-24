@@ -253,9 +253,9 @@
                                             <outlet property="addressLabel" destination="IJ6-ap-Z9Z" id="yoq-oY-8Gz"/>
                                             <outlet property="detailImageCount" destination="Fxd-xR-kIx" id="t2w-YO-vBT"/>
                                             <outlet property="detailSilverTownSubImageCollectionView" destination="cYv-VX-joh" id="T21-5b-ZuS"/>
-                                            <outlet property="imgTitleFirstButton" destination="qOk-cI-CBI" id="dd4-8e-nBg"/>
-                                            <outlet property="imgTitleSecondButton" destination="9ie-jD-q83" id="9cS-gZ-Y8R"/>
-                                            <outlet property="imgTitleThirdButton" destination="vPt-1g-Fic" id="ndV-1f-GIr"/>
+                                            <outlet property="imageTitleFirstButton" destination="qOk-cI-CBI" id="dd4-8e-nBg"/>
+                                            <outlet property="imageTitleSecondButton" destination="9ie-jD-q83" id="9cS-gZ-Y8R"/>
+                                            <outlet property="imageTitleThirdButton" destination="vPt-1g-Fic" id="ndV-1f-GIr"/>
                                             <outlet property="subContentFirstLabel" destination="wcD-lv-dBj" id="rOR-Rl-4zr"/>
                                             <outlet property="subContentSecondLabel" destination="t11-ch-HHA" id="Wjw-aH-adt"/>
                                             <outlet property="subOtherLabel" destination="JOC-xM-X1g" id="O5t-8Q-Hez"/>

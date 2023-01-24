@@ -15,11 +15,13 @@ class ImagePopupViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imageOrigin: UIImageView!
     @IBOutlet weak var xmarkButton: UIButton!
     
-    
+    var url: URL!
+
     override func viewDidLoad() {
             
         super.viewDidLoad()
     
+        imageOrigin.kf.setImage(with: url)
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 8.0
     
@@ -28,7 +30,7 @@ class ImagePopupViewController: UIViewController, UIScrollViewDelegate {
     }
             
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-       
+               
         return imageOrigin
     }
     

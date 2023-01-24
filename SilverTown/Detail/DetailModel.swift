@@ -18,10 +18,12 @@ struct DetailSilverTown {
     let subContentSecond: String
     let subOther: String
     let imageURLs: [DetailSilverTownSubImage]
-    let youtubeURLs: [String]
+    let imageURLsFirst: [DetailSilverTownSubImage]
+    let imageURLsSecond: [DetailSilverTownSubImage]
+    let imageURLsThird: [DetailSilverTownSubImage]
+    let youtubeIDs: [String]
     
 }
-
 
 struct DetailSilverTownSubImage {
     

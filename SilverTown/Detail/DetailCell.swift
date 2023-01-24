@@ -8,7 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
 import Kingfisher
 
 class DetailSilverTownTableViewCell: UITableViewCell {
@@ -22,9 +21,9 @@ class DetailSilverTownTableViewCell: UITableViewCell {
     @IBOutlet weak var subOtherLabel: UILabel!
     @IBOutlet weak var detailImageCount: UILabel!
     
-    @IBOutlet weak var imgTitleFirstButton: UIButton!
-    @IBOutlet weak var imgTitleSecondButton: UIButton!
-    @IBOutlet weak var imgTitleThirdButton: UIButton!
+    @IBOutlet weak var imageTitleFirstButton: UIButton!
+    @IBOutlet weak var imageTitleSecondButton: UIButton!
+    @IBOutlet weak var imageTitleThirdButton: UIButton!
     
     @IBOutlet weak var youtubeFirstImageView: UIImageView!
     @IBOutlet weak var youtubeSecondImageView: UIImageView!
@@ -37,15 +36,12 @@ class DetailSilverTownTableViewCell: UITableViewCell {
     var imageCount: Int = 0
     var widthBase: CGFloat = 0.0
     
-    //var mainViewController: UIViewController!
-    
     override func awakeFromNib() {
         
         adjustLayout()
         addSubBorders()
         imageTitleBorderRound()
         imageTitleButtonsAction()
-        
         detailSilverTownSubImageCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
     }
@@ -86,111 +82,78 @@ class DetailSilverTownTableViewCell: UITableViewCell {
     
     func imageTitleBorderRound(){
         
-        imgTitleFirstButton.layer.borderWidth = 2
-        imgTitleFirstButton.layer.borderColor = UIColor.basicPurple.cgColor
-        imgTitleFirstButton.layer.cornerRadius = 15
-        imgTitleFirstButton.clipsToBounds = true
-        imgTitleFirstButton.titleLabel?.textColor = .basicPurple
+        imageTitleFirstButton.layer.borderWidth = 2
+        imageTitleFirstButton.layer.borderColor = UIColor.basicPurple.cgColor
+        imageTitleFirstButton.layer.cornerRadius = 15
+        imageTitleFirstButton.clipsToBounds = true
+        imageTitleFirstButton.titleLabel?.textColor = .basicPurple
         
-        imgTitleSecondButton.layer.borderWidth = 1
-        imgTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
-        imgTitleSecondButton.layer.cornerRadius = 15
-        imgTitleSecondButton.clipsToBounds = true
-        imgTitleSecondButton.titleLabel?.textColor = .systemGray2
+        imageTitleSecondButton.layer.borderWidth = 1
+        imageTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
+        imageTitleSecondButton.layer.cornerRadius = 15
+        imageTitleSecondButton.clipsToBounds = true
+        imageTitleSecondButton.titleLabel?.textColor = .systemGray2
         
-        imgTitleThirdButton.layer.borderWidth = 1
-        imgTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
-        imgTitleThirdButton.layer.cornerRadius = 15
-        imgTitleThirdButton.clipsToBounds = true
-        imgTitleThirdButton.titleLabel?.textColor = .systemGray2
+        imageTitleThirdButton.layer.borderWidth = 1
+        imageTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
+        imageTitleThirdButton.layer.cornerRadius = 15
+        imageTitleThirdButton.clipsToBounds = true
+        imageTitleThirdButton.titleLabel?.textColor = .systemGray2
         
     }
     
     func imageTitleButtonsAction(){
         
-        imgTitleFirstButton.rx.tap.bind{
+        imageTitleFirstButton.rx.tap.bind{
             
-            self.imgTitleFirstButton.tintColor = .basicPurple
-            self.imgTitleFirstButton.layer.borderWidth = 2
-            self.imgTitleFirstButton.layer.borderColor = UIColor.basicPurple.cgColor
+            self.imageTitleFirstButton.tintColor = .basicPurple
+            self.imageTitleFirstButton.layer.borderWidth = 2
+            self.imageTitleFirstButton.layer.borderColor = UIColor.basicPurple.cgColor
             
-            self.imgTitleSecondButton.tintColor = .systemGray2
-            self.imgTitleSecondButton.layer.borderWidth = 1
-            self.imgTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
+            self.imageTitleSecondButton.tintColor = .systemGray2
+            self.imageTitleSecondButton.layer.borderWidth = 1
+            self.imageTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
             
-            self.imgTitleThirdButton.tintColor = .systemGray2
-            self.imgTitleThirdButton.layer.borderWidth = 1
-            self.imgTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
-            /*
-            self.imageURLs = ["https://dimg.donga.com/wps/NEWS/IMAGE/2022/04/21/112983704.5.jpg",
-                            "https://news.imaeil.com/photos/2019/05/28/2019052816581390757_l.jpg",
-                            "https://cdn.dailyimpact.co.kr/news/photo/202104/68343_42316_2142.jpg"]
-            self.detailSilverTownSubImageCollectionView.reloadData()*/
+            self.imageTitleThirdButton.tintColor = .systemGray2
+            self.imageTitleThirdButton.layer.borderWidth = 1
+            self.imageTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
         
             self.detailSilverTownSubImageCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
             
         }.disposed(by: disposeBag)
         
-        imgTitleSecondButton.rx.tap.bind{
+        imageTitleSecondButton.rx.tap.bind{
             
-            self.imgTitleFirstButton.tintColor = .systemGray2
-            self.imgTitleFirstButton.layer.borderWidth = 1
-            self.imgTitleFirstButton.layer.borderColor = UIColor.systemGray2.cgColor
+            self.imageTitleFirstButton.tintColor = .systemGray2
+            self.imageTitleFirstButton.layer.borderWidth = 1
+            self.imageTitleFirstButton.layer.borderColor = UIColor.systemGray2.cgColor
             
-            self.imgTitleSecondButton.tintColor = .basicPurple
-            self.imgTitleSecondButton.layer.borderWidth = 2
-            self.imgTitleSecondButton.layer.borderColor = UIColor.basicPurple.cgColor
+            self.imageTitleSecondButton.tintColor = .basicPurple
+            self.imageTitleSecondButton.layer.borderWidth = 2
+            self.imageTitleSecondButton.layer.borderColor = UIColor.basicPurple.cgColor
             
-            self.imgTitleThirdButton.tintColor = .systemGray2
-            self.imgTitleThirdButton.layer.borderWidth = 1
-            self.imgTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
-            
-            let data = Observable<[String]>.just(["https://dimg.donga.com/wps/NEWS/IMAGE/2020/06/03/101324166.5.jpg", "https://www.thedailypost.kr/news/photo/202002/73007_64794_1959.jpg", "https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg"])
-            
-
-            data.bind(to: self.detailSilverTownSubImageCollectionView.rx.items(
-                cellIdentifier: "cell",
-                cellType: DetailSilverTownSubImageCollectionViewCell.self
-            )) { index, model, cell in
-                
-                //print(model)
-                //cell.itemImage = model
-            }
-            .disposed(by: self.disposeBag)
-            /*
-            let data = [
-                DetailSilverTownSubImage(imageURL: "https://dimg.donga.com/wps/NEWS/IMAGE/2020/06/03/101324166.5.jpg"),
-                DetailSilverTownSubImage(imageURL: "https://www.thedailypost.kr/news/photo/202002/73007_64794_1959.jpg"),
-                DetailSilverTownSubImage(imageURL: "https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg")]*/
-            
-            //self.detailSilverTownSubImageViewModel.fetchItem(data: data)
-
-            //self.detailSilverTownSubImageCollectionView.reloadData()
+            self.imageTitleThirdButton.tintColor = .systemGray2
+            self.imageTitleThirdButton.layer.borderWidth = 1
+            self.imageTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
             
             self.detailSilverTownSubImageCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
             
             
         }.disposed(by: disposeBag)
         
-        imgTitleThirdButton.rx.tap.bind{
+        imageTitleThirdButton.rx.tap.bind{
             
-            self.imgTitleFirstButton.tintColor = .systemGray2
-            self.imgTitleFirstButton.layer.borderWidth = 1
-            self.imgTitleFirstButton.layer.borderColor = UIColor.systemGray2.cgColor
+            self.imageTitleFirstButton.tintColor = .systemGray2
+            self.imageTitleFirstButton.layer.borderWidth = 1
+            self.imageTitleFirstButton.layer.borderColor = UIColor.systemGray2.cgColor
             
-            self.imgTitleSecondButton.tintColor = .systemGray2
-            self.imgTitleSecondButton.layer.borderWidth = 1
-            self.imgTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
+            self.imageTitleSecondButton.tintColor = .systemGray2
+            self.imageTitleSecondButton.layer.borderWidth = 1
+            self.imageTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
             
-            self.imgTitleThirdButton.tintColor = .basicPurple
-            self.imgTitleThirdButton.layer.borderWidth = 2
-            self.imgTitleThirdButton.layer.borderColor = UIColor.basicPurple.cgColor
-            
-            /*
-            self.imageURLs = ["https://newsimg.sedaily.com/2017/09/03/1OKVUPOCKP_1.jpg",
-                            "https://img.etoday.co.kr/pto_db/2014/02/600/20140203051815_403252_836_554.JPG",
-                            "https://wimg.mk.co.kr/meet/neds/2015/10/image_readtop_2015_1019968_14458278062191475.jpg"]
-            self.detailSilverTownSubImageCollectionView.reloadData()*/
+            self.imageTitleThirdButton.tintColor = .basicPurple
+            self.imageTitleThirdButton.layer.borderWidth = 2
+            self.imageTitleThirdButton.layer.borderColor = UIColor.basicPurple.cgColor
             
             self.detailSilverTownSubImageCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
             

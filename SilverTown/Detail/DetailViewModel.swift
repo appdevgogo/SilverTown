@@ -26,7 +26,19 @@ struct DetailSilverTownViewModel {
                     DetailSilverTownSubImage(imageURL: "https://dimg.donga.com/wps/NEWS/IMAGE/2022/04/21/112983704.5.jpg"),
                     DetailSilverTownSubImage(imageURL: "https://news.imaeil.com/photos/2019/05/28/2019052816581390757_l.jpg"),
                     DetailSilverTownSubImage(imageURL: "https://cdn.dailyimpact.co.kr/news/photo/202104/68343_42316_2142.jpg")],
-                youtubeURLs: ["https://img.youtube.com/vi/SFdScbQPQmM/0.jpg", "https://img.youtube.com/vi/7fNhz1dbMQQ/0.jpg"])]
+                imageURLsFirst: [
+                    DetailSilverTownSubImage(imageURL: "https://dimg.donga.com/wps/NEWS/IMAGE/2022/04/21/112983704.5.jpg"),
+                    DetailSilverTownSubImage(imageURL: "https://news.imaeil.com/photos/2019/05/28/2019052816581390757_l.jpg"),
+                    DetailSilverTownSubImage(imageURL: "https://cdn.dailyimpact.co.kr/news/photo/202104/68343_42316_2142.jpg")],
+                imageURLsSecond: [
+                    DetailSilverTownSubImage(imageURL: "https://dimg.donga.com/wps/NEWS/IMAGE/2020/06/03/101324166.5.jpg"),
+                    DetailSilverTownSubImage(imageURL: "https://www.thedailypost.kr/news/photo/202002/73007_64794_1959.jpg"),
+                    DetailSilverTownSubImage(imageURL: "https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg")],
+                imageURLsThird: [
+                    DetailSilverTownSubImage(imageURL: "https://newsimg.sedaily.com/2017/09/03/1OKVUPOCKP_1.jpg"),
+                    DetailSilverTownSubImage(imageURL: "https://img.etoday.co.kr/pto_db/2014/02/600/20140203051815_403252_836_554.JPG"),
+                    DetailSilverTownSubImage(imageURL: "https://wimg.mk.co.kr/meet/neds/2015/10/image_readtop_2015_1019968_14458278062191475.jpg")],
+                youtubeIDs: ["SFdScbQPQmM", "7fNhz1dbMQQ"])]
                                           
         
         items.onNext(itemList)
@@ -45,7 +57,7 @@ struct DetailSilverTownSubImageViewModel {
         let itemList = data
         
         items.onNext(itemList)
-        items.onCompleted()
+        //items.onCompleted()
     }
     
 }

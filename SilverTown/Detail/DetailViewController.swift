@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
     
     func initSetting(){
         
-        addBackButton("arrow.backward")
+        addBackButton("arrow.backward", .black)
         addRightNavigationButton("heart")
     }
     
@@ -58,7 +58,28 @@ class DetailViewController: UIViewController {
             cell.subOtherLabel.text = model.subOther
             cell.imageCount = model.imageURLs.count
             
-            guard let url = URL(string: model.youtubeURLs[0]) else { return }
+            // Image Titie Buttons -------------->>
+            cell.imageTitleFirstButton.rx.tap.bind{
+                
+                self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsFirst)
+                
+            }.disposed(by: self.disposeBag)
+            
+            cell.imageTitleSecondButton.rx.tap.bind{
+                
+                self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsSecond)
+                
+            }.disposed(by: self.disposeBag)
+            
+            cell.imageTitleThirdButton.rx.tap.bind{
+                
+                let data = model.imageURLsThird
+                self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsThird)
+                
+            }.disposed(by: self.disposeBag)
+            // <<-------------------------------
+            
+            guard let url = URL(string: "https://img.youtube.com/vi/\(model.youtubeIDs[0])/0.jpg") else { return }
             
             let processor = DownsamplingImageProcessor(size: cell.youtubeFirstImageView.bounds.size)
                          |> RoundCornerImageProcessor(cornerRadius: 20)
@@ -68,21 +89,15 @@ class DetailViewController: UIViewController {
                 placeholder: UIImage(named: "smile"),
                 options: [.processor(processor), .loadDiskFileSynchronously, .cacheOriginalImage, .transition(.fade(0.25))])
             
-            guard let url = URL(string: model.youtubeURLs[1]) else { return }
+            guard let url = URL(string: "https://img.youtube.com/vi/\(model.youtubeIDs[1])/0.jpg") else { return }
             
             cell.youtubeSecondImageView.kf.setImage(
                 with: url,
                 placeholder: UIImage(named: "smile"),
                 options: [.processor(processor), .loadDiskFileSynchronously, .cacheOriginalImage, .transition(.fade(0.25))])
             
-            /*
-            print(self.detailSilverTownTV.frame.size)
-            print(cell.frame.size)
-            print(cell.contentView.frame.size)
-            print(cell.youtubeFirstImageView.frame.size)
-            */
             
-            
+            //Sub CollectionView 구분선 ------------------------>>
             self.detailSilverTownSubImageViewModel.items.bind(
                 to: cell.detailSilverTownSubImageCollectionView.rx.items(
                     cellIdentifier: "cell",
@@ -106,11 +121,15 @@ class DetailViewController: UIViewController {
                 
                 let storyBoard = UIStoryboard(name: "ImagePopup", bundle: nil)
                 guard let controller = storyBoard.instantiateViewController(withIdentifier: "ImagePopup") as? ImagePopupViewController else {return}
+                guard let url = URL(string: element.imageURL) else { return }
+                controller.url = url
                 self.navigationController?.pushViewController(controller, animated: false)
                 
             }.disposed(by: self.disposeBag)
             
             self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLs)
+            //<<------------------------------------------------
+            
             
             
         }.disposed(by: disposeBag)
@@ -118,6 +137,7 @@ class DetailViewController: UIViewController {
         detailSilverTownViewModel.fetchItem()
         
     }
+
 
 }
 

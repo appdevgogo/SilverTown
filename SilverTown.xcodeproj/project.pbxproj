@@ -15,6 +15,8 @@
 		FF5B9BCD297E523E009ACCEA /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9BCC297E523E009ACCEA /* ImagePopupViewController.swift */; };
 		FF5B9BD0297E5B1C009ACCEA /* ImagePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5B9BCF297E5B1C009ACCEA /* ImagePopup.storyboard */; };
 		FF7556BC297D1177001800D6 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7556BB297D1177001800D6 /* Filter.storyboard */; };
+		FF8548B429800B0800D7BC5E /* YoutubePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8548B329800B0800D7BC5E /* YoutubePopupViewController.swift */; };
+		FF8548B629800B2200D7BC5E /* YoutubePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8548B529800B2200D7BC5E /* YoutubePopup.storyboard */; };
 		FF9687A32974455500614DA9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A22974455500614DA9 /* DetailViewController.swift */; };
 		FF9687A52974457000614DA9 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A42974457000614DA9 /* DetailModel.swift */; };
 		FF9687A72974458800614DA9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A62974458800614DA9 /* DetailViewModel.swift */; };
@@ -50,6 +52,8 @@
 		FF5B9BCC297E523E009ACCEA /* ImagePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePopupViewController.swift; sourceTree = "<group>"; };
 		FF5B9BCF297E5B1C009ACCEA /* ImagePopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePopup.storyboard; sourceTree = "<group>"; };
 		FF7556BB297D1177001800D6 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
+		FF8548B329800B0800D7BC5E /* YoutubePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePopupViewController.swift; sourceTree = "<group>"; };
+		FF8548B529800B2200D7BC5E /* YoutubePopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YoutubePopup.storyboard; sourceTree = "<group>"; };
 		FF9687A22974455500614DA9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF9687A42974457000614DA9 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		FF9687A62974458800614DA9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -119,6 +123,15 @@
 			path = ImagePopup;
 			sourceTree = "<group>";
 		};
+		FF8548B229800A3100D7BC5E /* YoutubePopup */ = {
+			isa = PBXGroup;
+			children = (
+				FF8548B329800B0800D7BC5E /* YoutubePopupViewController.swift */,
+				FF8548B529800B2200D7BC5E /* YoutubePopup.storyboard */,
+			);
+			path = YoutubePopup;
+			sourceTree = "<group>";
+		};
 		FF93D3B42972D341005CF387 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				FF5B9BCE297E529C009ACCEA /* ImagePopup */,
+				FF8548B229800A3100D7BC5E /* YoutubePopup */,
 				FF9687A42974457000614DA9 /* DetailModel.swift */,
 				FF9687A62974458800614DA9 /* DetailViewModel.swift */,
 				FF976EE4297913BB004BD893 /* DetailCell.swift */,
@@ -304,6 +318,7 @@
 			files = (
 				FF9AE7DD2972F08B0088C2B7 /* NanumGothicExtraBold.ttf in Resources */,
 				FFC4A5A8296848430028E135 /* Assets.xcassets in Resources */,
+				FF8548B629800B2200D7BC5E /* YoutubePopup.storyboard in Resources */,
 				FF7556BC297D1177001800D6 /* Filter.storyboard in Resources */,
 				FF9AE7DE2972F08B0088C2B7 /* NanumGothicBold.ttf in Resources */,
 				FF9687A9297445A800614DA9 /* Detail.storyboard in Resources */,
@@ -382,6 +397,7 @@
 				FFAEB50729704C2B00A13670 /* MainCell.swift in Sources */,
 				FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */,
 				FF976EE5297913BB004BD893 /* DetailCell.swift in Sources */,
+				FF8548B429800B0800D7BC5E /* YoutubePopupViewController.swift in Sources */,
 				FFC4A59E296848370028E135 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

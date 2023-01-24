@@ -26,14 +26,14 @@ class PaddingLabel: UILabel {
 
 extension UIViewController {
     
-    func addBackButton(_ name: String) {
+    func addBackButton(_ name: String, _ color: UIColor) {
             
         let imgConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .regular, scale: .large)
         let imgObj = UIImage(systemName: name, withConfiguration: imgConfig)
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
         let button = UIButton(frame: CGRect(x: -15, y: 0, width: 60, height: 45))
         button.setImage(imgObj, for: .normal)
-        button.tintColor = .black
+        button.tintColor = color
         button.addTarget(self, action: #selector(self.backButtonAction(_:)), for: .touchUpInside)
         containerView.addSubview(button)
         
