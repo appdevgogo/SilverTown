@@ -36,7 +36,7 @@ extension UIButton {
 
 extension UIButton {
     
-    func addMainBottomButton(imageName: String, borderColor: CGColor, title: String, tintColr: UIColor) {
+    func addMainBottomButton(imageName: String, borderColor: CGColor, title: String, titleColor: UIColor) {
             
         setImage(UIImage(named: "\(imageName).png"), for: .normal)
         layer.borderWidth = 2
@@ -44,8 +44,10 @@ extension UIButton {
         layer.cornerRadius = 10
         clipsToBounds = true
         backgroundColor = .white
-        titleLabel?.text = "\(title)"
-        tintColor = tintColor
+        setTitle("\(title)", for: .normal)
+        setTitleColor(titleColor, for: .normal)
+        titleLabel?.font =  .systemFont(ofSize: 15)
+        self.alignTextBelow(spacing: 2.0)
 
     }
     
@@ -53,7 +55,7 @@ extension UIButton {
 
 extension UIButton {
   
-    func alignTextBelow(spacing: CGFloat = 4.0) {
+    func alignTextBelow(spacing: CGFloat) {
             guard let image = self.imageView?.image else {return}
             guard let titleLabel = self.titleLabel else {return}
             guard let titleText = titleLabel.text else {return}
@@ -64,3 +66,4 @@ extension UIButton {
             imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + spacing), left: 0, bottom: 0, right: -titleSize.width)
         }
 }
+

@@ -159,23 +159,22 @@ class MainViewController: UIViewController {
         print(mainSilverTownTableView.frame.size)
         print(UIScreen.main.bounds.size)
         
-        
         let window = UIApplication.shared.windows.first
         let safeAreaTop = window?.safeAreaInsets.top
         let safeAreaBottom = window?.safeAreaInsets.bottom
         
         safeAreaVertical = safeAreaTop! + safeAreaBottom!
         
-        mainBottomButtonSearch.addMainBottomButton(imageName: "main_bottom_btn_search", borderColor: UIColor.basicBlue.cgColor, title: "검색", tintColr: .basicBlue)
+        mainBottomButtonSearch.addMainBottomButton(imageName: "main_bottom_btn_search", borderColor: UIColor.basicBlue.cgColor, title: "검색", titleColor: .basicBlue)
         mainBottomButtonSearch.frame = CGRect(x: UIScreen.main.bounds.width / 5 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaVertical, width: 70, height: 60)
         mainSilverTownTableView.addSubview(mainBottomButtonSearch)
         
         
-        mainBottomButtonBookMark.addMainBottomButton(imageName: "main_bottom_btn_heart", borderColor: UIColor.basicPurple.cgColor, title: "즐겨찾기", tintColr: .basicPurple)
+        mainBottomButtonBookMark.addMainBottomButton(imageName: "main_bottom_btn_heart", borderColor: UIColor.basicPurple.cgColor, title: "즐겨찾기", titleColor: .basicPurple)
         mainBottomButtonBookMark.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaTop! - safeAreaBottom!, width: 70, height: 60)
         mainSilverTownTableView.addSubview(mainBottomButtonBookMark)
         
-        mainBottomButtonFilter.addMainBottomButton(imageName: "main_bottom_btn_filter", borderColor: UIColor.basicRed.cgColor, title: "검색", tintColr: .basicRed)
+        mainBottomButtonFilter.addMainBottomButton(imageName: "main_bottom_btn_filter", borderColor: UIColor.basicRed.cgColor, title: "필터", titleColor: .basicRed)
         mainBottomButtonFilter.frame = CGRect(x: UIScreen.main.bounds.width * 4/5 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaVertical, width: 70, height: 60)
         mainSilverTownTableView.addSubview(mainBottomButtonFilter)
 
@@ -196,14 +195,31 @@ extension MainViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
+        mainBottomButtonSearch.isHidden = true
+        mainBottomButtonBookMark.isHidden = true
+        mainBottomButtonFilter.isHidden = true
+        
+        mainFilterCollectionView.layer.addBorder(edge: UIRectEdge.bottom, color: .systemGray6, thickness: 1.0)
+        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        mainFilterCollectionView.layer.addBorder(edge: UIRectEdge.bottom, color: .white, thickness: 1.0)
+        
         let off = mainSilverTownTableView.contentOffset.y
         
+        mainBottomButtonSearch.fadeTransition(0.2)
+        mainBottomButtonSearch.isHidden = false
         mainBottomButtonSearch.frame = CGRect(x: UIScreen.main.bounds.width / 5 - 35, y: off + UIScreen.main.bounds.height - 130 - safeAreaVertical, width: mainBottomButtonSearch.frame.size.width, height: mainBottomButtonSearch.frame.size.height)
         
+        mainBottomButtonBookMark.fadeTransition(0.3)
+        mainBottomButtonBookMark.isHidden = false
         mainBottomButtonBookMark.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 35, y: off + UIScreen.main.bounds.height - 130 - safeAreaVertical, width: mainBottomButtonBookMark.frame.size.width, height: mainBottomButtonBookMark.frame.size.height)
         
+        mainBottomButtonFilter.fadeTransition(0.4)
+        mainBottomButtonFilter.isHidden = false
         mainBottomButtonFilter.frame = CGRect(x: UIScreen.main.bounds.width * 4/5 - 35, y: off + UIScreen.main.bounds.height - 130 - safeAreaVertical, width: mainBottomButtonFilter.frame.size.width, height: mainBottomButtonFilter.frame.size.height)
-        
         
     }
     
