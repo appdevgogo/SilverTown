@@ -20,11 +20,14 @@ class MainViewController: UIViewController {
     private var mainSilverTownViewModel = MainSilverTownViewModel()
     private var disposeBag = DisposeBag()
     
+    let btn = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         bindMainFilterCollectionView()
         bindMainSilverTownTableView()
+        addMainBottomButtons()
         
     }
     
@@ -137,14 +140,41 @@ class MainViewController: UIViewController {
         
         mainSilverTownTableView.rx.modelSelected(MainSilverTown.self).bind { element in
             
-            let storyBoard = UIStoryboard(name: "YoutubePopup", bundle: nil)
-            let controller = storyBoard.instantiateViewController(withIdentifier: "YoutubePopup")
+            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "Detail")
             self.navigationController?.pushViewController(controller, animated: true)
             
         }.disposed(by: disposeBag)
         
         mainSilverTownViewModel.fetchItem()
         
+    }
+    
+    func addMainBottomButtons(){
+        
+        print(mainSilverTownTableView.frame.size)
+        print(UIScreen.main.bounds.size)
+        print(mainFilterCollectionView.frame.height)
+        
+        /*
+        let guide = view.safeAreaLayoutGuide
+        let height = guide.layoutFrame.size.height
+        
+        print(height)
+        
+        let window = UIApplication.shared.windows.first
+        let topPadding = window?.safeAreaInsets.top
+        let bottomPadding = window?.safeAreaInsets.bottom
+
+        print(bottomPadding)*/
+        
+        btn.addMainBottomButton("main_bottom_btn_heart", .green)
+        btn.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 35, y: UIScreen.main.bounds.height - 150, width: 70, height: 60)
+        btn.titleLabel?.text = "g"
+        btn.tintColor = .basicPurple
+        btn.alignTextBelow(spacing: 1.0)
+        mainSilverTownTableView.addSubview(btn)
+
     }
 
 }
@@ -154,6 +184,16 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 350
+    }
+    
+}
+
+extension MainViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        let off = mainSilverTownTableView.contentOffset.y
+        btn.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 35, y: off + UIScreen.main.bounds.height - 150, width: btn.frame.size.width, height: btn.frame.size.height)
     }
     
 }

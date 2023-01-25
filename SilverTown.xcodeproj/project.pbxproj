@@ -17,6 +17,10 @@
 		FF7556BC297D1177001800D6 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7556BB297D1177001800D6 /* Filter.storyboard */; };
 		FF8548B429800B0800D7BC5E /* YoutubePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8548B329800B0800D7BC5E /* YoutubePopupViewController.swift */; };
 		FF8548B629800B2200D7BC5E /* YoutubePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8548B529800B2200D7BC5E /* YoutubePopup.storyboard */; };
+		FF8D27722980FE6700300385 /* UIViewControllerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D27712980FE6700300385 /* UIViewControllerSetting.swift */; };
+		FF8D27742980FE7E00300385 /* UILabelSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D27732980FE7E00300385 /* UILabelSetting.swift */; };
+		FF8D27762980FE9000300385 /* UIButtonSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D27752980FE9000300385 /* UIButtonSetting.swift */; };
+		FF8D27782980FFB600300385 /* UIOtherSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D27772980FFB600300385 /* UIOtherSetting.swift */; };
 		FF9687A32974455500614DA9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A22974455500614DA9 /* DetailViewController.swift */; };
 		FF9687A52974457000614DA9 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A42974457000614DA9 /* DetailModel.swift */; };
 		FF9687A72974458800614DA9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9687A62974458800614DA9 /* DetailViewModel.swift */; };
@@ -37,8 +41,8 @@
 		FFC4A5A8296848430028E135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC4A5A7296848430028E135 /* Assets.xcassets */; };
 		FFD32077296D86980098F456 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD32076296D86980098F456 /* MainModel.swift */; };
 		FFD32079296D86CA0098F456 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD32078296D86CA0098F456 /* MainViewModel.swift */; };
-		FFD86A4F297126710023F004 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD86A4E297126710023F004 /* Colors.swift */; };
-		FFD86A5129713CF80023F004 /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD86A5029713CF80023F004 /* UISettings.swift */; };
+		FFD86A4F297126710023F004 /* UIColorSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD86A4E297126710023F004 /* UIColorSetting.swift */; };
+		FFD86A5129713CF80023F004 /* UIImageViewSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD86A5029713CF80023F004 /* UIImageViewSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		FF7556BB297D1177001800D6 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
 		FF8548B329800B0800D7BC5E /* YoutubePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePopupViewController.swift; sourceTree = "<group>"; };
 		FF8548B529800B2200D7BC5E /* YoutubePopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YoutubePopup.storyboard; sourceTree = "<group>"; };
+		FF8D27712980FE6700300385 /* UIViewControllerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSetting.swift; sourceTree = "<group>"; };
+		FF8D27732980FE7E00300385 /* UILabelSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelSetting.swift; sourceTree = "<group>"; };
+		FF8D27752980FE9000300385 /* UIButtonSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonSetting.swift; sourceTree = "<group>"; };
+		FF8D27772980FFB600300385 /* UIOtherSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOtherSetting.swift; sourceTree = "<group>"; };
 		FF9687A22974455500614DA9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF9687A42974457000614DA9 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		FF9687A62974458800614DA9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -81,8 +89,8 @@
 		FFC4A5AC296848430028E135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFD32076296D86980098F456 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		FFD32078296D86CA0098F456 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		FFD86A4E297126710023F004 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		FFD86A5029713CF80023F004 /* UISettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettings.swift; sourceTree = "<group>"; };
+		FFD86A4E297126710023F004 /* UIColorSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorSetting.swift; sourceTree = "<group>"; };
+		FFD86A5029713CF80023F004 /* UIImageViewSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +159,12 @@
 		FFA647C4296C85FB00ABC259 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				FFD86A4E297126710023F004 /* Colors.swift */,
-				FFD86A5029713CF80023F004 /* UISettings.swift */,
+				FFD86A4E297126710023F004 /* UIColorSetting.swift */,
+				FF8D27732980FE7E00300385 /* UILabelSetting.swift */,
+				FF8D27752980FE9000300385 /* UIButtonSetting.swift */,
+				FFD86A5029713CF80023F004 /* UIImageViewSetting.swift */,
+				FF8D27712980FE6700300385 /* UIViewControllerSetting.swift */,
+				FF8D27772980FFB600300385 /* UIOtherSetting.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -384,21 +396,25 @@
 				FF9687A32974455500614DA9 /* DetailViewController.swift in Sources */,
 				FF5B9BCD297E523E009ACCEA /* ImagePopupViewController.swift in Sources */,
 				FFC4A5A6296848370028E135 /* SilverTown.xcdatamodeld in Sources */,
-				FFD86A4F297126710023F004 /* Colors.swift in Sources */,
-				FFD86A5129713CF80023F004 /* UISettings.swift in Sources */,
+				FF8D27782980FFB600300385 /* UIOtherSetting.swift in Sources */,
+				FFD86A4F297126710023F004 /* UIColorSetting.swift in Sources */,
+				FFD86A5129713CF80023F004 /* UIImageViewSetting.swift in Sources */,
 				FFC4A5A0296848370028E135 /* MainViewController.swift in Sources */,
+				FF8D27762980FE9000300385 /* UIButtonSetting.swift in Sources */,
 				FF1E8BDB297EC32D00A99646 /* FilterModel.swift in Sources */,
 				FFD32079296D86CA0098F456 /* MainViewModel.swift in Sources */,
 				FFD32077296D86980098F456 /* MainModel.swift in Sources */,
 				FF1E8BDD297EC33B00A99646 /* FilterViewModel.swift in Sources */,
 				FFC4A59C296848370028E135 /* AppDelegate.swift in Sources */,
 				FF1E8BD9297EC2B600A99646 /* FilterViewController.swift in Sources */,
+				FF8D27722980FE6700300385 /* UIViewControllerSetting.swift in Sources */,
 				FF9687A72974458800614DA9 /* DetailViewModel.swift in Sources */,
 				FFAEB50729704C2B00A13670 /* MainCell.swift in Sources */,
 				FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */,
 				FF976EE5297913BB004BD893 /* DetailCell.swift in Sources */,
 				FF8548B429800B0800D7BC5E /* YoutubePopupViewController.swift in Sources */,
 				FFC4A59E296848370028E135 /* SceneDelegate.swift in Sources */,
+				FF8D27742980FE7E00300385 /* UILabelSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

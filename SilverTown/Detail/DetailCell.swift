@@ -82,23 +82,9 @@ class DetailSilverTownTableViewCell: UITableViewCell {
     
     func imageTitleBorderRound(){
         
-        imageTitleFirstButton.layer.borderWidth = 2
-        imageTitleFirstButton.layer.borderColor = UIColor.basicPurple.cgColor
-        imageTitleFirstButton.layer.cornerRadius = 15
-        imageTitleFirstButton.clipsToBounds = true
-        imageTitleFirstButton.titleLabel?.textColor = .basicPurple
-        
-        imageTitleSecondButton.layer.borderWidth = 1
-        imageTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
-        imageTitleSecondButton.layer.cornerRadius = 15
-        imageTitleSecondButton.clipsToBounds = true
-        imageTitleSecondButton.titleLabel?.textColor = .systemGray2
-        
-        imageTitleThirdButton.layer.borderWidth = 1
-        imageTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
-        imageTitleThirdButton.layer.cornerRadius = 15
-        imageTitleThirdButton.clipsToBounds = true
-        imageTitleThirdButton.titleLabel?.textColor = .systemGray2
+        imageTitleFirstButton.detailImageTitleButtonOn()
+        imageTitleSecondButton.detailImageTitleButtonOff()
+        imageTitleThirdButton.detailImageTitleButtonOff()
         
     }
     
@@ -106,54 +92,27 @@ class DetailSilverTownTableViewCell: UITableViewCell {
         
         imageTitleFirstButton.rx.tap.bind{
             
-            self.imageTitleFirstButton.tintColor = .basicPurple
-            self.imageTitleFirstButton.layer.borderWidth = 2
-            self.imageTitleFirstButton.layer.borderColor = UIColor.basicPurple.cgColor
-            
-            self.imageTitleSecondButton.tintColor = .systemGray2
-            self.imageTitleSecondButton.layer.borderWidth = 1
-            self.imageTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
-            
-            self.imageTitleThirdButton.tintColor = .systemGray2
-            self.imageTitleThirdButton.layer.borderWidth = 1
-            self.imageTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
-        
+            self.imageTitleFirstButton.detailImageTitleButtonOn()
+            self.imageTitleSecondButton.detailImageTitleButtonOff()
+            self.imageTitleThirdButton.detailImageTitleButtonOff()
             self.detailSilverTownSubImageCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
             
         }.disposed(by: disposeBag)
         
         imageTitleSecondButton.rx.tap.bind{
             
-            self.imageTitleFirstButton.tintColor = .systemGray2
-            self.imageTitleFirstButton.layer.borderWidth = 1
-            self.imageTitleFirstButton.layer.borderColor = UIColor.systemGray2.cgColor
-            
-            self.imageTitleSecondButton.tintColor = .basicPurple
-            self.imageTitleSecondButton.layer.borderWidth = 2
-            self.imageTitleSecondButton.layer.borderColor = UIColor.basicPurple.cgColor
-            
-            self.imageTitleThirdButton.tintColor = .systemGray2
-            self.imageTitleThirdButton.layer.borderWidth = 1
-            self.imageTitleThirdButton.layer.borderColor = UIColor.systemGray2.cgColor
-            
+            self.imageTitleFirstButton.detailImageTitleButtonOff()
+            self.imageTitleSecondButton.detailImageTitleButtonOn()
+            self.imageTitleThirdButton.detailImageTitleButtonOff()
             self.detailSilverTownSubImageCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
-            
             
         }.disposed(by: disposeBag)
         
         imageTitleThirdButton.rx.tap.bind{
             
-            self.imageTitleFirstButton.tintColor = .systemGray2
-            self.imageTitleFirstButton.layer.borderWidth = 1
-            self.imageTitleFirstButton.layer.borderColor = UIColor.systemGray2.cgColor
-            
-            self.imageTitleSecondButton.tintColor = .systemGray2
-            self.imageTitleSecondButton.layer.borderWidth = 1
-            self.imageTitleSecondButton.layer.borderColor = UIColor.systemGray2.cgColor
-            
-            self.imageTitleThirdButton.tintColor = .basicPurple
-            self.imageTitleThirdButton.layer.borderWidth = 2
-            self.imageTitleThirdButton.layer.borderColor = UIColor.basicPurple.cgColor
+            self.imageTitleFirstButton.detailImageTitleButtonOff()
+            self.imageTitleSecondButton.detailImageTitleButtonOff()
+            self.imageTitleThirdButton.detailImageTitleButtonOn()
             
             self.detailSilverTownSubImageCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
             
