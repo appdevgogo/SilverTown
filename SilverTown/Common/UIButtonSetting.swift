@@ -36,15 +36,16 @@ extension UIButton {
 
 extension UIButton {
     
-    func addMainBottomButton(_ name: String, _ color: UIColor) {
+    func addMainBottomButton(imageName: String, borderColor: CGColor, title: String, tintColr: UIColor) {
             
-        setImage(UIImage(named: "\(name).png"), for: .normal)
+        setImage(UIImage(named: "\(imageName).png"), for: .normal)
         layer.borderWidth = 2
-        layer.borderColor = UIColor.basicPurple.cgColor
+        layer.borderColor = borderColor
         layer.cornerRadius = 10
         clipsToBounds = true
         backgroundColor = .white
-        tintColor = color
+        titleLabel?.text = "\(title)"
+        tintColor = tintColor
 
     }
     
