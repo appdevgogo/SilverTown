@@ -24,6 +24,7 @@ class PaddingLabel: UILabel {
     }
 }
 
+
 extension UILabel {
 
     func setLineSpacing(lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0) {
@@ -47,3 +48,19 @@ extension UILabel {
         self.attributedText = attributedString
     }
 }
+
+
+extension PaddingLabel {
+    
+    func minMaxLabelInitLayout(){
+        
+        textColor = .basicRed
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.basicRed.cgColor
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+        
+    }
+    
+}
+

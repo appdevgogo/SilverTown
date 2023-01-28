@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 
-class FilterViewController: UIViewController, UIScrollViewDelegate {
+class FilterViewController: UIViewController {
     
     @IBOutlet weak var filterTableView: UITableView!
     
@@ -24,13 +24,17 @@ class FilterViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initSetting()
         bindFilterTableView()
         
     }
     
-    func bindFilterTableView() {
+    func initSetting(){
         
-        filterTableView.rx.setDelegate(self).disposed(by: disposeBag)
+        addBackButton("arrow.backward", .black)
+    }
+    
+    func bindFilterTableView() {
         
         filterViewModel.items.bind(
             to: filterTableView.rx.items(
@@ -38,8 +42,6 @@ class FilterViewController: UIViewController, UIScrollViewDelegate {
                 cellType: FilterTableViewCell.self)
             
         ) { row, model, cell in
-            
-            cell.titleAddressLabel.text = "테스트"
             
 
             

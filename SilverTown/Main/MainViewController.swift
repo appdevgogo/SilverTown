@@ -61,7 +61,7 @@ class MainViewController: UIViewController {
             cell.itemLabel.layer.borderWidth = 1
             cell.itemLabel.layer.borderColor = UIColor.basicRed.cgColor
             cell.itemLabel.layer.cornerRadius = 15
-            cell.itemLabel.layer.masksToBounds = true
+            cell.itemLabel.clipsToBounds = true
             cell.itemLabel.sizeToFit()
             
             cell.itemLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
@@ -100,7 +100,7 @@ class MainViewController: UIViewController {
             cell.descriptionLabel.setLineSpacing(lineSpacing: 5.0)
             cell.descriptionLabel.text = model.description
             cell.separatorLabel.layer.cornerRadius = 3
-            cell.separatorLabel.layer.masksToBounds = true
+            cell.separatorLabel.clipsToBounds = true
             
             cell.mainSilverTownSubCollectionView.rx.modelSelected(MainSilverTownSub.self).bind { element in
                 
@@ -166,6 +166,15 @@ class MainViewController: UIViewController {
         mainBottomButtonSearch.addMainBottomButton(imageName: "main_bottom_btn_search", borderColor: UIColor.basicBlue.cgColor, title: "검색", titleColor: .basicBlue)
         mainBottomButtonSearch.frame = CGRect(x: UIScreen.main.bounds.width / 5 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaVertical, width: 70, height: 60)
         mainSilverTownTableView.addSubview(mainBottomButtonSearch)
+        
+        mainBottomButtonSearch.rx.tap.bind{
+            
+            let storyBoard = UIStoryboard(name: "Search", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "Search")
+            self.navigationController?.pushViewController(controller, animated: true)
+            
+        }.disposed(by: disposeBag)
+        
         
         
         mainBottomButtonBookMark.addMainBottomButton(imageName: "main_bottom_btn_heart", borderColor: UIColor.basicPurple.cgColor, title: "즐겨찾기", titleColor: .basicPurple)

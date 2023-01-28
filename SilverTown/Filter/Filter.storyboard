@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="1000" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-1C-1ZV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="1000" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-1C-1ZV">
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -70,9 +70,9 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LRZ-jX-ZVi">
                                                     <rect key="frame" x="18" y="351" width="354" height="31"/>
                                                 </slider>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1억이하" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-oi-hfR">
-                                                    <rect key="frame" x="20" y="401" width="68" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1억" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-oi-hfR">
+                                                    <rect key="frame" x="20" y="401" width="24" height="21.666666666666686"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -83,43 +83,43 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월이용료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-ev-7wm">
-                                                    <rect key="frame" x="20" y="478" width="350" height="30"/>
+                                                    <rect key="frame" x="20" y="472.66666666666669" width="350" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ofy-6i-qAN">
-                                                    <rect key="frame" x="18" y="528" width="354" height="31"/>
+                                                    <rect key="frame" x="18" y="522.66666666666663" width="354" height="31"/>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20만원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeD-lu-kNk">
-                                                    <rect key="frame" x="20" y="578" width="64" height="25.333333333333371"/>
+                                                    <rect key="frame" x="20" y="572.66666666666663" width="64" height="25.333333333333371"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80만원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8r-OO-uly">
-                                                    <rect key="frame" x="305" y="578" width="65" height="25.333333333333371"/>
+                                                    <rect key="frame" x="305" y="572.66666666666663" width="65" height="25.333333333333371"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세대관리비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISQ-GB-Idm">
-                                                    <rect key="frame" x="20" y="653.33333333333337" width="350" height="30"/>
+                                                    <rect key="frame" x="20" y="648" width="350" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xeV-lJ-Wqj">
-                                                    <rect key="frame" x="18" y="703.33333333333337" width="354" height="31"/>
+                                                    <rect key="frame" x="18" y="698" width="354" height="31"/>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10만원이하" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKl-KO-SAT">
-                                                    <rect key="frame" x="19.999999999999993" y="753.33333333333337" width="99.333333333333314" height="25.333333333333371"/>
+                                                    <rect key="frame" x="19.999999999999993" y="748" width="99.333333333333314" height="25.333333333333371"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100만원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBG-rh-AAp">
-                                                    <rect key="frame" x="295" y="753.33333333333337" width="75" height="27"/>
+                                                    <rect key="frame" x="295" y="748" width="75" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -165,10 +165,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="titleAddressLabel" destination="0yZ-wL-CwH" id="XV2-Mf-muB"/>
-                                            <outlet property="titleDepositLabel" destination="l1x-eS-iEF" id="J7V-pu-LVP"/>
-                                            <outlet property="titleMonthlyFeeLabel" destination="Lps-ev-7wm" id="APT-Yr-4bE"/>
-                                            <outlet property="titleUtilityCostLabel" destination="ISQ-GB-Idm" id="T4B-lf-yke"/>
+                                            <outlet property="addressTitleLabel" destination="0yZ-wL-CwH" id="XV2-Mf-muB"/>
+                                            <outlet property="depositMaxLabel" destination="f08-dd-rPm" id="1CQ-zj-iFr"/>
+                                            <outlet property="depositMinLabel" destination="BU3-oi-hfR" id="vuW-b8-nR7"/>
+                                            <outlet property="depositTitleLabel" destination="l1x-eS-iEF" id="J7V-pu-LVP"/>
+                                            <outlet property="monthlyFeeTitleLabel" destination="Lps-ev-7wm" id="APT-Yr-4bE"/>
+                                            <outlet property="monthlyMaxLabel" destination="N8r-OO-uly" id="DEk-4N-7ft"/>
+                                            <outlet property="monthlyMinLabel" destination="BeD-lu-kNk" id="4Yv-Sr-bXV"/>
+                                            <outlet property="utilityCostMaxLabel" destination="XBG-rh-AAp" id="fl1-oy-dKw"/>
+                                            <outlet property="utilityCostMinLabel" destination="LKl-KO-SAT" id="MNd-4M-aNB"/>
+                                            <outlet property="utilityCostTitleLabel" destination="ISQ-GB-Idm" id="T4B-lf-yke"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -184,7 +190,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="filterTableView" destination="ZaP-1C-1ZV" id="Bvg-6O-vHN"/>
+                        <outlet property="filterTableView" destination="ZaP-1C-1ZV" id="DSy-5J-gRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
