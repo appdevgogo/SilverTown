@@ -6,33 +6,32 @@
 //
 
 import Foundation
-import RxDataSources
 
 
-struct TableData {
+struct Filter {
     
-    let title: String
-    let address: String
-    let subTitleFirst: String
-    let subTitleSecond: String
-    let subContentFirst: String
-    let subContentSecond: String
-    let subOther: String
-    let imageURLs: [CollectionData]
-    let youtubeURLs: [String]
+    let addresses: [String]
+    let deposit: MinAndMax
+    let monthlyFee: MinAndMax
+    let utilityCost: MinAndMax
     
 }
 
 
-struct CollectionData {
+struct MinAndMax {
     
-    let imageURL: String
+    let min: Int
+    let max: Int
 }
 
+
+
+/*
 struct MySection {
     var header: String
     var items: [Item]
 }
+
 
 // section Model
 extension MySection: AnimatableSectionModelType {
@@ -46,5 +45,5 @@ extension MySection: AnimatableSectionModelType {
     var identity: String {
         return header
     }
-}
+}*/
 

@@ -11,13 +11,17 @@ import RxSwift
 import RxCocoa
 
 
-class CostumTableViewCell: UITableViewCell {
+class FilterTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var titleAddressLabel: UILabel!
+    @IBOutlet weak var titleDepositLabel: UILabel!
+    @IBOutlet weak var titleMonthlyFeeLabel: UILabel!
+    @IBOutlet weak var titleUtilityCostLabel: UILabel!
+    
 }
 
 
-class CostumCollectionViewCell : UICollectionViewCell {
+class FilterSubCollectionViewCell : UICollectionViewCell {
     
     var imageURL: String = ""
     

@@ -96,13 +96,19 @@ class MainViewController: UIViewController {
             
         ) { row, model, cell in
             
-            //print("------------->> mainSilverTownTableView 시작, row : \(row) ")
-            
             cell.titleLabel.text = model.title
             cell.descriptionLabel.setLineSpacing(lineSpacing: 5.0)
             cell.descriptionLabel.text = model.description
             cell.separatorLabel.layer.cornerRadius = 3
             cell.separatorLabel.layer.masksToBounds = true
+            
+            cell.mainSilverTownSubCollectionView.rx.modelSelected(MainSilverTownSub.self).bind { element in
+                
+                let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+                guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
+                self.navigationController?.pushViewController(controller, animated: true)
+             
+            }.disposed(by: self.disposeBag)
             
             let mainSilverTownSubViewModel = MainSilverTownSubViewModel()
 
@@ -128,14 +134,6 @@ class MainViewController: UIViewController {
                     
                  }
                 
-            }.disposed(by: self.disposeBag)
-            
-            cell.mainSilverTownSubCollectionView.rx.modelSelected(MainSilverTownSub.self).bind { element in
-                
-                let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
-                guard let controller = storyBoard.instantiateViewController(withIdentifier: "Detail") as? DetailViewController else {return}
-                self.navigationController?.pushViewController(controller, animated: true)
-             
             }.disposed(by: self.disposeBag)
             
             mainSilverTownSubViewModel.fetchItem(data: model.imageURLs)
@@ -177,6 +175,14 @@ class MainViewController: UIViewController {
         mainBottomButtonFilter.addMainBottomButton(imageName: "main_bottom_btn_filter", borderColor: UIColor.basicRed.cgColor, title: "필터", titleColor: .basicRed)
         mainBottomButtonFilter.frame = CGRect(x: UIScreen.main.bounds.width * 4/5 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaVertical, width: 70, height: 60)
         mainSilverTownTableView.addSubview(mainBottomButtonFilter)
+        
+        mainBottomButtonFilter.rx.tap.bind{
+            
+            let storyBoard = UIStoryboard(name: "Filter", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "Filter")
+            self.navigationController?.pushViewController(controller, animated: true)
+            
+        }.disposed(by: disposeBag)
 
     }
 
