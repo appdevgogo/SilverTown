@@ -16,11 +16,9 @@ class FilterViewController: UIViewController {
     @IBOutlet weak var filterTableView: UITableView!
     
     private var filterViewModel = FilterViewModel()
-    //private var filterSubViewModel = FilterSubViewModel()
+    private var filterSubViewModel = FilterSubViewModel()
     var disposeBag = DisposeBag()
 
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +34,9 @@ class FilterViewController: UIViewController {
     
     func bindFilterTableView() {
         
+        var itemOriginX: CGFloat = 0
+        var itemOriginY: CGFloat = 0
+        
         filterViewModel.items.bind(
             to: filterTableView.rx.items(
                 cellIdentifier: "cell",
@@ -43,13 +44,51 @@ class FilterViewController: UIViewController {
             
         ) { row, model, cell in
             
-
+            //==============================>
+            cell.filterSubViewModel.items.bind(
+                to: cell.filterSubCollectionView.rx.items(
+                cellIdentifier: "cell",
+                cellType: FilterSubCollectionViewCell.self)
+                
+                
+                ){ index, model, cell in
+                    
+                    cell.addressLabel.text = model
+                    cell.addressLabel.setfilterAddresses()
+                    cell.addressLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+                    
+                    cell.contentView.frame.size.width = cell.addressLabel.frame.width
+                    cell.frame.size.width = cell.addressLabel.frame.width + 20
+                    
+                    
+                    if (itemOriginX + cell.frame.size.width) > self.filterTableView.frame.width {
+                        
+                        itemOriginX = 0
+                        cell.frame.origin.x = itemOriginX
+                        cell.frame.origin.y = itemOriginY + cell.frame.height + 5
+                        itemOriginX = itemOriginX + cell.frame.width + 15
+                        itemOriginY = itemOriginY + cell.frame.height + 5
+                        
+                    } else {
+                        
+                        cell.frame.origin.x = itemOriginX
+                        cell.frame.origin.y = itemOriginY
+                        itemOriginX = itemOriginX + cell.frame.width + 15
+                        
+                    }
+                    
+                }.disposed(by: cell.disposeBag)
             
+            cell.filterSubViewModel.fetchItem(data: model.addresses)
+            
+            //<==============================
+        
         }.disposed(by: disposeBag)
         
         filterViewModel.fetchItem()
         
     }
+    
     
 }
 

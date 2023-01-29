@@ -30,8 +30,8 @@ class DetailSilverTownTableViewCell: UITableViewCell {
     
     @IBOutlet weak var detailSilverTownSubImageCollectionView: UICollectionView!
     
-    private var detailSilverTownSubImageViewModel = DetailSilverTownSubImageViewModel()
-    private var disposeBag = DisposeBag()
+    var detailSilverTownSubImageViewModel = DetailSilverTownSubImageViewModel()
+    var disposeBag = DisposeBag()
     
     var imageCount: Int = 0
     var widthBase: CGFloat = 0.0

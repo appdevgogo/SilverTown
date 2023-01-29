@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailSilverTownTableView: UITableView!
     private var detailSilverTownViewModel = DetailSilverTownViewModel()
-    private var detailSilverTownSubImageViewModel = DetailSilverTownSubImageViewModel()
+    //private var detailSilverTownSubImageViewModel = DetailSilverTownSubImageViewModel()
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -62,19 +62,19 @@ class DetailViewController: UIViewController {
             // Buttons -------------->>
             cell.imageTitleFirstButton.rx.tap.bind{
                 
-                self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsFirst)
+                cell.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsFirst)
                 
             }.disposed(by: self.disposeBag)
             
             cell.imageTitleSecondButton.rx.tap.bind{
                 
-                self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsSecond)
+                cell.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsSecond)
                 
             }.disposed(by: self.disposeBag)
             
             cell.imageTitleThirdButton.rx.tap.bind{
                 
-                self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsThird)
+                cell.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLsThird)
                 
             }.disposed(by: self.disposeBag)
             
@@ -117,8 +117,8 @@ class DetailViewController: UIViewController {
                 options: [.processor(processor), .loadDiskFileSynchronously, .cacheOriginalImage, .transition(.fade(0.25))])
             
             
-            //Sub CollectionView 구분선 ------------------------>>
-            self.detailSilverTownSubImageViewModel.items.bind(
+            //============ Sub CollectionView 구분선 ==============>>
+            cell.detailSilverTownSubImageViewModel.items.bind(
                 to: cell.detailSilverTownSubImageCollectionView.rx.items(
                     cellIdentifier: "cell",
                     cellType: DetailSilverTownSubImageCollectionViewCell.self)
@@ -135,7 +135,9 @@ class DetailViewController: UIViewController {
                     cell.itemImage.kf.setImage(with: url)
                  }
                     
-            }.disposed(by: self.disposeBag)
+            }.disposed(by: cell.disposeBag)
+            
+            cell.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLs)
             
             cell.detailSilverTownSubImageCollectionView.rx.modelSelected(DetailSilverTownSubImage.self).bind { element in
                 
@@ -145,12 +147,8 @@ class DetailViewController: UIViewController {
                 controller.url = url
                 self.navigationController?.pushViewController(controller, animated: false)
                 
-            }.disposed(by: self.disposeBag)
-            
-            self.detailSilverTownSubImageViewModel.fetchItem(data: model.imageURLs)
-            //<<------------------------------------------------
-            
-            
+            }.disposed(by: cell.disposeBag)
+            //<<==========================
             
         }.disposed(by: disposeBag)
         

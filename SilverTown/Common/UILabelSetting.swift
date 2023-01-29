@@ -14,14 +14,12 @@ class PaddingLabel: UILabel {
     var edgeInset: UIEdgeInsets = .zero
 
     override func drawText(in rect: CGRect) {
-        print("실행되니?11")
         
         let insets = UIEdgeInsets.init(top: edgeInset.top, left: edgeInset.left, bottom: edgeInset.bottom, right: edgeInset.right)
         super.drawText(in: rect.inset(by: insets))
     }
 
     override var intrinsicContentSize: CGSize {
-        print("실행되니?22")
         
         let size = super.intrinsicContentSize
         return CGSize(width: size.width + edgeInset.left + edgeInset.right, height: size.height + edgeInset.top + edgeInset.bottom)
@@ -65,6 +63,22 @@ extension PaddingLabel {
         layer.masksToBounds = true
         
     }
+    
+}
+
+extension UILabel {
+    
+    func setfilterAddresses() {
+        
+        textColor = .systemGray2
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.systemGray2.cgColor
+        layer.cornerRadius = 10
+        clipsToBounds = true
+        sizeToFit()
+    }
+    
+    
     
 }
 

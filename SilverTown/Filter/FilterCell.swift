@@ -29,6 +29,12 @@ class FilterTableViewCell: UITableViewCell {
     @IBOutlet weak var monthlyFeeSliderView: UIView!
     @IBOutlet weak var utilityCostSliderView: UIView!
     
+    @IBOutlet weak var filterSubCollectionView: UICollectionView!
+    
+    var filterSubViewModel = FilterSubViewModel()
+    var disposeBag = DisposeBag()
+    
+    
     override func awakeFromNib() {
         
         self.selectionStyle = .none
@@ -106,6 +112,5 @@ class FilterTableViewCell: UITableViewCell {
 
 class FilterSubCollectionViewCell : UICollectionViewCell {
     
-    var imageURL: String = ""
-    
+    @IBOutlet weak var addressLabel: PaddingLabel!
 }
