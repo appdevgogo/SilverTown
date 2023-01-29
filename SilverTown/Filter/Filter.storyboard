@@ -62,115 +62,117 @@
                                                     </cells>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보증금" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1x-eS-iEF">
-                                                    <rect key="frame" x="20" y="301" width="350" height="30"/>
+                                                    <rect key="frame" x="25" y="301" width="345" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LRZ-jX-ZVi">
-                                                    <rect key="frame" x="18" y="351" width="354" height="31"/>
-                                                </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1억" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-oi-hfR" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="401" width="29.333333333333329" height="26.333333333333314"/>
+                                                    <rect key="frame" x="25" y="411" width="29.333333333333329" height="26.333333333333314"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10억" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f08-dd-rPm" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="327" y="401" width="43" height="27"/>
+                                                    <rect key="frame" x="322" y="411" width="43" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월이용료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-ev-7wm">
-                                                    <rect key="frame" x="20" y="477.33333333333331" width="350" height="30"/>
+                                                    <rect key="frame" x="25" y="487.33333333333331" width="345" height="29.999999999999943"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ofy-6i-qAN">
-                                                    <rect key="frame" x="18" y="527.33333333333337" width="354" height="31"/>
-                                                </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20만원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeD-lu-kNk" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="577.33333333333337" width="64" height="25.333333333333371"/>
+                                                    <rect key="frame" x="25" y="597.33333333333337" width="64" height="25.333333333333371"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80만원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8r-OO-uly" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="305" y="577.33333333333337" width="65" height="25.333333333333371"/>
+                                                    <rect key="frame" x="300" y="597.33333333333337" width="65" height="25.333333333333371"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세대관리비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISQ-GB-Idm">
-                                                    <rect key="frame" x="20" y="652.66666666666663" width="350" height="30"/>
+                                                    <rect key="frame" x="20" y="672.66666666666663" width="350" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xeV-lJ-Wqj">
-                                                    <rect key="frame" x="18" y="702.66666666666663" width="354" height="31"/>
-                                                </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10만원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKl-KO-SAT" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="20.000000000000004" y="752.66666666666663" width="61.333333333333343" height="27"/>
+                                                    <rect key="frame" x="25.000000000000004" y="782.66666666666663" width="61.333333333333343" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100만원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBG-rh-AAp" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="295" y="752.66666666666663" width="75" height="27"/>
+                                                    <rect key="frame" x="290" y="782.66666666666663" width="75" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1j8-dG-qmH">
-                                                    <rect key="frame" x="20" y="819.66666666666663" width="350" height="100"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92w-H3-RLx">
+                                                    <rect key="frame" x="25" y="351" width="340" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="yHW-dW-qS3"/>
+                                                        <constraint firstAttribute="height" constant="50" id="vdh-J1-VS8"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXu-5P-ejv">
+                                                    <rect key="frame" x="25" y="537.33333333333337" width="340" height="50"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="Coh-cs-4EM"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfj-i6-GUM">
+                                                    <rect key="frame" x="20" y="722.66666666666663" width="350" height="50"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="Qco-V2-zXp"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0yZ-wL-CwH" firstAttribute="top" secondItem="m4h-jc-xx0" secondAttribute="topMargin" id="0qg-kX-ad9"/>
-                                                <constraint firstItem="LRZ-jX-ZVi" firstAttribute="top" secondItem="l1x-eS-iEF" secondAttribute="bottom" constant="20" id="1q7-9I-rZL"/>
                                                 <constraint firstItem="ISQ-GB-Idm" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="2FD-LF-5ne"/>
-                                                <constraint firstItem="XBG-rh-AAp" firstAttribute="top" secondItem="xeV-lJ-Wqj" secondAttribute="bottom" constant="20" id="3hr-xp-iyc"/>
-                                                <constraint firstItem="LKl-KO-SAT" firstAttribute="top" secondItem="xeV-lJ-Wqj" secondAttribute="bottom" constant="20" id="4tt-6U-Fbg"/>
-                                                <constraint firstItem="BU3-oi-hfR" firstAttribute="top" secondItem="LRZ-jX-ZVi" secondAttribute="bottom" constant="20" id="56g-ii-ihz"/>
-                                                <constraint firstItem="BU3-oi-hfR" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="5Xu-lF-dL7"/>
+                                                <constraint firstItem="f08-dd-rPm" firstAttribute="top" secondItem="92w-H3-RLx" secondAttribute="bottom" constant="10" id="5HO-fr-YXL"/>
+                                                <constraint firstItem="BU3-oi-hfR" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" constant="5" id="5Xu-lF-dL7"/>
                                                 <constraint firstItem="ISQ-GB-Idm" firstAttribute="top" secondItem="BeD-lu-kNk" secondAttribute="bottom" constant="50" id="5pw-48-ZFh"/>
-                                                <constraint firstItem="N8r-OO-uly" firstAttribute="top" secondItem="Ofy-6i-qAN" secondAttribute="bottom" constant="20" id="7vU-Jh-djV"/>
+                                                <constraint firstItem="Zfj-i6-GUM" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="9tv-qe-Fxl"/>
+                                                <constraint firstItem="92w-H3-RLx" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" constant="5" id="A0a-w4-A2N"/>
                                                 <constraint firstItem="l1x-eS-iEF" firstAttribute="top" secondItem="3RE-Q4-z57" secondAttribute="bottom" constant="30" id="A1f-rM-rcU"/>
-                                                <constraint firstItem="f08-dd-rPm" firstAttribute="top" secondItem="LRZ-jX-ZVi" secondAttribute="bottom" constant="20" id="Bow-Lf-dNG"/>
-                                                <constraint firstItem="Lps-ev-7wm" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="C9e-af-j2e"/>
+                                                <constraint firstItem="Lps-ev-7wm" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" constant="5" id="C9e-af-j2e"/>
                                                 <constraint firstItem="3RE-Q4-z57" firstAttribute="top" secondItem="0yZ-wL-CwH" secondAttribute="bottom" constant="20" id="DKv-Xc-HE0"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1j8-dG-qmH" secondAttribute="trailing" id="DTm-Ps-Acx"/>
-                                                <constraint firstItem="BeD-lu-kNk" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="Hja-X6-krO"/>
+                                                <constraint firstItem="pXu-5P-ejv" firstAttribute="top" secondItem="Lps-ev-7wm" secondAttribute="bottom" constant="20" id="HDZ-9g-z5c"/>
+                                                <constraint firstItem="BeD-lu-kNk" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" constant="5" id="Hja-X6-krO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Lps-ev-7wm" secondAttribute="trailing" id="JCW-VB-fNn"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="XBG-rh-AAp" secondAttribute="trailing" id="JJb-Nv-mt1"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="LRZ-jX-ZVi" secondAttribute="trailing" id="K8P-gA-3fK"/>
-                                                <constraint firstItem="xeV-lJ-Wqj" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="LG1-sg-UuF"/>
-                                                <constraint firstItem="1j8-dG-qmH" firstAttribute="top" secondItem="LKl-KO-SAT" secondAttribute="bottom" constant="40" id="Lfc-Ww-5BG"/>
-                                                <constraint firstItem="LRZ-jX-ZVi" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="NnJ-QK-JBi"/>
-                                                <constraint firstItem="LKl-KO-SAT" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="OIj-HK-nte"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XBG-rh-AAp" secondAttribute="trailing" constant="5" id="JJb-Nv-mt1"/>
+                                                <constraint firstItem="LKl-KO-SAT" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" constant="5" id="OIj-HK-nte"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="3RE-Q4-z57" secondAttribute="trailing" id="Qlk-iZ-F4W"/>
-                                                <constraint firstItem="xeV-lJ-Wqj" firstAttribute="top" secondItem="ISQ-GB-Idm" secondAttribute="bottom" constant="20" id="Qmm-Yb-WK3"/>
                                                 <constraint firstItem="3RE-Q4-z57" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="TBN-NF-uBD"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Ofy-6i-qAN" secondAttribute="trailing" id="UMm-7n-te1"/>
-                                                <constraint firstItem="f08-dd-rPm" firstAttribute="trailing" secondItem="m4h-jc-xx0" secondAttribute="trailingMargin" id="Uem-CM-Ybb"/>
-                                                <constraint firstItem="Ofy-6i-qAN" firstAttribute="top" secondItem="Lps-ev-7wm" secondAttribute="bottom" constant="20" id="Vg9-Vh-Xfw"/>
-                                                <constraint firstItem="1j8-dG-qmH" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="Wzm-8c-rIL"/>
+                                                <constraint firstItem="f08-dd-rPm" firstAttribute="trailing" secondItem="m4h-jc-xx0" secondAttribute="trailingMargin" constant="-5" id="Uem-CM-Ybb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zfj-i6-GUM" secondAttribute="trailing" id="Ux1-h7-A46"/>
+                                                <constraint firstItem="pXu-5P-ejv" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" constant="5" id="Veh-fB-591"/>
+                                                <constraint firstItem="LKl-KO-SAT" firstAttribute="top" secondItem="Zfj-i6-GUM" secondAttribute="bottom" constant="10" id="We7-Eo-mCP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="l1x-eS-iEF" secondAttribute="trailing" id="XF5-AL-SQU"/>
-                                                <constraint firstItem="l1x-eS-iEF" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="Z8n-UK-06V"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="xeV-lJ-Wqj" secondAttribute="trailing" id="ZQ0-m3-gKF"/>
-                                                <constraint firstItem="BeD-lu-kNk" firstAttribute="top" secondItem="Ofy-6i-qAN" secondAttribute="bottom" constant="20" id="abg-XC-Li5"/>
+                                                <constraint firstItem="N8r-OO-uly" firstAttribute="top" secondItem="pXu-5P-ejv" secondAttribute="bottom" constant="10" id="YPA-Ie-sa4"/>
+                                                <constraint firstItem="l1x-eS-iEF" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" constant="5" id="Z8n-UK-06V"/>
+                                                <constraint firstItem="BU3-oi-hfR" firstAttribute="top" secondItem="92w-H3-RLx" secondAttribute="bottom" constant="10" id="Zv7-aI-9gY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pXu-5P-ejv" secondAttribute="trailing" constant="5" id="ar6-To-ExK"/>
                                                 <constraint firstItem="0yZ-wL-CwH" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="ay0-db-9S2"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0yZ-wL-CwH" secondAttribute="trailing" id="eez-46-2aL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="N8r-OO-uly" secondAttribute="trailing" id="qqc-2m-uwl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="92w-H3-RLx" secondAttribute="trailing" constant="5" id="lM4-mj-6vz"/>
+                                                <constraint firstItem="BeD-lu-kNk" firstAttribute="top" secondItem="pXu-5P-ejv" secondAttribute="bottom" constant="10" id="lX2-hT-aiB"/>
+                                                <constraint firstItem="Zfj-i6-GUM" firstAttribute="top" secondItem="ISQ-GB-Idm" secondAttribute="bottom" constant="20" id="mBj-pT-i6k"/>
+                                                <constraint firstItem="XBG-rh-AAp" firstAttribute="top" secondItem="Zfj-i6-GUM" secondAttribute="bottom" constant="10" id="pzg-dm-pZ4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="N8r-OO-uly" secondAttribute="trailing" constant="5" id="qqc-2m-uwl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ISQ-GB-Idm" secondAttribute="trailing" id="qzr-eM-xMh"/>
-                                                <constraint firstItem="Ofy-6i-qAN" firstAttribute="leading" secondItem="m4h-jc-xx0" secondAttribute="leadingMargin" id="vjt-Xz-f61"/>
+                                                <constraint firstItem="92w-H3-RLx" firstAttribute="top" secondItem="l1x-eS-iEF" secondAttribute="bottom" constant="20" id="uH9-Ye-lmU"/>
                                                 <constraint firstItem="Lps-ev-7wm" firstAttribute="top" secondItem="BU3-oi-hfR" secondAttribute="bottom" constant="50" id="yAg-Uh-XBQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -178,14 +180,15 @@
                                             <outlet property="addressTitleLabel" destination="0yZ-wL-CwH" id="XV2-Mf-muB"/>
                                             <outlet property="depositMaxLabel" destination="f08-dd-rPm" id="1CQ-zj-iFr"/>
                                             <outlet property="depositMinLabel" destination="BU3-oi-hfR" id="elT-FR-B2g"/>
-                                            <outlet property="depositSlider" destination="LRZ-jX-ZVi" id="gtD-aT-SEC"/>
+                                            <outlet property="depositSliderView" destination="92w-H3-RLx" id="VfF-Uh-MBi"/>
                                             <outlet property="depositTitleLabel" destination="l1x-eS-iEF" id="J7V-pu-LVP"/>
+                                            <outlet property="monthlyFeeMaxLabel" destination="N8r-OO-uly" id="DEk-4N-7ft"/>
+                                            <outlet property="monthlyFeeMinLabel" destination="BeD-lu-kNk" id="4Yv-Sr-bXV"/>
+                                            <outlet property="monthlyFeeSliderView" destination="pXu-5P-ejv" id="IRz-9N-bec"/>
                                             <outlet property="monthlyFeeTitleLabel" destination="Lps-ev-7wm" id="APT-Yr-4bE"/>
-                                            <outlet property="monthlyMaxLabel" destination="N8r-OO-uly" id="DEk-4N-7ft"/>
-                                            <outlet property="monthlyMinLabel" destination="BeD-lu-kNk" id="4Yv-Sr-bXV"/>
-                                            <outlet property="testView" destination="1j8-dG-qmH" id="fpj-Bv-X7N"/>
                                             <outlet property="utilityCostMaxLabel" destination="XBG-rh-AAp" id="fl1-oy-dKw"/>
                                             <outlet property="utilityCostMinLabel" destination="LKl-KO-SAT" id="MNd-4M-aNB"/>
+                                            <outlet property="utilityCostSliderView" destination="Zfj-i6-GUM" id="v44-fC-Vh0"/>
                                             <outlet property="utilityCostTitleLabel" destination="ISQ-GB-Idm" id="T4B-lf-yke"/>
                                         </connections>
                                     </tableViewCell>
@@ -207,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352" y="-16"/>
+            <point key="canvasLocation" x="350.76923076923077" y="-16.350710900473931"/>
         </scene>
     </scenes>
     <resources>

@@ -19,22 +19,21 @@ class FilterTableViewCell: UITableViewCell {
     @IBOutlet weak var depositMinLabel: PaddingLabel!
     @IBOutlet weak var depositMaxLabel: PaddingLabel!
     @IBOutlet weak var monthlyFeeTitleLabel: UILabel!
-    @IBOutlet weak var monthlyMinLabel: PaddingLabel!
-    @IBOutlet weak var monthlyMaxLabel: PaddingLabel!
+    @IBOutlet weak var monthlyFeeMinLabel: PaddingLabel!
+    @IBOutlet weak var monthlyFeeMaxLabel: PaddingLabel!
     @IBOutlet weak var utilityCostTitleLabel: UILabel!
     @IBOutlet weak var utilityCostMinLabel: PaddingLabel!
     @IBOutlet weak var utilityCostMaxLabel: PaddingLabel!
     
-    @IBOutlet weak var testView: UIView!
-    @IBOutlet weak var depositSlider: UISlider!
-    
-    
-    
+    @IBOutlet weak var depositSliderView: UIView!
+    @IBOutlet weak var monthlyFeeSliderView: UIView!
+    @IBOutlet weak var utilityCostSliderView: UIView!
     
     override func awakeFromNib() {
         
+        self.selectionStyle = .none
         minMaxBorderRound()
-        test()
+        setSliders()
         
     }
     
@@ -44,15 +43,14 @@ class FilterTableViewCell: UITableViewCell {
         depositMinLabel.minMaxLabelInitLayout()
         depositMinLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         
-        
         depositMaxLabel.minMaxLabelInitLayout()
         depositMaxLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         
-        monthlyMinLabel.minMaxLabelInitLayout()
-        monthlyMinLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        monthlyFeeMinLabel.minMaxLabelInitLayout()
+        monthlyFeeMinLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         
-        monthlyMaxLabel.minMaxLabelInitLayout()
-        monthlyMaxLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        monthlyFeeMaxLabel.minMaxLabelInitLayout()
+        monthlyFeeMaxLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         
         utilityCostMinLabel.minMaxLabelInitLayout()
         utilityCostMinLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
@@ -62,36 +60,44 @@ class FilterTableViewCell: UITableViewCell {
         
     }
     
-    func test(){
+    func setSliders(){
         
-        depositSlider.tintColor = .basicRed
-        depositSlider.thumbTintColor = .basicRed
+        let depositSlider = MultiSlider()
+        depositSlider.setBasicRedMultiSlider(min: 0, max: 20)
+        depositSlider.value = [0, 20]
+        depositSlider.snapStepSize = 1.0
+        depositSlider.addTarget(self, action: #selector(depositSliderChange), for: .valueChanged)
+        depositSliderView.addConstrainedSubview(depositSlider, constrain: .leftMargin, .rightMargin, .bottomMargin)
         
-        depositSlider.minimumValue = 1    // default is 0.0
-        depositSlider.maximumValue = 5
-        //depositSlider.snapStepSize = 0.5
-
-        let horizontalMultiSlider = MultiSlider()
-        horizontalMultiSlider.orientation = .horizontal
-        horizontalMultiSlider.minimumValue = 10 / 4
-        horizontalMultiSlider.maximumValue = 10 / 3
-        horizontalMultiSlider.outerTrackColor = .gray
-        horizontalMultiSlider.value = [2.718, 3.14]
-        horizontalMultiSlider.valueLabelPosition = .top
-        horizontalMultiSlider.tintColor = .purple
-        horizontalMultiSlider.trackWidth = 32
-        horizontalMultiSlider.showsThumbImageShadow = false
-        horizontalMultiSlider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
-        testView.addConstrainedSubview(horizontalMultiSlider, constrain: .leftMargin, .rightMargin, .bottomMargin)
-        testView.layoutMargins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-
+        let monthlyFeeSlider = MultiSlider()
+        monthlyFeeSlider.setBasicRedMultiSlider(min: 0, max: 100)
+        monthlyFeeSlider.value = [0, 100]
+        monthlyFeeSlider.snapStepSize = 10.0
+        monthlyFeeSlider.addTarget(self, action: #selector(monthlyFeeSliderChange), for: .valueChanged)
+        monthlyFeeSliderView.addConstrainedSubview(monthlyFeeSlider, constrain: .leftMargin, .rightMargin, .bottomMargin)
         
+        let utilityCostSlider = MultiSlider()
+        utilityCostSlider.setBasicRedMultiSlider(min: 0, max: 50)
+        utilityCostSlider.value = [0, 50]
+        utilityCostSlider.snapStepSize = 5.0
+        utilityCostSlider.addTarget(self, action: #selector(utilityCostSliderChange), for: .valueChanged)
+        utilityCostSliderView.addConstrainedSubview(utilityCostSlider, constrain: .leftMargin, .rightMargin, .bottomMargin)
     }
     
     
-    @objc func sliderChanged(_ slider: MultiSlider) {
-        print("thumb \(slider.draggedThumbIndex) moved")
-        print("now thumbs are at \(slider.value)") // e.g., [1.0, 4.5, 5.0]
+    @objc func depositSliderChange(_ slider: MultiSlider) {
+        depositMinLabel.text = "\(Int(slider.value[0]))억"
+        depositMaxLabel.text = "\(Int(slider.value[1]))억"
+    }
+    
+    @objc func monthlyFeeSliderChange(_ slider: MultiSlider) {
+        monthlyFeeMinLabel.text = "\(Int(slider.value[0]))만"
+        monthlyFeeMaxLabel.text = "\(Int(slider.value[1]))만"
+    }
+    
+    @objc func utilityCostSliderChange(_ slider: MultiSlider) {
+        utilityCostMinLabel.text = "\(Int(slider.value[0]))만"
+        utilityCostMaxLabel.text = "\(Int(slider.value[1]))만"
     }
 
 

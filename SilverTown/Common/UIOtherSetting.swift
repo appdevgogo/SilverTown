@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MultiSlider
 
 
 extension UIView {
@@ -51,4 +52,23 @@ extension CALayer {
         self.addSublayer(border)
     }
 
+}
+
+
+extension MultiSlider {
+    
+    func setBasicRedMultiSlider(min: CGFloat, max: CGFloat) {
+        
+        minimumValue = min
+        maximumValue = max
+        orientation = .horizontal
+        outerTrackColor = .systemGray5
+        tintColor = .basicRed
+        trackWidth = 4
+        hasRoundTrackEnds = true
+        thumbTintColor = .basicRed
+        showsThumbImageShadow = true
+        
+    }
+    
 }
