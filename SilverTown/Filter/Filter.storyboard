@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="1000" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-1C-1ZV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="800" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZaP-1C-1ZV">
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="1000" id="R8E-nJ-Gtz" customClass="FilterTableViewCell" customModule="SilverTown" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="1000"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="800" id="R8E-nJ-Gtz" customClass="FilterTableViewCell" customModule="SilverTown" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="800"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R8E-nJ-Gtz" id="m4h-jc-xx0">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="800"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yZ-wL-CwH">
@@ -39,10 +39,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3RE-Q4-z57">
-                                                    <rect key="frame" x="25" y="61" width="340" height="200"/>
+                                                    <rect key="frame" x="25" y="61" width="340" height="40"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="SPF-RB-68P"/>
+                                                        <constraint firstAttribute="height" constant="40" id="SPF-RB-68P"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jui-hc-fXk">
                                                         <size key="itemSize" width="100" height="40"/>
@@ -77,88 +77,89 @@
                                                     </cells>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보증금" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1x-eS-iEF">
-                                                    <rect key="frame" x="25" y="291" width="65" height="30"/>
+                                                    <rect key="frame" x="25" y="131" width="65" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0억" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-oi-hfR" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="25" y="401" width="33" height="27"/>
+                                                    <rect key="frame" x="25" y="241" width="33" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10억" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f08-dd-rPm" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="322" y="401" width="43" height="27"/>
+                                                    <rect key="frame" x="322" y="241" width="43" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월이용료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-ev-7wm">
-                                                    <rect key="frame" x="25.000000000000007" y="478" width="86.666666666666686" height="30"/>
+                                                    <rect key="frame" x="25.000000000000007" y="318" width="86.666666666666686" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0만원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeD-lu-kNk" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="24.999999999999996" y="588" width="51.666666666666657" height="27"/>
+                                                    <rect key="frame" x="24.999999999999996" y="428" width="51.666666666666657" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100만원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8r-OO-uly" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="290" y="588" width="75" height="27"/>
+                                                    <rect key="frame" x="290" y="428" width="75" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세대관리비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISQ-GB-Idm">
-                                                    <rect key="frame" x="19.999999999999993" y="665" width="108.33333333333331" height="30"/>
+                                                    <rect key="frame" x="19.999999999999993" y="505" width="108.33333333333331" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10만원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKl-KO-SAT" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="25.000000000000004" y="775" width="61.333333333333343" height="27"/>
+                                                    <rect key="frame" x="25.000000000000004" y="615" width="61.333333333333343" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100만원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBG-rh-AAp" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="290" y="775" width="75" height="27"/>
+                                                    <rect key="frame" x="290" y="615" width="75" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92w-H3-RLx">
-                                                    <rect key="frame" x="25" y="341" width="340" height="50"/>
+                                                    <rect key="frame" x="25" y="181" width="340" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="vdh-J1-VS8"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXu-5P-ejv">
-                                                    <rect key="frame" x="25" y="528" width="340" height="50"/>
+                                                    <rect key="frame" x="25" y="368" width="340" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Coh-cs-4EM"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfj-i6-GUM">
-                                                    <rect key="frame" x="20" y="715" width="350" height="50"/>
+                                                    <rect key="frame" x="20" y="555" width="350" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Qco-V2-zXp"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NH-Vk-Pjt">
-                                                    <rect key="frame" x="88.333333333333329" y="11" width="49.999999999999986" height="40"/>
+                                                    <rect key="frame" x="68.333333333333329" y="11" width="50" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Ouv-yQ-uVt"/>
                                                         <constraint firstAttribute="height" constant="40" id="ggx-SO-lQ9"/>
                                                     </constraints>
+                                                    <color key="tintColor" systemColor="systemGray2Color"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="ㅜ"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="chevron.down.circle" catalog="system" title=" "/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -191,7 +192,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="92w-H3-RLx" secondAttribute="trailing" constant="5" id="lM4-mj-6vz"/>
                                                 <constraint firstItem="BeD-lu-kNk" firstAttribute="top" secondItem="pXu-5P-ejv" secondAttribute="bottom" constant="10" id="lX2-hT-aiB"/>
                                                 <constraint firstItem="Zfj-i6-GUM" firstAttribute="top" secondItem="ISQ-GB-Idm" secondAttribute="bottom" constant="20" id="mBj-pT-i6k"/>
-                                                <constraint firstItem="3NH-Vk-Pjt" firstAttribute="leading" secondItem="0yZ-wL-CwH" secondAttribute="trailing" constant="20" id="o5X-pV-IAl"/>
+                                                <constraint firstItem="3NH-Vk-Pjt" firstAttribute="leading" secondItem="0yZ-wL-CwH" secondAttribute="trailing" id="o5X-pV-IAl"/>
                                                 <constraint firstItem="XBG-rh-AAp" firstAttribute="top" secondItem="Zfj-i6-GUM" secondAttribute="bottom" constant="10" id="pzg-dm-pZ4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="N8r-OO-uly" secondAttribute="trailing" constant="5" id="qqc-2m-uwl"/>
                                                 <constraint firstItem="92w-H3-RLx" firstAttribute="top" secondItem="l1x-eS-iEF" secondAttribute="bottom" constant="20" id="uH9-Ye-lmU"/>
@@ -239,8 +240,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.down.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

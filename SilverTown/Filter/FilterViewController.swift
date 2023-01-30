@@ -27,6 +27,12 @@ class FilterViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+    }
+    
     func initSetting(){
         
         addBackButton("arrow.backward", .black)
@@ -44,14 +50,47 @@ class FilterViewController: UIViewController {
             
         ) { row, model, cell in
             
+            cell.addressContentHeight.constant = 400
+            self.filterTableView.rowHeight = 1200
+            cell.addressContentButton.tag = 1
+            
             cell.addressContentButton.rx.tap.bind {
                 
+                switch cell.addressContentButton.tag {
+                    
+                case 1 :
+                    
+                    cell.addressContentHeight.constant = 0
+                    cell.filterSubCollectionView.layoutIfNeeded()
+                    
+                    self.filterTableView.beginUpdates()
+                    self.filterTableView.rowHeight = 800
+                    self.filterTableView.endUpdates()
+                    
+                    cell.addressContentButton.tag = 0
+                    cell.addressContentButton.setImage(UIImage(systemName: "chevron.forward.circle"), for: .normal)
+                    
+                default:
+                    
+                    cell.addressContentHeight.constant = cell.filterSubCollectionView.contentSize.height + 140
+                    cell.filterSubCollectionView.layoutIfNeeded()
+                    
+                    self.filterTableView.beginUpdates()
+                    self.filterTableView.rowHeight = 1200
+                    self.filterTableView.endUpdates()
+                    
+                    cell.addressContentButton.tag = 1
+                    cell.addressContentButton.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+                }
+                
+                
+                /*
                 cell.addressContentHeight.constant = cell.filterSubCollectionView.contentSize.height + 140
                 cell.filterSubCollectionView.layoutIfNeeded()
                 
                 self.filterTableView.beginUpdates()
                 self.filterTableView.rowHeight = 1200
-                self.filterTableView.endUpdates()
+                self.filterTableView.endUpdates()*/
 
                 
             }.disposed(by: cell.disposeBag)
