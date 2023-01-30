@@ -30,18 +30,37 @@ class FilterTableViewCell: UITableViewCell {
     @IBOutlet weak var utilityCostSliderView: UIView!
     
     @IBOutlet weak var filterSubCollectionView: UICollectionView!
+    @IBOutlet weak var addressContentButton: UIButton!
+    @IBOutlet weak var addressContentHeight: NSLayoutConstraint!
     
     var filterSubViewModel = FilterSubViewModel()
     var disposeBag = DisposeBag()
     
-    
     override func awakeFromNib() {
         
-        self.selectionStyle = .none
+        initSetting()
+      //  addressContentButtonAction()
         minMaxBorderRound()
         setSliders()
         
     }
+    
+    func initSetting(){
+        
+        self.selectionStyle = .none
+        
+    }
+    /*
+    func addressContentButtonAction(){
+        
+        addressContentButton.rx.tap.bind{
+
+            self.addressContentHeight.constant = self.filterSubCollectionView.contentSize.height + 140
+            self.filterSubCollectionView.layoutIfNeeded()
+            
+        }.disposed(by: disposeBag)
+        
+    }*/
     
     
     func minMaxBorderRound(){

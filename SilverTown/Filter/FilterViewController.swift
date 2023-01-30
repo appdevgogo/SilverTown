@@ -44,12 +44,23 @@ class FilterViewController: UIViewController {
             
         ) { row, model, cell in
             
+            cell.addressContentButton.rx.tap.bind {
+                
+                cell.addressContentHeight.constant = cell.filterSubCollectionView.contentSize.height + 140
+                cell.filterSubCollectionView.layoutIfNeeded()
+                
+                self.filterTableView.beginUpdates()
+                self.filterTableView.rowHeight = 1200
+                self.filterTableView.endUpdates()
+
+                
+            }.disposed(by: cell.disposeBag)
+            
             //==============================>
             cell.filterSubViewModel.items.bind(
                 to: cell.filterSubCollectionView.rx.items(
                 cellIdentifier: "cell",
                 cellType: FilterSubCollectionViewCell.self)
-                
                 
                 ){ index, model, cell in
                     
@@ -61,13 +72,13 @@ class FilterViewController: UIViewController {
                     cell.frame.size.width = cell.addressLabel.frame.width + 20
                     
                     
-                    if (itemOriginX + cell.frame.size.width) > self.filterTableView.frame.width {
+                    if (itemOriginX + cell.frame.size.width + 50) > self.filterTableView.frame.width {
                         
                         itemOriginX = 0
                         cell.frame.origin.x = itemOriginX
-                        cell.frame.origin.y = itemOriginY + cell.frame.height + 5
+                        cell.frame.origin.y = itemOriginY + cell.frame.height + 10
                         itemOriginX = itemOriginX + cell.frame.width + 15
-                        itemOriginY = itemOriginY + cell.frame.height + 5
+                        itemOriginY = itemOriginY + cell.frame.height + 10
                         
                     } else {
                         
@@ -76,6 +87,8 @@ class FilterViewController: UIViewController {
                         itemOriginX = itemOriginX + cell.frame.width + 15
                         
                     }
+                    
+                    
                     
                 }.disposed(by: cell.disposeBag)
             
