@@ -20,6 +20,7 @@
 		FF5B9BCD297E523E009ACCEA /* ImagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B9BCC297E523E009ACCEA /* ImagePopupViewController.swift */; };
 		FF5B9BD0297E5B1C009ACCEA /* ImagePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5B9BCF297E5B1C009ACCEA /* ImagePopup.storyboard */; };
 		FF7556BC297D1177001800D6 /* Filter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7556BB297D1177001800D6 /* Filter.storyboard */; };
+		FF79A1D62987FD0A00332F64 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF79A1D42987FD0A00332F64 /* Model.xcdatamodeld */; };
 		FF8548B429800B0800D7BC5E /* YoutubePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8548B329800B0800D7BC5E /* YoutubePopupViewController.swift */; };
 		FF8548B629800B2200D7BC5E /* YoutubePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8548B529800B2200D7BC5E /* YoutubePopup.storyboard */; };
 		FF8D27722980FE6700300385 /* UIViewControllerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8D27712980FE6700300385 /* UIViewControllerSetting.swift */; };
@@ -66,6 +67,7 @@
 		FF5B9BCC297E523E009ACCEA /* ImagePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePopupViewController.swift; sourceTree = "<group>"; };
 		FF5B9BCF297E5B1C009ACCEA /* ImagePopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePopup.storyboard; sourceTree = "<group>"; };
 		FF7556BB297D1177001800D6 /* Filter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Filter.storyboard; sourceTree = "<group>"; };
+		FF79A1D52987FD0A00332F64 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FF8548B329800B0800D7BC5E /* YoutubePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePopupViewController.swift; sourceTree = "<group>"; };
 		FF8548B529800B2200D7BC5E /* YoutubePopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YoutubePopup.storyboard; sourceTree = "<group>"; };
 		FF8D27712980FE6700300385 /* UIViewControllerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSetting.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				FFC4A59D296848370028E135 /* SceneDelegate.swift */,
 				FFC4A5A7296848430028E135 /* Assets.xcassets */,
 				FFC4A5AC296848430028E135 /* Info.plist */,
+				FF79A1D42987FD0A00332F64 /* Model.xcdatamodeld */,
 				FFC4A5A4296848370028E135 /* SilverTown.xcdatamodeld */,
 			);
 			path = SilverTown;
@@ -435,6 +438,7 @@
 				FF32379829850CCB000E53E7 /* SearchViewModel.swift in Sources */,
 				FFC4A59E296848370028E135 /* SceneDelegate.swift in Sources */,
 				FF8D27742980FE7E00300385 /* UILabelSetting.swift in Sources */,
+				FF79A1D62987FD0A00332F64 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +660,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		FF79A1D42987FD0A00332F64 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF79A1D52987FD0A00332F64 /* Model.xcdatamodel */,
+			);
+			currentVersion = FF79A1D52987FD0A00332F64 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		FFC4A5A4296848370028E135 /* SilverTown.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
