@@ -35,7 +35,7 @@ class FilterViewController: UIViewController {
     
     func initSetting(){
         
-        addBackButton("arrow.backward", .black)
+        addBackButton("arrow.backward", .black, 1)
     }
     
     func bindFilterTableView() {

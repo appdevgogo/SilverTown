@@ -14,14 +14,13 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var mainFilterCollectionView: UICollectionView!
     private var mainFilterViewModel = MainFilterViewModel()
-    //private var mainFilterBag = DisposeBag()
     
     @IBOutlet weak var mainSilverTownTableView: UITableView!
     private var mainSilverTownViewModel = MainSilverTownViewModel()
     private var disposeBag = DisposeBag()
     
     let mainBottomButtonSearch = UIButton()
-    let mainBottomButtonBookMark = UIButton()
+    let mainBottomButtonBookmark = UIButton()
     let mainBottomButtonFilter = UIButton()
     
     private var safeAreaVertical: CGFloat = 0.0
@@ -163,6 +162,7 @@ class MainViewController: UIViewController {
         
         safeAreaVertical = safeAreaTop! + safeAreaBottom!
         
+        //----------
         mainBottomButtonSearch.addMainBottomButton(imageName: "main_bottom_btn_search", borderColor: UIColor.basicBlue.cgColor, title: "검색", titleColor: .basicBlue)
         mainBottomButtonSearch.frame = CGRect(x: UIScreen.main.bounds.width / 5 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaVertical, width: 70, height: 60)
         mainSilverTownTableView.addSubview(mainBottomButtonSearch)
@@ -175,12 +175,20 @@ class MainViewController: UIViewController {
             
         }.disposed(by: disposeBag)
         
+        //----------
+        mainBottomButtonBookmark.addMainBottomButton(imageName: "main_bottom_btn_heart", borderColor: UIColor.basicPurple.cgColor, title: "즐겨찾기", titleColor: .basicPurple)
+        mainBottomButtonBookmark.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaTop! - safeAreaBottom!, width: 70, height: 60)
+        mainSilverTownTableView.addSubview(mainBottomButtonBookmark)
         
+        mainBottomButtonBookmark.rx.tap.bind{
+            
+            let storyBoard = UIStoryboard(name: "Bookmark", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "Bookmark")
+            self.navigationController?.pushViewController(controller, animated: true)
+            
+        }.disposed(by: disposeBag)
         
-        mainBottomButtonBookMark.addMainBottomButton(imageName: "main_bottom_btn_heart", borderColor: UIColor.basicPurple.cgColor, title: "즐겨찾기", titleColor: .basicPurple)
-        mainBottomButtonBookMark.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaTop! - safeAreaBottom!, width: 70, height: 60)
-        mainSilverTownTableView.addSubview(mainBottomButtonBookMark)
-        
+        //----------
         mainBottomButtonFilter.addMainBottomButton(imageName: "main_bottom_btn_filter", borderColor: UIColor.basicRed.cgColor, title: "필터", titleColor: .basicRed)
         mainBottomButtonFilter.frame = CGRect(x: UIScreen.main.bounds.width * 4/5 - 35, y: UIScreen.main.bounds.height - 130 - safeAreaVertical, width: 70, height: 60)
         mainSilverTownTableView.addSubview(mainBottomButtonFilter)
@@ -211,7 +219,7 @@ extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         mainBottomButtonSearch.isHidden = true
-        mainBottomButtonBookMark.isHidden = true
+        mainBottomButtonBookmark.isHidden = true
         mainBottomButtonFilter.isHidden = true
         
         mainFilterCollectionView.layer.addBorder(edge: UIRectEdge.bottom, color: .systemGray6, thickness: 1.0)
@@ -228,9 +236,9 @@ extension MainViewController: UIScrollViewDelegate {
         mainBottomButtonSearch.isHidden = false
         mainBottomButtonSearch.frame = CGRect(x: UIScreen.main.bounds.width / 5 - 35, y: off + UIScreen.main.bounds.height - 130 - safeAreaVertical, width: mainBottomButtonSearch.frame.size.width, height: mainBottomButtonSearch.frame.size.height)
         
-        mainBottomButtonBookMark.fadeTransition(0.3)
-        mainBottomButtonBookMark.isHidden = false
-        mainBottomButtonBookMark.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 35, y: off + UIScreen.main.bounds.height - 130 - safeAreaVertical, width: mainBottomButtonBookMark.frame.size.width, height: mainBottomButtonBookMark.frame.size.height)
+        mainBottomButtonBookmark.fadeTransition(0.3)
+        mainBottomButtonBookmark.isHidden = false
+        mainBottomButtonBookmark.frame = CGRect(x: UIScreen.main.bounds.width / 2 - 35, y: off + UIScreen.main.bounds.height - 130 - safeAreaVertical, width: mainBottomButtonBookmark.frame.size.width, height: mainBottomButtonBookmark.frame.size.height)
         
         mainBottomButtonFilter.fadeTransition(0.4)
         mainBottomButtonFilter.isHidden = false

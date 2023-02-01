@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 
 extension UIViewController {
@@ -35,12 +36,13 @@ extension UIViewController {
 
 extension UIViewController {
     
-    func addBackButton(_ name: String, _ color: UIColor) {
+    func addBackButton(_ name: String, _ color: UIColor, _ tag: Int) {
             
         let imgConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .regular, scale: .large)
         let imgObj = UIImage(systemName: name, withConfiguration: imgConfig)
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
         let button = UIButton(frame: CGRect(x: -15, y: 0, width: 60, height: 45))
+        button.tag = tag
         button.setImage(imgObj, for: .normal)
         button.tintColor = color
         button.addTarget(self, action: #selector(self.backButtonAction(_:)), for: .touchUpInside)
@@ -52,6 +54,17 @@ extension UIViewController {
     }
     
     @objc func backButtonAction(_ sender: UIButton) {
+        
+        switch sender.tag {
+            
+        case 1:
+            var context: NSManagedObjectContext!
+            let coreDataManager = CoreDataManager(context: context)
+            coreDataManager.saveData()
+            
+        default:
+            break
+        }
         
         navigationController?.popViewController(animated: true)
         

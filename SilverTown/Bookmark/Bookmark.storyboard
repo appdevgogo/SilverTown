@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bookmark View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Bookmark" id="Y6W-OH-hqX" customClass="BookmarkViewController" customModule="SilverTown" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDU-4R-lpu">
+                                <rect key="frame" x="144.66666666666666" y="147" width="101" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save Data"/>
+                                <connections>
+                                    <action selector="saveDataButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Z9y-XZ-LRI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLL-TY-DUN">
+                                <rect key="frame" x="149" y="231.33333333333334" width="92" height="35.000000000000028"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Get Data"/>
+                                <connections>
+                                    <action selector="getDataButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mV2-aq-Rc4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxW-Bv-X4f">
+                                <rect key="frame" x="146.66666666666666" y="316.33333333333331" width="97" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Delete All"/>
+                                <connections>
+                                    <action selector="deleteAllButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pHu-JE-4E2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRM-1t-DzH">
+                                <rect key="frame" x="141" y="391.33333333333331" width="108" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Insert Data"/>
+                                <connections>
+                                    <action selector="insertButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cbs-ol-tzi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MDU-4R-lpu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="LcW-6n-is2"/>
+                            <constraint firstItem="IRM-1t-DzH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Q0o-Uv-UaB"/>
+                            <constraint firstItem="jLL-TY-DUN" firstAttribute="top" secondItem="MDU-4R-lpu" secondAttribute="bottom" constant="50" id="TNh-MH-esg"/>
+                            <constraint firstItem="wxW-Bv-X4f" firstAttribute="top" secondItem="jLL-TY-DUN" secondAttribute="bottom" constant="50" id="dlh-eP-wDk"/>
+                            <constraint firstItem="MDU-4R-lpu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ehy-ov-f61"/>
+                            <constraint firstItem="jLL-TY-DUN" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="flB-cR-Xw4"/>
+                            <constraint firstItem="wxW-Bv-X4f" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="w8h-LK-hmp"/>
+                            <constraint firstItem="IRM-1t-DzH" firstAttribute="top" secondItem="wxW-Bv-X4f" secondAttribute="bottom" constant="40" id="xrp-6W-IoT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="getDataButton" destination="jLL-TY-DUN" id="hJV-Oa-9QX"/>
+                        <outlet property="saveDataButton" destination="MDU-4R-lpu" id="dNG-JM-T2u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
