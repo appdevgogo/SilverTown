@@ -11,39 +11,12 @@ import Foundation
 struct Filter {
     
     let addresses: [String]
-    let deposit: MinAndMax
-    let monthlyFee: MinAndMax
-    let utilityCost: MinAndMax
+    let depositMin: Int
+    let depositMax: Int
+    let monthlyFeeMin : Int
+    let monthlyFeeMax : Int
+    let utilityCostMin : Int
+    let utilityCostMax : Int
     
 }
-
-
-struct MinAndMax {
-    
-    let min: Int
-    let max: Int
-}
-
-
-
-/*
-struct MySection {
-    var header: String
-    var items: [Item]
-}
-
-
-// section Model
-extension MySection: AnimatableSectionModelType {
-    typealias Item = Int
-    
-    init(original: MySection, items: [Int]) {
-        self = original
-        self.items = items
-    }
-    
-    var identity: String {
-        return header
-    }
-}*/
 

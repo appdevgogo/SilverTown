@@ -32,22 +32,22 @@ class BookmarkViewController: UIViewController {
     
     @IBAction func getDataButtonAction(_ sender: Any) {
         
-        let test = CoreDataManager(context: context)
-        test.getData()
+        //let test = CoreDataManager(context: context)
+        //test.getData()
         
     }
     
     @IBAction func deleteAllButtonAction(_ sender: Any) {
         
-        let test = CoreDataManager(context: context)
-        test.deleteAllData()
+        //let test = CoreDataManager(context: context)
+        //test.deleteAllData()
         
     }
     
     @IBAction func insertButtonAction(_ sender: Any) {
         
-        let test = CoreDataManager(context: context)
-        test.inesertData()
+        //let test = CoreDataManager(context: context)
+        //test.inesertData()
         
     }
     

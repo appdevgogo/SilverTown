@@ -9,16 +9,18 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import CoreData
 
 
 class FilterViewController: UIViewController {
     
     @IBOutlet weak var filterTableView: UITableView!
     
+    private var context: NSManagedObjectContext!
     private var filterViewModel = FilterViewModel()
     private var filterSubViewModel = FilterSubViewModel()
     var disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,9 +35,24 @@ class FilterViewController: UIViewController {
         
     }
     
-    func initSetting(){
+    func initSetting() {
         
         addBackButton("arrow.backward", .black, 1)
+        saveFilterCoreData()
+        
+        
+    }
+    
+    func saveFilterCoreData() {
+        
+        //API로 Filter 상태 받아온후 CoreData에 저장
+        let coreDataManager = CoreDataManager(context: context)
+        let filterCoreData = Filter(addresses: ["서울특별시", "경기도", "인천광역시", "부산광역시", "대전광역시", "울산광역시", "광주광역시","세종특별자치시", "강원도", "충청북도", "충청남도", "경상북도", "경상남도", "전라북도", "전라남도", "제주특별자치도"], depositMin: 0, depositMax: 100, monthlyFeeMin: 0, monthlyFeeMax: 100, utilityCostMin: 0, utilityCostMax: 100)
+        
+        coreDataManager.deleteAllData(entityName: "FilterCoreData")
+        coreDataManager.saveDataFilter(filter: filterCoreData)
+        coreDataManager.getData(entityName: "FilterCoreData")
+        
     }
     
     func bindFilterTableView() {

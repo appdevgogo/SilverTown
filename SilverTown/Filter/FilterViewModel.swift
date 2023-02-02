@@ -9,13 +9,15 @@ import Foundation
 import RxSwift
 
 
-class FilterViewModel {
+struct FilterViewModel {
     
     var items = PublishSubject<[Filter]>()
     
     func fetchItem(){
         
-        let itemList = [Filter(addresses: ["서울특별시", "경기도", "인천광역시", "부산광역시", "대전광역시", "울산광역시", "광주광역시","세종특별자치시", "강원도", "충청북도", "충청남도", "경상북도", "경상남도", "전라북도", "전라남도", "제주특별자치도"], deposit: MinAndMax(min: 0, max: 100), monthlyFee: MinAndMax(min: 0, max: 100), utilityCost: MinAndMax(min: 0, max: 100))]
+        //여기서 CoreData에 있는 data를 불러와서 itemList에 저장 해야함
+        
+        let itemList = [Filter(addresses: ["서울특별시", "경기도", "인천광역시", "부산광역시", "대전광역시", "울산광역시", "광주광역시","세종특별자치시", "강원도", "충청북도", "충청남도", "경상북도", "경상남도", "전라북도", "전라남도", "제주특별자치도"], depositMin: 0, depositMax: 100, monthlyFeeMin: 0, monthlyFeeMax: 100, utilityCostMin: 0, utilityCostMax: 100)]
         
         items.onNext(itemList)
         items.onCompleted()

@@ -26,13 +26,12 @@ class CoreDataManager {
         context = appDelegate.persistentContainer.viewContext
     }
     
-    
     func saveData() {
         
         let items = [0,1,2]
         
         print("Insert Array data..")
-        
+
         for item in items {
             
             let dataObject = NSEntityDescription.insertNewObject(forEntityName: "PhoneBook", into: context)
@@ -53,9 +52,9 @@ class CoreDataManager {
 
     }
 
-    func getData() {
+    func getData(entityName : String) {
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PhoneBook")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
         request.returnsObjectsAsFaults = false
         
         print("fetching data..")
@@ -71,31 +70,12 @@ class CoreDataManager {
         } catch {
             print("Fetching data Failed")
         }
+        
     }
     
-    func inesertData() {
+    func deleteAllData(entityName: String) {
         
-        let dataObject = NSEntityDescription.insertNewObject(forEntityName: "PhoneBook", into: context)
-        
-        dataObject.setValue("memo111", forKey: "memo")
-        dataObject.setValue("Yoo", forKey: "personName")
-        dataObject.setValue("010-3333-4444", forKey: "phoneNumber")
-        
-        print("Insert data..")
-        
-         do {
-             try context.save()
-             
-         } catch {
-             print("Storing data Failed")
-             
-         }
-
-    }
-    
-    func deleteAllData() {
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PhoneBook")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
         request.returnsObjectsAsFaults = false
         
         print("deleting.. all data")
@@ -110,6 +90,56 @@ class CoreDataManager {
             }
         } catch {
             print("Delte All Data Failed")
+        }
+        
+    }
+    
+    
+    func saveDataFilter(filter: Filter) {
+        
+        let dataObject = NSEntityDescription.insertNewObject(forEntityName: "FilterCoreData", into: context)
+        
+        guard let data = try? JSONEncoder().encode(filter.addresses),
+        let answersEncodedString = String(data: data, encoding: .utf8) else { return }
+        
+       // let arrayAsString: String = filter.addresses.description
+       // let stringAsData = arrayAsString.data(using: String.Encoding.utf16)
+        
+        dataObject.setValue(answersEncodedString, forKey: "addresses")
+        dataObject.setValue(filter.depositMin, forKey: "depositMin")
+        dataObject.setValue(filter.depositMax, forKey: "depositMax")
+        dataObject.setValue(filter.monthlyFeeMin, forKey: "monthlyFeeMin")
+        dataObject.setValue(filter.monthlyFeeMax, forKey: "monthlyFeeMax")
+        dataObject.setValue(filter.utilityCostMin, forKey: "utilityCostMin")
+        dataObject.setValue(filter.utilityCostMax, forKey: "utilityCostMin")
+        
+        do {
+            try context.save()
+            
+        } catch {
+            print("Insert data Failed")
+            
+        }
+        
+    }
+    
+    func getDataFilter(entityName : String) {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
+        request.returnsObjectsAsFaults = false
+        
+        print("fetching data..")
+        
+        do {
+            
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                
+                print(data)
+
+            }
+        } catch {
+            print("Fetching data Failed")
         }
         
     }
