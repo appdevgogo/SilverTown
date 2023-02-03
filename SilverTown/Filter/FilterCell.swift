@@ -33,6 +33,10 @@ class FilterTableViewCell: UITableViewCell {
     @IBOutlet weak var addressContentButton: UIButton!
     @IBOutlet weak var addressContentHeight: NSLayoutConstraint!
     
+    var depositSlider = MultiSlider()
+    var monthlyFeeSlider = MultiSlider()
+    var utilityCostSlider = MultiSlider()
+
     var filterSubViewModel = FilterSubViewModel()
     var disposeBag = DisposeBag()
     
@@ -44,6 +48,7 @@ class FilterTableViewCell: UITableViewCell {
         setSliders()
         
     }
+    
     
     func initSetting(){
         
@@ -87,23 +92,17 @@ class FilterTableViewCell: UITableViewCell {
     
     func setSliders(){
         
-        let depositSlider = MultiSlider()
         depositSlider.setBasicRedMultiSlider(min: 0, max: 20)
-        depositSlider.value = [0, 20]
         depositSlider.snapStepSize = 1.0
         depositSlider.addTarget(self, action: #selector(depositSliderChange), for: .valueChanged)
         depositSliderView.addConstrainedSubview(depositSlider, constrain: .leftMargin, .rightMargin, .bottomMargin)
         
-        let monthlyFeeSlider = MultiSlider()
         monthlyFeeSlider.setBasicRedMultiSlider(min: 0, max: 100)
-        monthlyFeeSlider.value = [0, 100]
         monthlyFeeSlider.snapStepSize = 10.0
         monthlyFeeSlider.addTarget(self, action: #selector(monthlyFeeSliderChange), for: .valueChanged)
         monthlyFeeSliderView.addConstrainedSubview(monthlyFeeSlider, constrain: .leftMargin, .rightMargin, .bottomMargin)
         
-        let utilityCostSlider = MultiSlider()
         utilityCostSlider.setBasicRedMultiSlider(min: 0, max: 50)
-        utilityCostSlider.value = [0, 50]
         utilityCostSlider.snapStepSize = 5.0
         utilityCostSlider.addTarget(self, action: #selector(utilityCostSliderChange), for: .valueChanged)
         utilityCostSliderView.addConstrainedSubview(utilityCostSlider, constrain: .leftMargin, .rightMargin, .bottomMargin)
@@ -111,18 +110,18 @@ class FilterTableViewCell: UITableViewCell {
     
     
     @objc func depositSliderChange(_ slider: MultiSlider) {
-        depositMinLabel.text = "\(Int(slider.value[0]))억"
-        depositMaxLabel.text = "\(Int(slider.value[1]))억"
+        depositMinLabel.text = "\(Int(slider.value[0]))억원"
+        depositMaxLabel.text = "\(Int(slider.value[1]))억원"
     }
     
     @objc func monthlyFeeSliderChange(_ slider: MultiSlider) {
-        monthlyFeeMinLabel.text = "\(Int(slider.value[0]))만"
-        monthlyFeeMaxLabel.text = "\(Int(slider.value[1]))만"
+        monthlyFeeMinLabel.text = "\(Int(slider.value[0]))만원"
+        monthlyFeeMaxLabel.text = "\(Int(slider.value[1]))만원"
     }
     
     @objc func utilityCostSliderChange(_ slider: MultiSlider) {
-        utilityCostMinLabel.text = "\(Int(slider.value[0]))만"
-        utilityCostMaxLabel.text = "\(Int(slider.value[1]))만"
+        utilityCostMinLabel.text = "\(Int(slider.value[0]))만원"
+        utilityCostMaxLabel.text = "\(Int(slider.value[1]))만원"
     }
 
 

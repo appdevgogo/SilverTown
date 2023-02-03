@@ -11,12 +11,12 @@ import Foundation
 struct Filter {
     
     let addresses: [String]
-    let depositMin: Int
-    let depositMax: Int
-    let monthlyFeeMin : Int
-    let monthlyFeeMax : Int
-    let utilityCostMin : Int
-    let utilityCostMax : Int
+    var depositMin: Int
+    var depositMax: Int
+    var monthlyFeeMin : Int
+    var monthlyFeeMax : Int
+    var utilityCostMin : Int
+    var utilityCostMax : Int
     
 }
 

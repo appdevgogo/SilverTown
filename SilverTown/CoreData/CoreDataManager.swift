@@ -108,7 +108,28 @@ class CoreDataManager {
         dataObject.setValue(filter.monthlyFeeMin, forKey: "monthlyFeeMin")
         dataObject.setValue(filter.monthlyFeeMax, forKey: "monthlyFeeMax")
         dataObject.setValue(filter.utilityCostMin, forKey: "utilityCostMin")
-        dataObject.setValue(filter.utilityCostMax, forKey: "utilityCostMin")
+        dataObject.setValue(filter.utilityCostMax, forKey: "utilityCostMax")
+        
+        do {
+            try context.save()
+            
+        } catch {
+            print("Insert data Failed")
+            
+        }
+        
+    }
+    
+    func saveDataFilterMinMax(filter: [Int]) {
+        
+        let dataObject = NSEntityDescription.insertNewObject(forEntityName: "FilterCoreData", into: context)
+        
+        dataObject.setValue(filter[0], forKey: "depositMin")
+        dataObject.setValue(filter[1], forKey: "depositMax")
+        dataObject.setValue(filter[2], forKey: "monthlyFeeMin")
+        dataObject.setValue(filter[3], forKey: "monthlyFeeMax")
+        dataObject.setValue(filter[4], forKey: "utilityCostMin")
+        dataObject.setValue(filter[5], forKey: "utilityCostMax")
         
         do {
             try context.save()

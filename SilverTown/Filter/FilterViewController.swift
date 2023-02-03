@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import CoreData
+import MultiSlider
 
 
 class FilterViewController: UIViewController {
@@ -19,6 +20,8 @@ class FilterViewController: UIViewController {
     private var context: NSManagedObjectContext!
     private var filterViewModel = FilterViewModel()
     private var filterSubViewModel = FilterSubViewModel()
+    
+    var minMaxArray = [0,0,0,0,0,0]
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -35,9 +38,21 @@ class FilterViewController: UIViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        let toSaveData = Filter(addresses: ["서울특별시", "경기도", "인천광역시", "부산광역시", "대전광역시", "울산광역시", "광주광역시","세종특별자치시", "강원도", "충청북도", "충청남도", "경상북도", "경상남도", "전라북도", "전라남도", "제주특별자치도"], depositMin: minMaxArray[0], depositMax: minMaxArray[1], monthlyFeeMin: minMaxArray[2], monthlyFeeMax: minMaxArray[3], utilityCostMin: minMaxArray[4], utilityCostMax: minMaxArray[5])
+        
+        let coreDataManager = CoreDataManager(context: context)
+        coreDataManager.deleteAllData(entityName: "FilterCoreData")
+        coreDataManager.saveDataFilter(filter: toSaveData)
+        coreDataManager.getData(entityName: "FilterCoreData")
+        
+    }
+    
     func initSetting() {
         
-        addBackButton("arrow.backward", .black, 1)
+        addBackButton("arrow.backward", .black)
         
     }
     
@@ -56,6 +71,54 @@ class FilterViewController: UIViewController {
             cell.addressContentHeight.constant = 400
             self.filterTableView.rowHeight = 1200
             cell.addressContentButton.tag = 1
+            
+            cell.depositSlider.value = [CGFloat(model.depositMin), CGFloat(model.depositMax)]
+            cell.monthlyFeeSlider.value = [CGFloat(model.monthlyFeeMin), CGFloat(model.monthlyFeeMax)]
+            cell.utilityCostSlider.value = [CGFloat(model.utilityCostMin), CGFloat(model.utilityCostMax)]
+            
+            cell.depositMinLabel.text = "\(model.depositMin)억원"
+            cell.depositMaxLabel.text = "\(model.depositMax)억원"
+            cell.monthlyFeeMinLabel.text = "\(model.monthlyFeeMin)만원"
+            cell.monthlyFeeMaxLabel.text = "\(model.monthlyFeeMax)만원"
+            cell.utilityCostMinLabel.text = "\(model.utilityCostMin)만원"
+            cell.utilityCostMaxLabel.text = "\(model.utilityCostMax)만원"
+            
+            cell.depositMinLabel.rx.observe(String.self, "text")
+                .subscribe(onNext: { text in
+                    let value = text!.replacingOccurrences(of: "억원", with: "")
+                    self.minMaxArray[0] = Int(value)!
+                }).disposed(by: self.disposeBag)
+            
+            cell.depositMaxLabel.rx.observe(String.self, "text")
+                .subscribe(onNext: { text in
+                    let value = text!.replacingOccurrences(of: "억원", with: "")
+                    self.minMaxArray[1] = Int(value)!
+                }).disposed(by: self.disposeBag)
+            
+            cell.monthlyFeeMinLabel.rx.observe(String.self, "text")
+                .subscribe(onNext: { text in
+                    let value = text!.replacingOccurrences(of: "만원", with: "")
+                    self.minMaxArray[2] = Int(value)!
+                }).disposed(by: self.disposeBag)
+            
+            cell.monthlyFeeMaxLabel.rx.observe(String.self, "text")
+                .subscribe(onNext: { text in
+                    let value = text!.replacingOccurrences(of: "만원", with: "")
+                    self.minMaxArray[3] = Int(value)!
+                    
+                }).disposed(by: self.disposeBag)
+            
+            cell.utilityCostMinLabel.rx.observe(String.self, "text")
+                .subscribe(onNext: { text in
+                    let value = text!.replacingOccurrences(of: "만원", with: "")
+                    self.minMaxArray[4] = Int(value)!
+                }).disposed(by: self.disposeBag)
+            
+            cell.utilityCostMaxLabel.rx.observe(String.self, "text")
+                .subscribe(onNext: { text in
+                    let value = text!.replacingOccurrences(of: "만원", with: "")
+                    self.minMaxArray[5] = Int(value)!
+                }).disposed(by: self.disposeBag)
             
             cell.addressContentButton.rx.tap.bind {
                 
@@ -127,10 +190,8 @@ class FilterViewController: UIViewController {
                         cell.frame.origin.x = itemOriginX
                         cell.frame.origin.y = itemOriginY
                         itemOriginX = itemOriginX + cell.frame.width + 15
-                        
+        
                     }
-                    
-                    
                     
                 }.disposed(by: cell.disposeBag)
             
