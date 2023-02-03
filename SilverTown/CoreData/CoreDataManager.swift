@@ -100,12 +100,9 @@ class CoreDataManager {
         let dataObject = NSEntityDescription.insertNewObject(forEntityName: "FilterCoreData", into: context)
         
         guard let data = try? JSONEncoder().encode(filter.addresses),
-        let answersEncodedString = String(data: data, encoding: .utf8) else { return }
+        let encodedString = String(data: data, encoding: .utf8) else { return }
         
-       // let arrayAsString: String = filter.addresses.description
-       // let stringAsData = arrayAsString.data(using: String.Encoding.utf16)
-        
-        dataObject.setValue(answersEncodedString, forKey: "addresses")
+        dataObject.setValue(encodedString, forKey: "addresses")
         dataObject.setValue(filter.depositMin, forKey: "depositMin")
         dataObject.setValue(filter.depositMax, forKey: "depositMax")
         dataObject.setValue(filter.monthlyFeeMin, forKey: "monthlyFeeMin")
@@ -123,25 +120,41 @@ class CoreDataManager {
         
     }
     
-    func getDataFilter(entityName : String) {
+    func getDataFilter(entityName : String) -> [Filter] {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
         request.returnsObjectsAsFaults = false
         
         print("fetching data..")
-        
+
         do {
             
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 
-                print(data)
+                let decodedAddresses = data.value(forKey: "addresses") as! String
+                let decodedDepositMin = data.value(forKey: "depositMin") as! Int
+                let decodedDepositMax = data.value(forKey: "depositMax") as! Int
+                let decodedMonthlyFeeMin = data.value(forKey: "monthlyFeeMin") as! Int
+                let decodedMonthlyFeeMax = data.value(forKey: "monthlyFeeMax") as! Int
+                let decodedUtilityCostMin = data.value(forKey: "utilityCostMin") as! Int
+                let decodedUtilityCostMax = data.value(forKey: "utilityCostMax") as! Int
+
+                
+                let data = Data(decodedAddresses.utf8)
+                let arrayAddress = try! JSONDecoder().decode([String].self, from: data)
+                
+                let returnData = [Filter(addresses: arrayAddress, depositMin: decodedDepositMin, depositMax: decodedDepositMax, monthlyFeeMin: decodedMonthlyFeeMin, monthlyFeeMax: decodedMonthlyFeeMax, utilityCostMin: decodedUtilityCostMin, utilityCostMax: decodedUtilityCostMax)]
+                
+                
+                return returnData
 
             }
+            
         } catch {
             print("Fetching data Failed")
         }
-        
+        return []
     }
     
     
