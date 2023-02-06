@@ -68,7 +68,17 @@ extension PaddingLabel {
 
 extension UILabel {
     
-    func setfilterAddresses() {
+    func setfilterAddressSelected() {
+        
+        textColor = .basicRed
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.basicRed.cgColor
+        layer.cornerRadius = 10
+        clipsToBounds = true
+        sizeToFit()
+    }
+    
+    func setfilterAddressUnSelected() {
         
         textColor = .systemGray2
         layer.borderWidth = 1

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import RxGesture
 import CoreData
 import MultiSlider
 
@@ -22,12 +23,14 @@ class FilterViewController: UIViewController {
     private var filterSubViewModel = FilterSubViewModel()
     
     var minMaxArray = [0,0,0,0,0,0]
+    var addressesSelectedArray = [String]()
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initSetting()
+        getAddressesSelected()
         bindFilterTableView()
         
     }
@@ -40,8 +43,10 @@ class FilterViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        print(addressesSelectedArray)
 
-        let toSaveData = Filter(addresses: ["서울특별시", "경기도", "인천광역시", "부산광역시", "대전광역시", "울산광역시", "광주광역시","세종특별자치시", "강원도", "충청북도", "충청남도", "경상북도", "경상남도", "전라북도", "전라남도", "제주특별자치도"], depositMin: minMaxArray[0], depositMax: minMaxArray[1], monthlyFeeMin: minMaxArray[2], monthlyFeeMax: minMaxArray[3], utilityCostMin: minMaxArray[4], utilityCostMax: minMaxArray[5])
+        let toSaveData = Filter(addresses: filterViewModel.addressesBase, addressesSelected: addressesSelectedArray, depositMin: minMaxArray[0], depositMax: minMaxArray[1], monthlyFeeMin: minMaxArray[2], monthlyFeeMax: minMaxArray[3], utilityCostMin: minMaxArray[4], utilityCostMax: minMaxArray[5])
         
         let coreDataManager = CoreDataManager(context: context)
         coreDataManager.deleteAllData(entityName: "FilterCoreData")
@@ -53,6 +58,15 @@ class FilterViewController: UIViewController {
     func initSetting() {
         
         addBackButton("arrow.backward", .black)
+        
+    }
+    
+    func getAddressesSelected() {
+        
+        let coreDataManager = CoreDataManager(context: context)
+        let filterCoreData = coreDataManager.getDataddressesSelected(entityName: "FilterCoreData")
+        
+        print(filterCoreData)
         
     }
     
@@ -68,7 +82,7 @@ class FilterViewController: UIViewController {
             
         ) { row, model, cell in
             
-            cell.addressContentHeight.constant = 400
+            cell.addressContentHeight.constant = 450
             self.filterTableView.rowHeight = 1200
             cell.addressContentButton.tag = 1
             
@@ -170,7 +184,9 @@ class FilterViewController: UIViewController {
                 ){ index, model, cell in
                     
                     cell.addressLabel.text = model
-                    cell.addressLabel.setfilterAddresses()
+                    
+                    cell.addressLabel.setfilterAddressSelected()
+                    cell.addressLabel.tag = 1
                     cell.addressLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
                     
                     cell.contentView.frame.size.width = cell.addressLabel.frame.width
@@ -192,6 +208,38 @@ class FilterViewController: UIViewController {
                         itemOriginX = itemOriginX + cell.frame.width + 15
         
                     }
+                    
+                    
+                    cell.addressLabel.rx.tapGesture().when(.recognized).subscribe(onNext: {_ in
+                        
+                        
+                        switch cell.addressLabel.tag {
+                            
+                        case 0:
+                            cell.addressLabel.setfilterAddressSelected()
+                            cell.addressLabel.tag = 1
+                            self.addressesSelectedArray.append(cell.addressLabel.text!)
+                            
+                            
+                        default:
+                            cell.addressLabel.setfilterAddressUnSelected()
+                            cell.addressLabel.tag = 0
+                            //기존에 있는 것 삭제함
+                            self.addressesSelectedArray.removeAll(where: { $0 == "\(cell.addressLabel.text!)" })
+                        }
+                        
+                            
+                    }).disposed(by: self.disposeBag)
+
+                    
+                    /*
+                    cell.filterSubCollectionView.rx.bind { element in
+                        
+                        print(element)
+                        
+                    }.disposed(by: cell.disposeBag)
+                    //<<==========================*/
+                    
                     
                 }.disposed(by: cell.disposeBag)
             
