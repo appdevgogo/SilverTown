@@ -190,6 +190,7 @@ class FilterViewController: UIViewController {
                     
                     cell.addressLabel.text = model
                     
+                    
                     if self.addressSelectedArray.contains(cell.addressLabel.text!){
                         
                         cell.addressLabel.setfilterAddressSelected()
@@ -225,8 +226,9 @@ class FilterViewController: UIViewController {
                     }
                     
                     
-                    cell.addressLabel.rx.tapGesture().when(.recognized).subscribe(onNext: {_ in
+                    cell.addressLabel.rx.tapGesture().when(.recognized).subscribe(onNext: { [weak self] _ in
                         
+                        guard let self = self else { return }
                         
                         switch cell.addressLabel.tag {
                             
@@ -240,7 +242,7 @@ class FilterViewController: UIViewController {
                             cell.addressLabel.setfilterAddressUnSelected()
                             cell.addressLabel.tag = 0
                             //기존에 있는 것 삭제함
-                            self.addressSelectedArray.removeAll(where: { $0 == "\(cell.addressLabel.text!)" })
+                            self.addressSelectedArray.removeAll(where: { $0 == "\(cell.addressLabel.text!)"})
                         }
                         
                             

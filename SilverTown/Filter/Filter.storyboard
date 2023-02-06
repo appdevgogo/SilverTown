@@ -59,8 +59,8 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCX-WU-eiF" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                                        <rect key="frame" x="24" y="6.9999999999999982" width="52" height="26.333333333333329"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                        <rect key="frame" x="26" y="8" width="48" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -83,50 +83,50 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0억원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-oi-hfR" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="25" y="241" width="52" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                    <rect key="frame" x="24.999999999999996" y="241" width="49.666666666666657" height="25.333333333333314"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20억원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f08-dd-rPm" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="301" y="241" width="64" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="303.66666666666669" y="241" width="61.333333333333314" height="25.333333333333314"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월이용료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-ev-7wm">
-                                                    <rect key="frame" x="25.000000000000007" y="318" width="86.666666666666686" height="30"/>
+                                                    <rect key="frame" x="25.000000000000007" y="316.33333333333331" width="86.666666666666686" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0만원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeD-lu-kNk" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="24.999999999999996" y="428" width="51.666666666666657" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="25.000000000000004" y="426.33333333333331" width="49.333333333333343" height="25.333333333333314"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100만원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8r-OO-uly" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="290" y="428" width="75" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="294" y="426.33333333333331" width="71" height="25.333333333333314"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세대관리비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISQ-GB-Idm">
-                                                    <rect key="frame" x="19.999999999999993" y="505" width="108.33333333333331" height="30"/>
+                                                    <rect key="frame" x="19.999999999999993" y="501.66666666666674" width="108.33333333333331" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10만원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKl-KO-SAT" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="25.000000000000004" y="615" width="61.333333333333343" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="25.000000000000004" y="611.66666666666663" width="58.333333333333343" height="25.333333333333371"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50만원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBG-rh-AAp" customClass="PaddingLabel" customModule="SilverTown" customModuleProvider="target">
-                                                    <rect key="frame" x="300" y="615" width="65" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="303.33333333333331" y="611.66666666666663" width="61.666666666666686" height="25.333333333333371"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -138,14 +138,14 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXu-5P-ejv">
-                                                    <rect key="frame" x="25" y="368" width="340" height="50"/>
+                                                    <rect key="frame" x="25" y="366.33333333333331" width="340" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Coh-cs-4EM"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfj-i6-GUM">
-                                                    <rect key="frame" x="20" y="555" width="350" height="50"/>
+                                                    <rect key="frame" x="20" y="551.66666666666663" width="350" height="50"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Qco-V2-zXp"/>

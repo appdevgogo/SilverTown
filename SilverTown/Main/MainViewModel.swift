@@ -10,7 +10,7 @@ import RxSwift
 
 struct MainFilterViewModel {
     
-    var items = PublishSubject<[MainFilter]>()
+    let items = PublishSubject<[MainFilter]>()
     
     func fetchItem(){
         
@@ -31,7 +31,7 @@ struct MainFilterViewModel {
 
 struct MainSilverTownViewModel {
     
-    var items = PublishSubject<[MainSilverTown]>()
+    let items = PublishSubject<[MainSilverTown]>()
     
     func fetchItem(){
         
@@ -60,7 +60,7 @@ struct MainSilverTownViewModel {
 
 struct MainSilverTownSubViewModel {
     
-    var items = PublishSubject<[MainSilverTownSub]>()
+    let items = PublishSubject<[MainSilverTownSub]>()
     
     func fetchItem(data: [MainSilverTownSub]){
         
