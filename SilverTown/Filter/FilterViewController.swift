@@ -23,14 +23,14 @@ class FilterViewController: UIViewController {
     private var filterSubViewModel = FilterSubViewModel()
     
     var minMaxArray = [0,0,0,0,0,0]
-    var addressesSelectedArray = [String]()
+    var addressSelectedArray = [String]()
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initSetting()
-        getAddressesSelected()
+        getAddressSelected()
         bindFilterTableView()
         
     }
@@ -44,9 +44,9 @@ class FilterViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        print(addressesSelectedArray)
+        print(addressSelectedArray)
 
-        let toSaveData = Filter(addresses: filterViewModel.addressesBase, addressesSelected: addressesSelectedArray, depositMin: minMaxArray[0], depositMax: minMaxArray[1], monthlyFeeMin: minMaxArray[2], monthlyFeeMax: minMaxArray[3], utilityCostMin: minMaxArray[4], utilityCostMax: minMaxArray[5])
+        let toSaveData = Filter(address: filterViewModel.addressBase, addressSelected: addressSelectedArray, depositMin: minMaxArray[0], depositMax: minMaxArray[1], monthlyFeeMin: minMaxArray[2], monthlyFeeMax: minMaxArray[3], utilityCostMin: minMaxArray[4], utilityCostMax: minMaxArray[5])
         
         let coreDataManager = CoreDataManager(context: context)
         coreDataManager.deleteAllData(entityName: "FilterCoreData")
@@ -61,12 +61,15 @@ class FilterViewController: UIViewController {
         
     }
     
-    func getAddressesSelected() {
+    func getAddressSelected() {
         
         let coreDataManager = CoreDataManager(context: context)
-        let filterCoreData = coreDataManager.getDataddressesSelected(entityName: "FilterCoreData")
+        let filterCoreData = coreDataManager.getDataAddressSelected(entityName: "FilterCoreData")
         
-        print(filterCoreData)
+        addressSelectedArray = filterCoreData
+        
+        
+        print("addressSelectedArray : \(addressSelectedArray)")
         
     }
     
@@ -183,10 +186,22 @@ class FilterViewController: UIViewController {
                 
                 ){ index, model, cell in
                     
+                    print("rrrrrrrrrrrrrr")
+                    
                     cell.addressLabel.text = model
                     
-                    cell.addressLabel.setfilterAddressSelected()
-                    cell.addressLabel.tag = 1
+                    if self.addressSelectedArray.contains(cell.addressLabel.text!){
+                        
+                        cell.addressLabel.setfilterAddressSelected()
+                        cell.addressLabel.tag = 1
+                        
+                    } else {
+                        
+                        cell.addressLabel.setfilterAddressUnSelected()
+                        cell.addressLabel.tag = 0
+                            
+                    }
+                    
                     cell.addressLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
                     
                     cell.contentView.frame.size.width = cell.addressLabel.frame.width
@@ -218,14 +233,14 @@ class FilterViewController: UIViewController {
                         case 0:
                             cell.addressLabel.setfilterAddressSelected()
                             cell.addressLabel.tag = 1
-                            self.addressesSelectedArray.append(cell.addressLabel.text!)
+                            self.addressSelectedArray.append(cell.addressLabel.text!)
                             
                             
                         default:
                             cell.addressLabel.setfilterAddressUnSelected()
                             cell.addressLabel.tag = 0
                             //기존에 있는 것 삭제함
-                            self.addressesSelectedArray.removeAll(where: { $0 == "\(cell.addressLabel.text!)" })
+                            self.addressSelectedArray.removeAll(where: { $0 == "\(cell.addressLabel.text!)" })
                         }
                         
                             
@@ -243,7 +258,7 @@ class FilterViewController: UIViewController {
                     
                 }.disposed(by: cell.disposeBag)
             
-            cell.filterSubViewModel.fetchItem(data: model.addresses)
+            cell.filterSubViewModel.fetchItem(data: model.address)
             
             //<==============================
         

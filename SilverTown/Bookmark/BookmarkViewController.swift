@@ -39,8 +39,8 @@ class BookmarkViewController: UIViewController {
     
     @IBAction func deleteAllButtonAction(_ sender: Any) {
         
-        //let test = CoreDataManager(context: context)
-        //test.deleteAllData()
+        let test = CoreDataManager(context: context)
+        test.deleteAllData(entityName: "FilterCoreData")
         
     }
     

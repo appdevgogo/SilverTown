@@ -99,14 +99,14 @@ class CoreDataManager {
         
         let dataObject = NSEntityDescription.insertNewObject(forEntityName: "FilterCoreData", into: context)
         
-        guard let addressData = try? JSONEncoder().encode(filter.addresses),
+        guard let addressData = try? JSONEncoder().encode(filter.address),
         let encodedAddressString = String(data: addressData, encoding: .utf8) else { return }
         
-        guard let addressSelectedData = try? JSONEncoder().encode(filter.addressesSelected),
+        guard let addressSelectedData = try? JSONEncoder().encode(filter.addressSelected),
         let encodedAddressSelectedString = String(data: addressSelectedData, encoding: .utf8) else { return }
         
-        dataObject.setValue(encodedAddressString, forKey: "addresses")
-        dataObject.setValue(encodedAddressSelectedString, forKey: "addressesSelected")
+        dataObject.setValue(encodedAddressString, forKey: "address")
+        dataObject.setValue(encodedAddressSelectedString, forKey: "addressSelected")
         dataObject.setValue(filter.depositMin, forKey: "depositMin")
         dataObject.setValue(filter.depositMax, forKey: "depositMax")
         dataObject.setValue(filter.monthlyFeeMin, forKey: "monthlyFeeMin")
@@ -157,8 +157,8 @@ class CoreDataManager {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 
-                let decodedAddresses = data.value(forKey: "addresses") as! String
-                let decodedAddressesSelected = data.value(forKey: "addressesSelected") as! String
+                let decodedAddress = data.value(forKey: "address") as! String
+                let decodedAddressSelected = data.value(forKey: "addressSelected") as! String
                 let decodedDepositMin = data.value(forKey: "depositMin") as! Int
                 let decodedDepositMax = data.value(forKey: "depositMax") as! Int
                 let decodedMonthlyFeeMin = data.value(forKey: "monthlyFeeMin") as! Int
@@ -167,14 +167,14 @@ class CoreDataManager {
                 let decodedUtilityCostMax = data.value(forKey: "utilityCostMax") as! Int
 
                 
-                let addressesData = Data(decodedAddresses.utf8)
-                let arrayAddress = try! JSONDecoder().decode([String].self, from: addressesData)
+                let addressData = Data(decodedAddress.utf8)
+                let arrayAddress = try! JSONDecoder().decode([String].self, from: addressData)
                 
-                let addressesSelectedData = Data(decodedAddressesSelected.utf8)
-                let arrayAddressSelected = try! JSONDecoder().decode([String].self, from: addressesSelectedData)
+                let addressSelectedData = Data(decodedAddressSelected.utf8)
+                let arrayAddressSelected = try! JSONDecoder().decode([String].self, from: addressSelectedData)
                 
                 
-                let returnData = [Filter(addresses: arrayAddress, addressesSelected: arrayAddressSelected, depositMin: decodedDepositMin, depositMax: decodedDepositMax, monthlyFeeMin: decodedMonthlyFeeMin, monthlyFeeMax: decodedMonthlyFeeMax, utilityCostMin: decodedUtilityCostMin, utilityCostMax: decodedUtilityCostMax)]
+                let returnData = [Filter(address: arrayAddress, addressSelected: arrayAddressSelected, depositMin: decodedDepositMin, depositMax: decodedDepositMax, monthlyFeeMin: decodedMonthlyFeeMin, monthlyFeeMax: decodedMonthlyFeeMax, utilityCostMin: decodedUtilityCostMin, utilityCostMax: decodedUtilityCostMax)]
                 
                 
                 return returnData
@@ -187,7 +187,7 @@ class CoreDataManager {
         return []
     }
     
-    func getDataddressesSelected(entityName : String) -> [String] {
+    func getDataAddressSelected(entityName : String) -> [String] {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
         request.returnsObjectsAsFaults = false
@@ -199,10 +199,10 @@ class CoreDataManager {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 
-                let decodedAddressesSelected = data.value(forKey: "addressesSelected") as! String
+                let decodedAddressSelected = data.value(forKey: "addressSelected") as! String
                 
-                let addressesSelectedData = Data(decodedAddressesSelected.utf8)
-                let arrayAddressSelected = try! JSONDecoder().decode([String].self, from: addressesSelectedData)
+                let addressSelectedData = Data(decodedAddressSelected.utf8)
+                let arrayAddressSelected = try! JSONDecoder().decode([String].self, from: addressSelectedData)
                 
                 
                 let returnData = arrayAddressSelected

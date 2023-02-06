@@ -10,8 +10,8 @@ import Foundation
 
 struct Filter {
     
-    let addresses: [String]
-    let addressesSelected: [String]
+    let address: [String]
+    let addressSelected: [String]
     var depositMin: Int
     var depositMax: Int
     var monthlyFeeMin : Int
