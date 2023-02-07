@@ -26,7 +26,7 @@ class BookmarkViewController: UIViewController {
     @IBAction func saveDataButtonAction(_ sender: Any) {
         
         let test = CoreDataManager(context: context)
-        test.saveData()
+       // test.saveData()
         
     }
     

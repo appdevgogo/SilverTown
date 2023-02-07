@@ -18,13 +18,13 @@ class FilterViewController: UIViewController {
     
     @IBOutlet weak var filterTableView: UITableView!
     
-    private var context: NSManagedObjectContext!
     private var filterViewModel = FilterViewModel()
     private var filterSubViewModel = FilterSubViewModel()
+    private var disposeBag = DisposeBag()
     
-    var minMaxArray = [0,0,0,0,0,0]
-    var addressSelectedArray = [String]()
-    var disposeBag = DisposeBag()
+    private var context: NSManagedObjectContext!
+    private var minMaxArray = [0,0,0,0,0,0]
+    private var addressSelectedArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,23 +35,15 @@ class FilterViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        print(addressSelectedArray)
 
         let toSaveData = Filter(address: filterViewModel.addressBase, addressSelected: addressSelectedArray, depositMin: minMaxArray[0], depositMax: minMaxArray[1], monthlyFeeMin: minMaxArray[2], monthlyFeeMax: minMaxArray[3], utilityCostMin: minMaxArray[4], utilityCostMax: minMaxArray[5])
         
         let coreDataManager = CoreDataManager(context: context)
         coreDataManager.deleteAllData(entityName: "FilterCoreData")
         coreDataManager.saveDataFilter(filter: toSaveData)
-        coreDataManager.getData(entityName: "FilterCoreData")
+        //coreDataManager.getData(entityName: "FilterCoreData")
         
     }
     
@@ -64,12 +56,9 @@ class FilterViewController: UIViewController {
     func getAddressSelected() {
         
         let coreDataManager = CoreDataManager(context: context)
-        let filterCoreData = coreDataManager.getDataAddressSelected(entityName: "FilterCoreData")
+        let coreData = coreDataManager.getDataFilter(entityName: "FilterCoreData")
         
-        addressSelectedArray = filterCoreData
-        
-        
-        print("addressSelectedArray : \(addressSelectedArray)")
+        addressSelectedArray = coreData[0].addressSelected
         
     }
     

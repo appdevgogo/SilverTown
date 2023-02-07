@@ -12,8 +12,10 @@ struct MainFilterViewModel {
     
     let items = PublishSubject<[MainFilter]>()
     
-    func fetchItem(){
+    func fetchItem(data: [MainFilter]){
         
+        let itemList = data
+        /*
         let itemList = [
             MainFilter(item: "서울특별시 마포구"),
             MainFilter(item: "보증금 1~6억"),
@@ -21,10 +23,10 @@ struct MainFilterViewModel {
             MainFilter(item: "식비 1만4천원/1식"),
             MainFilter(item: "건강검진 평생무료"),
             MainFilter(item: "실비보험 적용"),
-        ]
+        ]*/
         
         items.onNext(itemList)
-        items.onCompleted()
+      //  items.onCompleted()
     }
     
 }

@@ -8,26 +8,31 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import CoreData
 
 
 class MainViewController: UIViewController {
     
     @IBOutlet weak var mainFilterCollectionView: UICollectionView!
-    private var mainFilterViewModel = MainFilterViewModel()
-    
     @IBOutlet weak var mainSilverTownTableView: UITableView!
+    
+    private var mainFilterViewModel = MainFilterViewModel()
     private var mainSilverTownViewModel = MainSilverTownViewModel()
     private var disposeBag = DisposeBag()
+    
+    private var context: NSManagedObjectContext!
+    private var safeAreaVertical: CGFloat = 0.0
+    //private var addressArray = [String]()
+    private var mainFilterData = [MainFilter]()
     
     let mainBottomButtonSearch = UIButton()
     let mainBottomButtonBookmark = UIButton()
     let mainBottomButtonFilter = UIButton()
     
-    private var safeAreaVertical: CGFloat = 0.0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getFilterMain()
         bindMainFilterCollectionView()
         bindMainSilverTownTableView()
         addMainBottomButtons()
@@ -37,11 +42,50 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        //getFilterMain()
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func getFilterMain() {
+        
+        let coreDataManager = CoreDataManager(context: context)
+        let coreData = coreDataManager.getDataFilter(entityName: "FilterCoreData")
+        //var addressArray = coreData[0].address
+       // var addressSelectedArray = coreData[0].addressSelected
+        var addressIndex = [Int]()
+        var text: String
+        
+        switch coreData[0].addressSelected.count {
+            
+        case 0:
+            text = "모든지역"
+            
+        default:
+            for item in coreData[0].addressSelected {
+                if let index = coreData[0].address.firstIndex(of: item) {
+                    addressIndex.append(index)
+                }
+            }
+            
+            text = "\(coreData[0].address[addressIndex.min()!]) 등 \(coreData[0].addressSelected.count)지역"
+        }
+        
+        
+        
+        mainFilterData = [
+            MainFilter(item: "\(text)"),
+            MainFilter(item: "보증금 \(coreData[0].depositMin)~\(coreData[0].depositMax)억원"),
+            MainFilter(item: "월이용료 \(coreData[0].monthlyFeeMin)~\(coreData[0].monthlyFeeMax)만원"),
+            MainFilter(item: "월관리비 \(coreData[0].utilityCostMin)~\(coreData[0].utilityCostMax)만원")
+        ]
+        
+        
     }
     
     func bindMainFilterCollectionView() {
@@ -65,14 +109,16 @@ class MainViewController: UIViewController {
             
             cell.itemLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
             
-            cell.contentView.frame.size.width = cell.itemLabel.frame.size.width
-            cell.frame.size.width = cell.itemLabel.frame.size.width + 20
+            cell.contentView.frame.size.width = cell.itemLabel.frame.width
+            cell.frame.size.width = cell.itemLabel.frame.width + 20
             
             switch index {
+                
             case sizeFixArray.count :
                 cell.frame.origin.x = itemOrigin
                 sizeFixArray.append(itemOrigin)
-                itemOrigin = itemOrigin + cell.frame.size.width + 15
+                itemOrigin = itemOrigin + cell.frame.size.width + 10 //간격
+                
             default :
                 cell.frame.origin.x = sizeFixArray[index]
                 
@@ -80,7 +126,7 @@ class MainViewController: UIViewController {
             
         }.disposed(by: disposeBag)
         
-        mainFilterViewModel.fetchItem()
+        mainFilterViewModel.fetchItem(data: mainFilterData)
 
     }
     
@@ -153,8 +199,8 @@ class MainViewController: UIViewController {
     
     func addMainBottomButtons(){
         
-        print(mainSilverTownTableView.frame.size)
-        print(UIScreen.main.bounds.size)
+        //print(mainSilverTownTableView.frame.size)
+        //print(UIScreen.main.bounds.size)
         
         let window = UIApplication.shared.windows.first
         let safeAreaTop = window?.safeAreaInsets.top
