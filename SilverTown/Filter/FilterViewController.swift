@@ -155,16 +155,6 @@ class FilterViewController: UIViewController {
                     cell.addressContentButton.setImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
                 }
                 
-                
-                /*
-                cell.addressContentHeight.constant = cell.filterSubCollectionView.contentSize.height + 140
-                cell.filterSubCollectionView.layoutIfNeeded()
-                
-                self.filterTableView.beginUpdates()
-                self.filterTableView.rowHeight = 1200
-                self.filterTableView.endUpdates()*/
-
-                
             }.disposed(by: cell.disposeBag)
             
             //==============================>
@@ -174,8 +164,6 @@ class FilterViewController: UIViewController {
                 cellType: FilterSubCollectionViewCell.self)
                 
                 ){ index, model, cell in
-                    
-                    print("rrrrrrrrrrrrrr")
                     
                     cell.addressLabel.text = model
                     

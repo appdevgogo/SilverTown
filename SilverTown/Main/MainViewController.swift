@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var mainFilterCollectionView: UICollectionView!
     @IBOutlet weak var mainSilverTownTableView: UITableView!
+    @IBOutlet weak var addressContentWidth: NSLayoutConstraint!
     
     private var mainFilterViewModel = MainFilterViewModel()
     private var mainSilverTownViewModel = MainSilverTownViewModel()
@@ -56,8 +57,6 @@ class MainViewController: UIViewController {
         
         let coreDataManager = CoreDataManager(context: context)
         let coreData = coreDataManager.getDataFilter(entityName: "FilterCoreData")
-        //var addressArray = coreData[0].address
-       // var addressSelectedArray = coreData[0].addressSelected
         var addressIndex = [Int]()
         var text: String
         
@@ -75,8 +74,6 @@ class MainViewController: UIViewController {
             
             text = "\(coreData[0].address[addressIndex.min()!]) 등 \(coreData[0].addressSelected.count)지역"
         }
-        
-        
         
         mainFilterData = [
             MainFilter(item: "\(text)"),
@@ -123,6 +120,23 @@ class MainViewController: UIViewController {
                 cell.frame.origin.x = sizeFixArray[index]
                 
             }
+            
+            switch self.mainFilterData.count {
+                
+            case (index + 1): break
+             //   self.addressContentWidth.constant = 1000
+                
+            default: break
+            }
+            
+            
+            self.mainFilterCollectionView.contentSize.width = 1000
+            self.addressContentWidth.constant = 1000
+            
+            print(self.mainFilterCollectionView.contentSize.width)
+            print(self.addressContentWidth.constant)
+            
+            
             
         }.disposed(by: disposeBag)
         
