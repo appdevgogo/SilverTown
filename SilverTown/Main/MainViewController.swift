@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var mainFilterCollectionView: UICollectionView!
     @IBOutlet weak var mainSilverTownTableView: UITableView!
-    @IBOutlet weak var addressContentWidth: NSLayoutConstraint!
+    //@IBOutlet weak var addressContentWidth: NSLayoutConstraint!
     
     private var mainFilterViewModel = MainFilterViewModel()
     private var mainSilverTownViewModel = MainSilverTownViewModel()
@@ -25,6 +25,8 @@ class MainViewController: UIViewController {
     private var safeAreaVertical: CGFloat = 0.0
     //private var addressArray = [String]()
     private var mainFilterData = [MainFilter]()
+    //private var mainFilterSizeFixArray: [CGFloat] = []
+    //private var mainFilterItemOrigin: CGFloat = 15
     
     let mainBottomButtonSearch = UIButton()
     let mainBottomButtonBookmark = UIButton()
@@ -33,24 +35,28 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getFilterMain()
         bindMainFilterCollectionView()
         bindMainSilverTownTableView()
         addMainBottomButtons()
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        //getFilterMain()
+        print("viewWillAppear =====**")
+        //mainFilterSizeFixArray = []
+        //mainFilterItemOrigin = 15
+        getFilterMain()
+        mainFilterViewModel.fetchItem(data: mainFilterData)
         
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+
     }
     
     func getFilterMain() {
@@ -61,9 +67,15 @@ class MainViewController: UIViewController {
         var text: String
         
         switch coreData[0].addressSelected.count {
+    
+        case coreData[0].address.count:
+            text = "모든지역"
             
         case 0:
-            text = "모든지역"
+            text = "지역선택없음"
+            
+        case 1:
+            text = "\(coreData[0].addressSelected[0])"
             
         default:
             for item in coreData[0].addressSelected {
@@ -72,7 +84,7 @@ class MainViewController: UIViewController {
                 }
             }
             
-            text = "\(coreData[0].address[addressIndex.min()!]) 등 \(coreData[0].addressSelected.count)지역"
+            text = "\(coreData[0].address[addressIndex.min()!]) 등 \(coreData[0].addressSelected.count) 지역"
         }
         
         mainFilterData = [
@@ -87,8 +99,10 @@ class MainViewController: UIViewController {
     
     func bindMainFilterCollectionView() {
         
-        var itemOrigin: CGFloat = 15
-        var sizeFixArray: [CGFloat] = []
+        //자동으로 사이즈를 결정하게 하는 것(중요)
+        let layout = mainFilterCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = UICollectionViewFlowLayout.automaticSize
+        layout.estimatedItemSize = CGSize(width: 128, height: 50)
         
         mainFilterViewModel.items.bind(
             to: mainFilterCollectionView.rx.items(
@@ -101,47 +115,34 @@ class MainViewController: UIViewController {
             cell.itemLabel.layer.borderWidth = 1
             cell.itemLabel.layer.borderColor = UIColor.basicRed.cgColor
             cell.itemLabel.layer.cornerRadius = 15
-            cell.itemLabel.clipsToBounds = true
+            cell.itemLabel.clipsToBounds = true //하단라인 생성시 필요
             cell.itemLabel.sizeToFit()
             
             cell.itemLabel.edgeInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
             
+            /*
             cell.contentView.frame.size.width = cell.itemLabel.frame.width
             cell.frame.size.width = cell.itemLabel.frame.width + 20
             
             switch index {
                 
-            case sizeFixArray.count :
-                cell.frame.origin.x = itemOrigin
-                sizeFixArray.append(itemOrigin)
-                itemOrigin = itemOrigin + cell.frame.size.width + 10 //간격
+            case self.mainFilterSizeFixArray.count :
+                print("************ 시작 ************")
+                print(self.mainFilterItemOrigin)
+                
+                cell.frame.origin.x = self.mainFilterItemOrigin
+                self.mainFilterSizeFixArray.append(self.mainFilterItemOrigin)
+                self.mainFilterItemOrigin = self.mainFilterItemOrigin + cell.frame.size.width + 10 //간격
                 
             default :
-                cell.frame.origin.x = sizeFixArray[index]
+                cell.frame.origin.x = self.mainFilterSizeFixArray[index]
                 
-            }
-            
-            switch self.mainFilterData.count {
-                
-            case (index + 1): break
-             //   self.addressContentWidth.constant = 1000
-                
-            default: break
-            }
-            
-            
-            self.mainFilterCollectionView.contentSize.width = 1000
-            self.addressContentWidth.constant = 1000
-            
-            print(self.mainFilterCollectionView.contentSize.width)
-            print(self.addressContentWidth.constant)
-            
-            
-            
+            }*/
+
         }.disposed(by: disposeBag)
         
-        mainFilterViewModel.fetchItem(data: mainFilterData)
-
+       // mainFilterViewModel.fetchItem(data: mainFilterData)
+        
     }
     
     func bindMainSilverTownTableView() {
@@ -180,8 +181,6 @@ class MainViewController: UIViewController {
                 
                 cell.itemImage.layer.cornerRadius = 25
                 
-                //print("================== mainSilverTownSubViewModel ==>>")
-                
                 switch model.imageURL {
                      
                 case "none", "":
@@ -212,9 +211,6 @@ class MainViewController: UIViewController {
     }
     
     func addMainBottomButtons(){
-        
-        //print(mainSilverTownTableView.frame.size)
-        //print(UIScreen.main.bounds.size)
         
         let window = UIApplication.shared.windows.first
         let safeAreaTop = window?.safeAreaInsets.top
