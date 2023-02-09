@@ -13,7 +13,7 @@ class BookmarkViewController: UIViewController {
     @IBOutlet weak var saveDataButton: UIButton!
     @IBOutlet weak var getDataButton: UIButton!
     
- //   private var context: NSManagedObjectContext!
+    private var context: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,30 @@ class BookmarkViewController: UIViewController {
     }
     
     @IBAction func getDataButtonAction(_ sender: Any) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+       let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let filter = "유당마을"
+        let predicate = NSPredicate(format: "title = %@", filter)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SearchCoreData")
+        fetchRequest.predicate = predicate
+        
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
+            
+            print(result)
+            
+            for data in result {
+               print(data.value(forKey: "title") as! String)
+               print(data.value(forKey: "address") as! String)
+            }
+                              
+
+        } catch {
+            print("Error in updating")
+        }
         
         //let test = CoreDataManager(context: context)
         //test.getData()
