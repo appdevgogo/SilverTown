@@ -22,7 +22,7 @@ class FilterViewController: UIViewController {
     private var filterSubViewModel = FilterSubViewModel()
     private var disposeBag = DisposeBag()
     
-    private var context: NSManagedObjectContext!
+   // private var context: NSManagedObjectContext!
     private var minMaxArray = [0,0,0,0,0,0]
     private var addressSelectedArray = [String]()
     
@@ -40,7 +40,7 @@ class FilterViewController: UIViewController {
 
         let toSaveData = Filter(address: filterViewModel.addressBase, addressSelected: addressSelectedArray, depositMin: minMaxArray[0], depositMax: minMaxArray[1], monthlyFeeMin: minMaxArray[2], monthlyFeeMax: minMaxArray[3], utilityCostMin: minMaxArray[4], utilityCostMax: minMaxArray[5])
         
-        let coreDataManager = CoreDataManager(context: context)
+        let coreDataManager = CoreDataManager()
         coreDataManager.deleteAllData(entityName: "FilterCoreData")
         coreDataManager.saveDataFilter(filter: toSaveData)
         //coreDataManager.getData(entityName: "FilterCoreData")
@@ -55,7 +55,7 @@ class FilterViewController: UIViewController {
     
     func getAddressSelected() {
         
-        let coreDataManager = CoreDataManager(context: context)
+        let coreDataManager = CoreDataManager()
         let coreData = coreDataManager.getDataFilter(entityName: "FilterCoreData")
         
         addressSelectedArray = coreData[0].addressSelected

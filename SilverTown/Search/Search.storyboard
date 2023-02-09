@@ -17,46 +17,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="500" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-J6-hNG">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-J6-hNG">
+                                <rect key="frame" x="0.0" y="103" width="390" height="707"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="500" id="DPg-C2-EdK" customClass="SearchTableViewCell" customModule="SilverTown" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="500"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="DPg-C2-EdK" customClass="SearchTableViewCell" customModule="SilverTown" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DPg-C2-EdK" id="0Uf-hc-fBx">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="500"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3억" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGR-4L-Sfz">
-                                                    <rect key="frame" x="20.000000000000004" y="21" width="32.333333333333343" height="26.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouE-4Z-V1U">
+                                                    <rect key="frame" x="20" y="31" width="350" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dGR-4L-Sfz" firstAttribute="leading" secondItem="0Uf-hc-fBx" secondAttribute="leadingMargin" id="4YE-Os-tc3"/>
-                                                <constraint firstItem="dGR-4L-Sfz" firstAttribute="top" secondItem="0Uf-hc-fBx" secondAttribute="topMargin" constant="10" id="6xT-it-Ntb"/>
+                                                <constraint firstItem="ouE-4Z-V1U" firstAttribute="top" secondItem="0Uf-hc-fBx" secondAttribute="topMargin" constant="20" id="QWB-qr-6hT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ouE-4Z-V1U" secondAttribute="trailing" id="V7a-cG-rfP"/>
+                                                <constraint firstItem="ouE-4Z-V1U" firstAttribute="leading" secondItem="0Uf-hc-fBx" secondAttribute="leadingMargin" id="hbt-eh-hfa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="testLabel" destination="dGR-4L-Sfz" id="QKf-cH-fNa"/>
+                                            <outlet property="testLabel" destination="ouE-4Z-V1U" id="qDr-xj-J7N"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XLv-p0-Joy">
+                                <rect key="frame" x="0.0" y="47" width="390" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="rOW-2c-mvj"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bBN-J6-hNG" secondAttribute="bottom" id="2SD-wg-DKb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bBN-J6-hNG" secondAttribute="trailing" id="MWk-Yx-rlv"/>
+                            <constraint firstItem="bBN-J6-hNG" firstAttribute="top" secondItem="XLv-p0-Joy" secondAttribute="bottom" id="ONQ-ct-Dek"/>
+                            <constraint firstItem="XLv-p0-Joy" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="R8g-9B-4w3"/>
                             <constraint firstItem="bBN-J6-hNG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TQc-1i-Fli"/>
-                            <constraint firstItem="bBN-J6-hNG" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="j11-sh-AJX"/>
+                            <constraint firstItem="XLv-p0-Joy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bM5-1g-6bn"/>
+                            <constraint firstItem="XLv-p0-Joy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jlg-Sx-v2B"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="XLv-p0-Joy" id="iAw-po-zZt"/>
                         <outlet property="searchTableView" destination="bBN-J6-hNG" id="fMc-4v-u8b"/>
                     </connections>
                 </viewController>

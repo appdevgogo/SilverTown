@@ -50,7 +50,13 @@ struct MainSilverTownViewModel {
                 description: "보증금 8억 / 월이용료 167만원\n세대관리비 30만원(24평형)",
                 imageURLs: [MainSilverTownSub(imageURL:"https://dimg.donga.com/wps/NEWS/IMAGE/2020/06/03/101324166.5.jpg"),
                             MainSilverTownSub(imageURL:"https://www.thedailypost.kr/news/photo/202002/73007_64794_1959.jpg"),
-                            MainSilverTownSub(imageURL:"https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg")])
+                            MainSilverTownSub(imageURL:"https://dimg.donga.com/wps/NEWS/IMAGE/2021/04/08/106312456.2.jpg")]),
+            MainSilverTown(
+                title: "유당마을",
+                description: "보증금 3억 / 월이용료 230만원\n세대관리비 10만원(20평형)",
+                imageURLs: [MainSilverTownSub(imageURL:"https://newsimg.sedaily.com/2017/09/03/1OKVUPOCKP_1.jpg"),
+                            MainSilverTownSub(imageURL:"https://img.etoday.co.kr/pto_db/2014/02/600/20140203051815_403252_836_554.JPG"),
+                            MainSilverTownSub(imageURL:"https://wimg.mk.co.kr/meet/neds/2015/10/image_readtop_2015_1019968_14458278062191475.jpg")])
             ]
         
         items.onNext(itemList)

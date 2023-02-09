@@ -13,9 +13,6 @@ import RxCocoa
 
 class SearchTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var testLabel: UILabel!
     
-    @IBOutlet weak var testLabel: PaddingLabel!
-    
-    
-
 }

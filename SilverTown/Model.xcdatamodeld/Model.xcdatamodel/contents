@@ -10,10 +10,12 @@
         <attribute name="utilityCostMax" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="utilityCostMin" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="PhoneBook" representedClassName="PhoneBook" syncable="YES" codeGenerationType="class">
-        <attribute name="memo" optional="YES" attributeType="String"/>
-        <attribute name="personName" optional="YES" attributeType="String"/>
-        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+    <entity name="SearchCoreData" representedClassName="SearchCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="deposit" optional="YES" attributeType="String"/>
+        <attribute name="monthlyFee" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="utilityCost" optional="YES" attributeType="String"/>
     </entity>
     <entity name="SilverTownCoreData" representedClassName="SilverTownCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="deposit" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

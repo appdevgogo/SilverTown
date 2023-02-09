@@ -13,7 +13,7 @@ class BookmarkViewController: UIViewController {
     @IBOutlet weak var saveDataButton: UIButton!
     @IBOutlet weak var getDataButton: UIButton!
     
-    private var context: NSManagedObjectContext!
+ //   private var context: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class BookmarkViewController: UIViewController {
     
     @IBAction func saveDataButtonAction(_ sender: Any) {
         
-        let test = CoreDataManager(context: context)
+      //  let test = CoreDataManager(context: context)
        // test.saveData()
         
     }
@@ -39,8 +39,8 @@ class BookmarkViewController: UIViewController {
     
     @IBAction func deleteAllButtonAction(_ sender: Any) {
         
-        let test = CoreDataManager(context: context)
-        test.deleteAllData(entityName: "FilterCoreData")
+       // let test = CoreDataManager(context: context)
+       // test.deleteAllData(entityName: "FilterCoreData")
         
     }
     

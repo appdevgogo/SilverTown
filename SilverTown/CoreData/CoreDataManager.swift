@@ -14,8 +14,8 @@ class CoreDataManager {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var context: NSManagedObjectContext!
     
-    init(context: NSManagedObjectContext!) {
-        self.context = context
+    init() {
+      //  self.context = context
         
         openData()
     }
@@ -85,6 +85,27 @@ class CoreDataManager {
         dataObject.setValue(filter.monthlyFeeMax, forKey: "monthlyFeeMax")
         dataObject.setValue(filter.utilityCostMin, forKey: "utilityCostMin")
         dataObject.setValue(filter.utilityCostMax, forKey: "utilityCostMax")
+        
+        do {
+            try context.save()
+            
+        } catch {
+            print("Insert data Failed")
+            
+        }
+        
+    }
+    
+    func saveDataSearch(search: Search) {
+        
+        let dataObject = NSEntityDescription.insertNewObject(forEntityName: "SearchCoreData", into: context)
+        
+        dataObject.setValue(search.title, forKey: "title")
+        dataObject.setValue(search.address, forKey: "address")
+        dataObject.setValue(search.deposit, forKey: "deposit")
+        dataObject.setValue(search.monthlyFee, forKey: "monthlyFee")
+        dataObject.setValue(search.utilityCost, forKey: "utilityCost")
+
         
         do {
             try context.save()

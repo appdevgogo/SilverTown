@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     private var mainSilverTownViewModel = MainSilverTownViewModel()
     private var disposeBag = DisposeBag()
     
-    private var context: NSManagedObjectContext!
+  //  private var context: NSManagedObjectContext!
     private var safeAreaVertical: CGFloat = 0.0
     //private var addressArray = [String]()
     private var mainFilterData = [MainFilter]()
@@ -61,7 +61,7 @@ class MainViewController: UIViewController {
     
     func getFilterMain() {
         
-        let coreDataManager = CoreDataManager(context: context)
+        let coreDataManager = CoreDataManager()
         let coreData = coreDataManager.getDataFilter(entityName: "FilterCoreData")
         var addressIndex = [Int]()
         var text: String

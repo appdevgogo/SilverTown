@@ -10,13 +10,11 @@ import Foundation
 
 struct Search {
     
-    let addresses: [String]
-    let depositMin: Int
-    let depositMax: Int
-    let monthlyFeeMin : Int
-    let monthlyFeeMax : Int
-    let utilityCostMin : Int
-    let utilityCostMax : Int
+    let title: String
+    let address: String
+    let deposit: String
+    let monthlyFee: String
+    let utilityCost: String
     
 }
 
