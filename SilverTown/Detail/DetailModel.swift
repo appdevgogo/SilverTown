@@ -10,6 +10,7 @@ import Foundation
 
 struct DetailSilverTown {
     
+    let id: String
     let title: String
     let address: String
     let subTitleFirst: String

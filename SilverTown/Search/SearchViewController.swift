@@ -138,7 +138,4 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
     }
     
-    private func input(){
-        
-    }
 }

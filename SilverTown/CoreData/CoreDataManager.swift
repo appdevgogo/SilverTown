@@ -67,6 +67,37 @@ class CoreDataManager {
         return []
     }
     
+    func getDataBookmark(entityName : String) -> [Bookmark] {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
+        request.returnsObjectsAsFaults = false
+        
+        var returnData = [Bookmark]()
+        
+        print("getBookmark -->>")
+
+        do {
+            
+            let result = try context.fetch(request)
+            
+            
+            for data in result as! [NSManagedObject] {
+                
+                let id = data.value(forKey: "id") as! String
+                let title = data.value(forKey: "title") as! String
+                let address = data.value(forKey: "address") as! String
+
+                returnData.append(Bookmark(id: id, title: title, address: address))
+                
+            }
+
+        } catch {
+            print("Fetching data Failed")
+            
+        }
+        return returnData
+    }
+    
     func saveDataFilter(filter: Filter) {
         
         let dataObject = NSEntityDescription.insertNewObject(forEntityName: "FilterCoreData", into: context)
@@ -117,6 +148,25 @@ class CoreDataManager {
         
     }
     
+    func saveDataBookmark(bookmark: Bookmark) {
+        
+        let dataObject = NSEntityDescription.insertNewObject(forEntityName: "BookmarkCoreData", into: context)
+        
+        dataObject.setValue(bookmark.id, forKey: "id")
+        dataObject.setValue(bookmark.title, forKey: "title")
+        dataObject.setValue(bookmark.address, forKey: "address")
+
+        
+        do {
+            try context.save()
+            
+        } catch {
+            print("Insert data Failed")
+            
+        }
+        
+    }
+    
     func deleteAllData(entityName: String) {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
@@ -138,6 +188,32 @@ class CoreDataManager {
         
     }
     
+    func deleteByIdData(entityName: String, id: String) {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
+        request.returnsObjectsAsFaults = false
+        
+        let predicate = NSPredicate(format: "id == %@", id)
+        
+        request.predicate = predicate
+        
+        print("delete ById Data-->>")
+        
+        do {
+            
+            let result = try context.fetch(request)
+            print(result)
+            
+            for data in result as! [NSManagedObject] {
+                
+                context.delete(data)
+
+            }
+        } catch {
+            print("Delte ById Data Failed")
+        }
+        
+    }
     
 }
 

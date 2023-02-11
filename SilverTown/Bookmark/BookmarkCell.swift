@@ -1,19 +1,20 @@
 //
-//  SearchCell.swift
+//  BookmarkCell.swift
 //  SilverTown
 //
-//  Created by yyjweber on 2023/01/28.
+//  Created by yyjweber on 2023/02/11.
 //
 
 import Foundation
 import UIKit
+import RxSwift
 
 
-class SearchTableViewCell: UITableViewCell {
+class BookmarkTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var searchResultTitle: UILabel!
-    @IBOutlet weak var searchResultAddress: UILabel!
-    @IBOutlet weak var searchResultOthers: UILabel!
+    @IBOutlet weak var bookmarkTitleLabel: UILabel!
+    @IBOutlet weak var bookmarkAddressLabel: UILabel!
+    @IBOutlet weak var bookmarkDeleteButton: UIButton!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

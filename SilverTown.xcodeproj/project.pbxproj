@@ -43,6 +43,8 @@
 		FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB21FF296A7EDC00E32CAC /* LaunchViewController.swift */; };
 		FFAB2202296A813D00E32CAC /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB2201296A813D00E32CAC /* Launch.storyboard */; };
 		FFAEB50729704C2B00A13670 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAEB50629704C2B00A13670 /* MainCell.swift */; };
+		FFB05EBC2997BB2A0077610A /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB05EBB2997BB2A0077610A /* BookmarkViewModel.swift */; };
+		FFB05EBE2997BE0A0077610A /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB05EBD2997BE0A0077610A /* BookmarkCell.swift */; };
 		FFC4A59C296848370028E135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59B296848370028E135 /* AppDelegate.swift */; };
 		FFC4A59E296848370028E135 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59D296848370028E135 /* SceneDelegate.swift */; };
 		FFC4A5A0296848370028E135 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59F296848370028E135 /* MainViewController.swift */; };
@@ -99,6 +101,8 @@
 		FFAB21FF296A7EDC00E32CAC /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		FFAB2201296A813D00E32CAC /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		FFAEB50629704C2B00A13670 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		FFB05EBB2997BB2A0077610A /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
+		FFB05EBD2997BE0A0077610A /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
 		FFC4A598296848370028E135 /* SilverTown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilverTown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC4A59B296848370028E135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFC4A59D296848370028E135 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				FF2C31FC298A1F7E0014BFAD /* BookmarkModel.swift */,
+				FFB05EBB2997BB2A0077610A /* BookmarkViewModel.swift */,
+				FFB05EBD2997BE0A0077610A /* BookmarkCell.swift */,
 				FF2C31FE298A1F940014BFAD /* BookmarkViewController.swift */,
 				FF2C3200298A1FBE0014BFAD /* Bookmark.storyboard */,
 			);
@@ -449,12 +455,14 @@
 				FF32379629850CA5000E53E7 /* SearchModel.swift in Sources */,
 				FF1E8BDD297EC33B00A99646 /* FilterViewModel.swift in Sources */,
 				FFC4A59C296848370028E135 /* AppDelegate.swift in Sources */,
+				FFB05EBC2997BB2A0077610A /* BookmarkViewModel.swift in Sources */,
 				FF32379429850C48000E53E7 /* SearchViewController.swift in Sources */,
 				FF32379A29850D4F000E53E7 /* SearchCell.swift in Sources */,
 				FF1E8BD9297EC2B600A99646 /* FilterViewController.swift in Sources */,
 				FF8D27722980FE6700300385 /* UIViewControllerSetting.swift in Sources */,
 				FF9687A72974458800614DA9 /* DetailViewModel.swift in Sources */,
 				FFAEB50729704C2B00A13670 /* MainCell.swift in Sources */,
+				FFB05EBE2997BE0A0077610A /* BookmarkCell.swift in Sources */,
 				FFAB2200296A7EDC00E32CAC /* LaunchViewController.swift in Sources */,
 				FF976EE5297913BB004BD893 /* DetailCell.swift in Sources */,
 				FF8548B429800B0800D7BC5E /* YoutubePopupViewController.swift in Sources */,

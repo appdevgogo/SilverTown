@@ -1,18 +1,18 @@
 //
-//  SearchViewModel.swift
+//  BookmarkViewModel.swift
 //  SilverTown
 //
-//  Created by yyjweber on 2023/01/28.
+//  Created by yyjweber on 2023/02/11.
 //
 
 import Foundation
 import RxSwift
 
-class SearchViewModel {
+class BookmarkViewModel {
     
-    var items = PublishSubject<[Search]>()
+    var items = PublishSubject<[Bookmark]>()
     
-    func fetchItem(data: [Search]){
+    func fetchItem(data: [Bookmark]){
         
         let itemList = data
         
@@ -21,4 +21,5 @@ class SearchViewModel {
         
     }
 }
+
 

@@ -6,4 +6,14 @@
 //
 
 import Foundation
+import RxSwift
+
+struct Bookmark {
+    
+    let id: String
+    let title: String
+    let address: String
+    
+}
+
 
