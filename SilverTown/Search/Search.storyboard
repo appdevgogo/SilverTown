@@ -17,38 +17,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-J6-hNG">
-                                <rect key="frame" x="0.0" y="103" width="390" height="707"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bBN-J6-hNG">
+                                <rect key="frame" x="0.0" y="102" width="390" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="DPg-C2-EdK" customClass="SearchTableViewCell" customModule="SilverTown" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="160" id="DPg-C2-EdK" customClass="SearchTableViewCell" customModule="SilverTown" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DPg-C2-EdK" id="0Uf-hc-fBx">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouE-4Z-V1U">
-                                                    <rect key="frame" x="20" y="31" width="350" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SK그레이스힐(Grace Hill)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouE-4Z-V1U">
+                                                    <rect key="frame" x="20" y="15.000000000000002" width="350" height="27.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강서구 양천로 470" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuc-CZ-A8L">
+                                                    <rect key="frame" x="20" y="48.666666666666664" width="350" height="21.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPV-Gf-ON7">
+                                                    <rect key="frame" x="20" y="82.333333333333329" width="350" height="40.666666666666671"/>
+                                                    <string key="text">보증금 8억 / 월이용료 167만원
+세대관리비 30만원</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rym-oX-oY0">
+                                                    <rect key="frame" x="20" y="148" width="350" height="1"/>
+                                                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="Eh3-hX-Ldt"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ouE-4Z-V1U" firstAttribute="top" secondItem="0Uf-hc-fBx" secondAttribute="topMargin" constant="20" id="QWB-qr-6hT"/>
+                                                <constraint firstItem="xuc-CZ-A8L" firstAttribute="top" secondItem="ouE-4Z-V1U" secondAttribute="bottom" constant="6" id="06m-LW-NQ8"/>
+                                                <constraint firstItem="rPV-Gf-ON7" firstAttribute="top" secondItem="xuc-CZ-A8L" secondAttribute="bottom" constant="12" id="9Ak-et-Psx"/>
+                                                <constraint firstItem="ouE-4Z-V1U" firstAttribute="top" secondItem="0Uf-hc-fBx" secondAttribute="topMargin" constant="4" id="QWB-qr-6hT"/>
+                                                <constraint firstItem="rym-oX-oY0" firstAttribute="bottom" secondItem="0Uf-hc-fBx" secondAttribute="bottomMargin" id="TR5-LN-1Tl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xuc-CZ-A8L" secondAttribute="trailing" id="TZl-F2-Bxe"/>
+                                                <constraint firstItem="rPV-Gf-ON7" firstAttribute="leading" secondItem="0Uf-hc-fBx" secondAttribute="leadingMargin" id="UsJ-UJ-r1y"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ouE-4Z-V1U" secondAttribute="trailing" id="V7a-cG-rfP"/>
+                                                <constraint firstItem="xuc-CZ-A8L" firstAttribute="leading" secondItem="0Uf-hc-fBx" secondAttribute="leadingMargin" id="Xl7-E9-D9V"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rym-oX-oY0" secondAttribute="trailing" id="fQE-Sm-NkU"/>
                                                 <constraint firstItem="ouE-4Z-V1U" firstAttribute="leading" secondItem="0Uf-hc-fBx" secondAttribute="leadingMargin" id="hbt-eh-hfa"/>
+                                                <constraint firstItem="rym-oX-oY0" firstAttribute="leading" secondItem="0Uf-hc-fBx" secondAttribute="leadingMargin" id="j1u-9w-xNt"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rPV-Gf-ON7" secondAttribute="trailing" id="p8z-Rg-6dH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="testLabel" destination="ouE-4Z-V1U" id="qDr-xj-J7N"/>
+                                            <outlet property="searchResultAddress" destination="xuc-CZ-A8L" id="Poy-td-llB"/>
+                                            <outlet property="searchResultOthers" destination="rPV-Gf-ON7" id="Ye1-6b-qCk"/>
+                                            <outlet property="searchResultTitle" destination="ouE-4Z-V1U" id="RTp-sW-PoH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XLv-p0-Joy">
-                                <rect key="frame" x="0.0" y="47" width="390" height="56"/>
+                                <rect key="frame" x="15" y="52" width="360" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="t5a-6F-KP2"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="rOW-2c-mvj"/>
@@ -60,11 +95,11 @@
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bBN-J6-hNG" secondAttribute="bottom" id="2SD-wg-DKb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bBN-J6-hNG" secondAttribute="trailing" id="MWk-Yx-rlv"/>
-                            <constraint firstItem="bBN-J6-hNG" firstAttribute="top" secondItem="XLv-p0-Joy" secondAttribute="bottom" id="ONQ-ct-Dek"/>
-                            <constraint firstItem="XLv-p0-Joy" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="R8g-9B-4w3"/>
+                            <constraint firstItem="bBN-J6-hNG" firstAttribute="top" secondItem="XLv-p0-Joy" secondAttribute="bottom" constant="5" id="ONQ-ct-Dek"/>
+                            <constraint firstItem="XLv-p0-Joy" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-15" id="R8g-9B-4w3"/>
                             <constraint firstItem="bBN-J6-hNG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TQc-1i-Fli"/>
-                            <constraint firstItem="XLv-p0-Joy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bM5-1g-6bn"/>
-                            <constraint firstItem="XLv-p0-Joy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jlg-Sx-v2B"/>
+                            <constraint firstItem="XLv-p0-Joy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="bM5-1g-6bn"/>
+                            <constraint firstItem="XLv-p0-Joy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="jlg-Sx-v2B"/>
                         </constraints>
                     </view>
                     <connections>
@@ -80,6 +115,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

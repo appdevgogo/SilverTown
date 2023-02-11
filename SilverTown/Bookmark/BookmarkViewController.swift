@@ -35,8 +35,8 @@ class BookmarkViewController: UIViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
        let managedContext = appDelegate.persistentContainer.viewContext
         
-        let filter = "유당마을"
-        let predicate = NSPredicate(format: "title = %@", filter)
+        let filter = "유"
+        let predicate = NSPredicate(format: "title CONTAINS %@", filter)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SearchCoreData")
         fetchRequest.predicate = predicate
         
