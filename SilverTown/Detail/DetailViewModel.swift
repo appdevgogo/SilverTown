@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import CoreData
 
 struct DetailSilverTownViewModel {
     
@@ -44,6 +45,19 @@ struct DetailSilverTownViewModel {
         
         items.onNext(itemList)
         items.onCompleted()
+        
+        saveDetailSilverDown(id: itemList[0].id, title: itemList[0].title, address: itemList[0].address)
+        
+    }
+    
+    func saveDetailSilverDown(id: String, title: String, address: String) {
+        
+        let coreDataManager = CoreDataManager()
+        let toSaveData =
+            DetailSilverTownToSave(id: id, title: title, address: address)
+
+        coreDataManager.saveDataDetailSilverTown(detailSilverTown: toSaveData)
+        
     }
     
 }

@@ -98,6 +98,37 @@ class CoreDataManager {
         return returnData
     }
     
+    func getDataDetailToBookmark(entityName : String) -> [Bookmark] {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
+        request.returnsObjectsAsFaults = false
+        
+        var returnData = [Bookmark]()
+        
+        print("getDataDetailToBookmark -->>")
+
+        do {
+            
+            let result = try context.fetch(request)
+            
+            
+            for data in result as! [NSManagedObject] {
+                
+                let id = data.value(forKey: "id") as! String
+                let title = data.value(forKey: "title") as! String
+                let address = data.value(forKey: "address") as! String
+
+                returnData.append(Bookmark(id: id, title: title, address: address))
+                
+            }
+
+        } catch {
+            print("Fetching data Failed")
+            
+        }
+        return returnData
+    }
+    
     func saveDataFilter(filter: Filter) {
         
         let dataObject = NSEntityDescription.insertNewObject(forEntityName: "FilterCoreData", into: context)
@@ -155,6 +186,25 @@ class CoreDataManager {
         dataObject.setValue(bookmark.id, forKey: "id")
         dataObject.setValue(bookmark.title, forKey: "title")
         dataObject.setValue(bookmark.address, forKey: "address")
+
+        
+        do {
+            try context.save()
+            
+        } catch {
+            print("Insert data Failed")
+            
+        }
+        
+    }
+    
+    func saveDataDetailSilverTown(detailSilverTown: DetailSilverTownToSave) {
+        
+        let dataObject = NSEntityDescription.insertNewObject(forEntityName: "DetailCoreData", into: context)
+        
+        dataObject.setValue(detailSilverTown.id, forKey: "id")
+        dataObject.setValue(detailSilverTown.title, forKey: "title")
+        dataObject.setValue(detailSilverTown.address, forKey: "address")
 
         
         do {

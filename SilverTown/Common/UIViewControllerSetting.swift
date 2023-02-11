@@ -14,6 +14,9 @@ extension UIViewController {
     
     func addRightNavigationButton(_ name: String) {
         
+        //여기서 우선적으로 CoreData에 북마크 데이터가 있는지 확인후에
+        //만약에 있으면 하트Fill(tag=1) 없으면 하트NoFill(tag=0)
+        
         let imgConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
         let imgObj = UIImage(systemName: name, withConfiguration: imgConfig)
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
@@ -30,6 +33,14 @@ extension UIViewController {
     @objc func rightNavigationButtonAction(_ sender: UIButton) {
         
        print("clicked")
+        //tag=1(이미 북마크 존재)이면 클릭시 삭제
+        //tag=0(북마크 없음)이면 클릭시 추가
+        let coreDataManager = CoreDataManager()
+        let toSaveData =
+            Bookmark(id: "st00002", title: "더클래식 500 실버타운", address: "서울특별시 광진구 능동로 90")
+
+        coreDataManager.saveDataBookmark(bookmark: toSaveData)
+        
     }
     
 }

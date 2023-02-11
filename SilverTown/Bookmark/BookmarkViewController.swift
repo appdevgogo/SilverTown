@@ -24,6 +24,7 @@ class BookmarkViewController: UIViewController {
         super.viewDidLoad()
         
         initSetting()
+        getBookmarkData()
         bindBookmarkTableView()
         
     }
@@ -34,11 +35,19 @@ class BookmarkViewController: UIViewController {
 
     }
     
+    func getBookmarkData() {
+        
+        let coreDataManager = CoreDataManager()
+        
+        bookmarkArray = coreDataManager.getDataBookmark(entityName: "BookmarkCoreData")
+        
+    }
+    
     func bookmarkReset() {
         
         let coreDataManager = CoreDataManager()
         let toSaveData = [
-            Bookmark(id: "st00002", title: "SK그레이스힐(Grace Hill)", address: "서울시 강서구 양천로 470"),
+            Bookmark(id: "st00001", title: "SK그레이스힐(Grace Hill)", address: "서울시 강서구 양천로 470"),
             Bookmark(id: "st00003", title: "유당마을", address: "경기도 수원시 장안구 조원동 119-3번지"),
             Bookmark(id: "st00004", title: "하이원빌리지 실버타운", address: "서울특별시 용산구 한강로 2가 55번지"),
             Bookmark(id: "st00005", title: "더헤리티지 실버타운", address: "경기도 성남시 분당구 금곡동 305-2")]
@@ -50,8 +59,6 @@ class BookmarkViewController: UIViewController {
         }
         
         bookmarkArray = coreDataManager.getDataBookmark(entityName: "BookmarkCoreData")
-        
-        //print(bookmarkArray)
         
         bookmarkViewModel.fetchItem(data: bookmarkArray)
         
@@ -66,32 +73,21 @@ class BookmarkViewController: UIViewController {
             
         ) { row, model, cell in
             
-            print("---->> rxxx 실행됨")
-            
             cell.bookmarkTitleLabel.text = model.title
             cell.bookmarkAddressLabel.text = model.address
             
             cell.bookmarkDeleteButton.rx.tap.bind{
                 
-                print("삭제버튼 클릭됨요")
-                
-                print(model.id)
-                
-                /*
                 let coreDataManager = CoreDataManager()
                 
                 coreDataManager.deleteByIdData(entityName: "BookmarkCoreData", id: model.id)
                 
-                
-                self.bookmarkArray = coreDataManager.getDataBookmark(entityName: "BookmarkCoreData")*/
-                
-                self.bookmarkArray = []
+                self.bookmarkArray = coreDataManager.getDataBookmark(entityName: "BookmarkCoreData")
                 
                 self.bookmarkViewModel.fetchItem(data: self.bookmarkArray)
                 
-            }.disposed(by: self.disposeBag)
+            }.disposed(by: cell.disposeBag)
 
-                    
         }.disposed(by: disposeBag)
         
         bookmarkViewModel.fetchItem(data: bookmarkArray)

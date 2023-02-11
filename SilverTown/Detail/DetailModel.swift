@@ -30,3 +30,11 @@ struct DetailSilverTownSubImage {
     
     let imageURL: String
 }
+
+struct DetailSilverTownToSave {
+    
+    let id: String
+    let title: String
+    let address: String
+    
+}
