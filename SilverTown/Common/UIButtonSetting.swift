@@ -67,3 +67,9 @@ extension UIButton {
         }
 }
 
+class BookmarkUIButton: UIButton {
+    
+    var data = Bookmark(id: "", title: "", address: "")
+    
+}
+

@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailSilverTownTableView: UITableView!
     private var detailSilverTownViewModel = DetailSilverTownViewModel()
     //private var detailSilverTownSubImageViewModel = DetailSilverTownSubImageViewModel()
+    
     private var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ class DetailViewController: UIViewController {
         
         initSetting()
         bindDetailSilverTownTableView()
+
         
     }
     
@@ -39,7 +41,6 @@ class DetailViewController: UIViewController {
     func initSetting(){
         
         addBackButton("arrow.backward", .black)
-        addRightNavigationBookmarkButton()
     }
     
     func bindDetailSilverTownTableView() {
@@ -49,6 +50,8 @@ class DetailViewController: UIViewController {
                 cellIdentifier: "cell",
                 cellType: DetailSilverTownTableViewCell.self)
         ) { row, model, cell in
+
+            self.addRightNavigationBookmarkButton(bookmark: Bookmark(id: model.id, title: model.title, address: model.address))
             
             cell.titleLabel.text = model.title
             cell.addressLabel.text = model.address

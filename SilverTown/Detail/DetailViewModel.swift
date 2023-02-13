@@ -16,7 +16,7 @@ struct DetailSilverTownViewModel {
         
         let itemList = [
             DetailSilverTown(
-                id: "st00001",
+                id: "st00002",
                 title: "더클래식500 실버타운",
                 address: "서울특별시 광진구 능동로 90",
                 subTitleFirst: "공급면적",

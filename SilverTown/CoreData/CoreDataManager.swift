@@ -98,37 +98,6 @@ class CoreDataManager {
         return returnData
     }
     
-    func getDataDetailToBookmark(entityName : String) -> [Bookmark] {
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
-        request.returnsObjectsAsFaults = false
-        
-        var returnData = [Bookmark]()
-        
-        print("getDataDetailToBookmark -->>")
-
-        do {
-            
-            let result = try context.fetch(request)
-            
-            
-            for data in result as! [NSManagedObject] {
-                
-                let id = data.value(forKey: "id") as! String
-                let title = data.value(forKey: "title") as! String
-                let address = data.value(forKey: "address") as! String
-
-                returnData.append(Bookmark(id: id, title: title, address: address))
-                
-            }
-
-        } catch {
-            print("Fetching data Failed")
-            
-        }
-        return returnData
-    }
-    
     func getDataDetailBookmarkCheck(entityName : String, id: String) -> Int {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
@@ -206,19 +175,27 @@ class CoreDataManager {
     
     func saveDataBookmark(bookmark: Bookmark) {
         
-        let dataObject = NSEntityDescription.insertNewObject(forEntityName: "BookmarkCoreData", into: context)
+        let check = self.getDataDetailBookmarkCheck(entityName: "BookmarkCoreData", id: bookmark.id)
         
-        dataObject.setValue(bookmark.id, forKey: "id")
-        dataObject.setValue(bookmark.title, forKey: "title")
-        dataObject.setValue(bookmark.address, forKey: "address")
+        switch check{
+            
+        case 1: break
+            
+        default:
+            let dataObject = NSEntityDescription.insertNewObject(forEntityName: "BookmarkCoreData", into: context)
+            
+            dataObject.setValue(bookmark.id, forKey: "id")
+            dataObject.setValue(bookmark.title, forKey: "title")
+            dataObject.setValue(bookmark.address, forKey: "address")
 
-        
-        do {
-            try context.save()
             
-        } catch {
-            print("Insert data Failed")
-            
+            do {
+                try context.save()
+                
+            } catch {
+                print("Insert data Failed")
+                
+            }
         }
         
     }
