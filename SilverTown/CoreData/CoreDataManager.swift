@@ -80,7 +80,6 @@ class CoreDataManager {
             
             let result = try context.fetch(request)
             
-            
             for data in result as! [NSManagedObject] {
                 
                 let id = data.value(forKey: "id") as! String
@@ -196,6 +195,28 @@ class CoreDataManager {
                 print("Insert data Failed")
                 
             }
+        }
+        
+    }
+    
+    func saveDataBookmarkAll(bookmark: [Bookmark]) {
+        
+        let dataObject = NSEntityDescription.insertNewObject(forEntityName: "BookmarkCoreData", into: context)
+        
+        do {
+            
+            for item in bookmark{
+                
+                dataObject.setValue(item.id, forKey: "id")
+                dataObject.setValue(item.title, forKey: "title")
+                dataObject.setValue(item.address, forKey: "address")
+                
+                try context.save()
+            }
+            
+        } catch {
+            print("Insert data Failed")
+            
         }
         
     }

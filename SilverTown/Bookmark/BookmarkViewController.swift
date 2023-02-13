@@ -26,12 +26,18 @@ class BookmarkViewController: UIViewController {
         initSetting()
         getBookmarkData()
         bindBookmarkTableView()
+        test()
         
     }
     
     func initSetting(){
         
         addBackButton("arrow.backward", .black)
+        
+       // bookmarkTableView.dataSource = self
+        bookmarkTableView.dragInteractionEnabled = true
+        bookmarkTableView.dragDelegate = self
+        bookmarkTableView.dropDelegate = self
 
     }
     
@@ -91,6 +97,41 @@ class BookmarkViewController: UIViewController {
         }.disposed(by: disposeBag)
         
         bookmarkViewModel.fetchItem(data: bookmarkArray)
+        
+        
+    }
+    
+    func test() {
+        
+        bookmarkTableView.rx.itemMoved
+            .subscribe(onNext: { indexPaths in
+                
+                print(indexPaths.sourceIndex)
+                print(indexPaths.destinationIndex)
+                
+             //   self.bookmarkArray.swapAt(<#T##i: Int##Int#>, <#T##j: Int##Int#>)
+                
+                let element = self.bookmarkArray.remove(at: indexPaths.sourceIndex.row)
+                self.bookmarkArray.insert(element, at: indexPaths.destinationIndex.row)
+                
+
+         //       self.bookmarkArray.move(fromOffsets: IndexSet(integer: indexPaths.destinationIndex.row), toOffset: indexPaths.sourceIndex.row)
+                                //indexPaths.destinationIndex.row //indexPaths.sourceIndex.row
+                
+                let coreDataManager = CoreDataManager()
+                coreDataManager.deleteAllData(entityName: "BookmarkCoreData")
+                
+                for item in self.bookmarkArray{
+                    
+                    coreDataManager.saveDataBookmark(bookmark: item)
+                    
+                }
+                
+                print(self.bookmarkArray)
+  
+            })
+            .disposed(by:disposeBag)
+        
     }
 
     @IBAction func bookmarkResetClick(_ sender: Any) {
@@ -100,5 +141,38 @@ class BookmarkViewController: UIViewController {
     }
     
 }
+
+//rxswift itemove로 하게되면 특정 디자인만 사용하게됨 그러므로 아래 사용 필요
+
+extension BookmarkViewController: UITableViewDragDelegate, UITableViewDropDelegate {
+    
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+            return [UIDragItem(itemProvider: NSItemProvider())]
+        }
+    
+    func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
+        if session.localDragSession != nil {
+            return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+        }
+        return UITableViewDropProposal(operation: .cancel, intent: .unspecified)
+    }
+    
+    //UITableViewDropDelegate를 실행하기 위해서는 필수임
+    func tableView(_ tableView: UITableView, performDropWith coordinator: UITableViewDropCoordinator) {
+        
+        print("performDropWith")
+        
+    }
+    /*
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        print("\(sourceIndexPath.row) -> \(destinationIndexPath.row)")
+        //   let moveCell = self.list[sourceIndexPath.row]
+        //  self.list.remove(at: sourceIndexPath.row)
+        //   self.list.insert(moveCell, at: destinationIndexPath.row)
+    }*/
+}
+
+
+
 
 

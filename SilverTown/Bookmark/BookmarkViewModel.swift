@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+
 class BookmarkViewModel {
     
     var items = PublishSubject<[Bookmark]>()
@@ -21,5 +22,6 @@ class BookmarkViewModel {
         
     }
 }
+
 
 
