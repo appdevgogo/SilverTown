@@ -39,7 +39,7 @@ class DetailViewController: UIViewController {
     func initSetting(){
         
         addBackButton("arrow.backward", .black)
-        addRightNavigationButton("heart")
+        addRightNavigationBookmarkButton()
     }
     
     func bindDetailSilverTownTableView() {

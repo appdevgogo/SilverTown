@@ -12,25 +12,44 @@ import CoreData
 
 extension UIViewController {
     
-    func addRightNavigationButton(_ name: String) {
+    func addRightNavigationBookmarkButton(id: String) {
         
         //여기서 우선적으로 CoreData에 북마크 데이터가 있는지 확인후에
         //만약에 있으면 하트Fill(tag=1) 없으면 하트NoFill(tag=0)
+        
+        let coreDataManager = CoreDataManager()
+        let check = coreDataManager.getDataDetailBookmarkCheck(entityName: "BookmarkCoreData", id: "\(id)")
+        
+        let name: String
+        let tag: Int
+        
+        switch check {
+            
+        case 1: break
+            name = "heart.fill"
+            tag = 1
+            
+        default: break
+            name = "heart"
+            tag = 0
+        }
         
         let imgConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
         let imgObj = UIImage(systemName: name, withConfiguration: imgConfig)
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
         let button = UIButton(frame: CGRect(x: -10, y: 0, width: 60, height: 45))
+        
+        button.tag = tag
         button.setImage(imgObj, for: .normal)
         button.tintColor = .basicPurple
-        button.addTarget(self, action: #selector(self.rightNavigationButtonAction(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.rightNavigationBookmarkButtonAction(_:)), for: .touchUpInside)
         containerView.addSubview(button)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: containerView)
         
     }
     
-    @objc func rightNavigationButtonAction(_ sender: UIButton) {
+    @objc func rightNavigationBookmarkButtonAction(_ sender: UIButton) {
         
        print("clicked")
         //tag=1(이미 북마크 존재)이면 클릭시 삭제

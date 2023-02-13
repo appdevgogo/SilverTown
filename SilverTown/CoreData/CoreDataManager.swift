@@ -129,6 +129,31 @@ class CoreDataManager {
         return returnData
     }
     
+    func getDataDetailBookmarkCheck(entityName : String, id: String) -> Int {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "\(entityName)")
+        request.returnsObjectsAsFaults = false
+        
+        let predicate = NSPredicate(format: "id == %@", id)
+        
+        request.predicate = predicate
+        
+        print("getDataDetailBookmarkCheck-->>")
+        
+        do {
+            
+            let result = try context.fetch(request)
+            
+            return result.count
+            
+
+        } catch {
+            print("Delte ById Data Failed")
+            return 0
+        }
+        
+    }
+    
     func saveDataFilter(filter: Filter) {
         
         let dataObject = NSEntityDescription.insertNewObject(forEntityName: "FilterCoreData", into: context)
