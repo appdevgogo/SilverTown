@@ -26,7 +26,14 @@ class BookmarkViewController: UIViewController {
         initSetting()
         getBookmarkData()
         bindBookmarkTableView()
-        test()
+        bookmarkItemMove()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(false, animated: false)
         
     }
     
@@ -82,6 +89,7 @@ class BookmarkViewController: UIViewController {
             cell.bookmarkTitleLabel.text = model.title
             cell.bookmarkAddressLabel.text = model.address
             
+            
             cell.bookmarkDeleteButton.rx.tap.bind{
                 
                 let coreDataManager = CoreDataManager()
@@ -93,7 +101,16 @@ class BookmarkViewController: UIViewController {
                 self.bookmarkViewModel.fetchItem(data: self.bookmarkArray)
                 
             }.disposed(by: cell.disposeBag)
+            
 
+        }.disposed(by: disposeBag)
+        
+        bookmarkTableView.rx.modelSelected(Bookmark.self).bind { element in
+            
+            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "Detail")
+            self.navigationController?.pushViewController(controller, animated: true)
+            
         }.disposed(by: disposeBag)
         
         bookmarkViewModel.fetchItem(data: bookmarkArray)
@@ -101,7 +118,7 @@ class BookmarkViewController: UIViewController {
         
     }
     
-    func test() {
+    func bookmarkItemMove() {
         
         bookmarkTableView.rx.itemMoved
             .subscribe(onNext: { indexPaths in

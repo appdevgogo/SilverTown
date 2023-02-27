@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import CoreData
-
+import FirebaseDatabase
 
 class MainViewController: UIViewController {
     
@@ -27,15 +27,19 @@ class MainViewController: UIViewController {
     private var mainFilterData = [MainFilter]()
     //private var mainFilterSizeFixArray: [CGFloat] = []
     //private var mainFilterItemOrigin: CGFloat = 15
+    private var mainSilverTownData = [MainSilverTown]()
     
     let mainBottomButtonSearch = UIButton()
     let mainBottomButtonBookmark = UIButton()
     let mainBottomButtonFilter = UIButton()
     
+    let firebaseData = Database.database().reference()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        getMainSilverTownData()
         bindMainFilterCollectionView()
         bindMainSilverTownTableView()
         addMainBottomButtons()
@@ -45,8 +49,6 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        
-        print("viewWillAppear =====**")
         //mainFilterSizeFixArray = []
         //mainFilterItemOrigin = 15
         getFilterMain()
@@ -58,6 +60,62 @@ class MainViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
 
+    }
+    
+    func getMainSilverTownData() {
+        /*
+        firebaseData.child("data").getData(completion:  { error, snapshot in
+          guard error == nil else {
+            print(error!.localizedDescription)
+            return;
+          }
+          print()
+            
+        });*/
+        
+        firebaseData.child("data").observeSingleEvent(of: .value, with: { snapshot in
+         
+            guard let snapData = snapshot.value as? [String: Any] else {return}
+            
+            for item in snapData.values {
+
+                guard let source = item as? [String: Any] else {return}
+                guard let imgSource = source["imageURLs"] as? [String: String] else {return}
+         
+                let dataTo = MainSilverTown(
+                    title: source["title"] as! String,
+                    description: source["description"] as! String,
+                    imageURLs: [
+                        MainSilverTownSub(imageURL: imgSource.values.sorted()[0]),
+                        MainSilverTownSub(imageURL: imgSource.values.sorted()[1]),
+                        MainSilverTownSub(imageURL: imgSource.values.sorted()[2])])
+                
+                self.mainSilverTownData.append(dataTo)
+            }
+            
+            self.mainSilverTownViewModel.fetchItem(data: self.mainSilverTownData)
+            
+
+        }) { error in
+            
+          print(error.localizedDescription)
+            
+        }
+/*
+        firebaseData.child("data").observeSingleEvent(of: .value) { snapshot in
+            
+            guard let snapData = snapshot.value as? [String: Any] else {return}
+            
+            /*
+            MainSilverTown(
+                title: "유당마을",
+                description: "보증금 3억 / 월이용료 230만원\n세대관리비 10만원(20평형)",
+                imageURLs: [MainSilverTownSub(imageURL:"https://newsimg.sedaily.com/2017/09/03/1OKVUPOCKP_1.jpg"),
+                            MainSilverTownSub(imageURL:"https://img.etoday.co.kr/pto_db/2014/02/600/20140203051815_403252_836_554.JPG"),
+                            MainSilverTownSub(imageURL:"https://wimg.mk.co.kr/meet/neds/2015/10/image_readtop_2015_1019968_14458278062191475.jpg")])
+            ]*/
+        }*/
+        
     }
     
     func getFilterMain() {
@@ -207,7 +265,7 @@ class MainViewController: UIViewController {
             
         }.disposed(by: disposeBag)
         
-        mainSilverTownViewModel.fetchItem()
+        //mainSilverTownViewModel.fetchItem()
         
     }
     

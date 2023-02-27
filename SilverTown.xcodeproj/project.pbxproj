@@ -45,6 +45,7 @@
 		FFAEB50729704C2B00A13670 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAEB50629704C2B00A13670 /* MainCell.swift */; };
 		FFB05EBC2997BB2A0077610A /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB05EBB2997BB2A0077610A /* BookmarkViewModel.swift */; };
 		FFB05EBE2997BE0A0077610A /* BookmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB05EBD2997BE0A0077610A /* BookmarkCell.swift */; };
+		FFBB9DC529AB667300E6AF18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFBB9DC429AB667200E6AF18 /* GoogleService-Info.plist */; };
 		FFC4A59C296848370028E135 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59B296848370028E135 /* AppDelegate.swift */; };
 		FFC4A59E296848370028E135 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59D296848370028E135 /* SceneDelegate.swift */; };
 		FFC4A5A0296848370028E135 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4A59F296848370028E135 /* MainViewController.swift */; };
@@ -103,6 +104,7 @@
 		FFAEB50629704C2B00A13670 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		FFB05EBB2997BB2A0077610A /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		FFB05EBD2997BE0A0077610A /* BookmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCell.swift; sourceTree = "<group>"; };
+		FFBB9DC429AB667200E6AF18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Users/yyjweber/Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFC4A598296848370028E135 /* SilverTown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilverTown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC4A59B296848370028E135 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFC4A59D296848370028E135 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				FFC4A59D296848370028E135 /* SceneDelegate.swift */,
 				FFC4A5A7296848430028E135 /* Assets.xcassets */,
 				FFC4A5AC296848430028E135 /* Info.plist */,
+				FFBB9DC429AB667200E6AF18 /* GoogleService-Info.plist */,
 				FF79A1D42987FD0A00332F64 /* Model.xcdatamodeld */,
 				FFC4A5A4296848370028E135 /* SilverTown.xcdatamodeld */,
 			);
@@ -330,6 +333,8 @@
 			dependencies = (
 			);
 			name = SilverTown;
+			packageProductDependencies = (
+			);
 			productName = SilverTown;
 			productReference = FFC4A598296848370028E135 /* SilverTown.app */;
 			productType = "com.apple.product-type.application";
@@ -358,6 +363,9 @@
 				Base,
 			);
 			mainGroup = FFC4A58F296848370028E135;
+			packageReferences = (
+				FFBB9DC629AB676700E6AF18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FFC4A599296848370028E135 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -385,6 +393,7 @@
 				FF9AE7DC2972F08B0088C2B7 /* NanumGothic.ttf in Resources */,
 				FF32379129850C2C000E53E7 /* Search.storyboard in Resources */,
 				FF5B9BD0297E5B1C009ACCEA /* ImagePopup.storyboard in Resources */,
+				FFBB9DC529AB667300E6AF18 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +699,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FFBB9DC629AB676700E6AF18 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		FF79A1D42987FD0A00332F64 /* Model.xcdatamodeld */ = {

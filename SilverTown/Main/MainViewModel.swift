@@ -35,8 +35,11 @@ struct MainSilverTownViewModel {
     
     let items = PublishSubject<[MainSilverTown]>()
     
-    func fetchItem(){
+    func fetchItem(data: [MainSilverTown]){
         
+        let itemList = data
+                
+        /*
         let itemList = [
             MainSilverTown(
                 title: "SK그레이스힐(Grace Hill)",
@@ -57,7 +60,7 @@ struct MainSilverTownViewModel {
                 imageURLs: [MainSilverTownSub(imageURL:"https://newsimg.sedaily.com/2017/09/03/1OKVUPOCKP_1.jpg"),
                             MainSilverTownSub(imageURL:"https://img.etoday.co.kr/pto_db/2014/02/600/20140203051815_403252_836_554.JPG"),
                             MainSilverTownSub(imageURL:"https://wimg.mk.co.kr/meet/neds/2015/10/image_readtop_2015_1019968_14458278062191475.jpg")])
-            ]
+            ]*/
         
         items.onNext(itemList)
         items.onCompleted()

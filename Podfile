@@ -11,5 +11,7 @@ target 'SilverTown' do
   pod 'RxGesture'
   pod 'Kingfisher'
   pod 'MultiSlider'
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseDatabase'
   
 end

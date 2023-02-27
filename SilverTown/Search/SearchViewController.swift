@@ -33,6 +33,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
+    }
+    
     func initSetting(){
         
         addBackButton("arrow.backward", .black)
@@ -131,6 +138,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
             cell.searchResultAddress.text = model.address
             cell.searchResultOthers.text = "보증금 \(model.deposit)억 / 월이용료 \(model.monthlyFee)만원\n세대관리비 \(model.utilityCost)만원(21평형)"
             cell.searchResultOthers.setLineSpacing(lineSpacing: 3.0)
+            
+        }.disposed(by: disposeBag)
+        
+        searchTableView.rx.modelSelected(Search.self).bind { element in
+            
+            let storyBoard = UIStoryboard(name: "Detail", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "Detail")
+            self.navigationController?.pushViewController(controller, animated: true)
             
         }.disposed(by: disposeBag)
         
